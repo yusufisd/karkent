@@ -3,17 +3,17 @@
     <!-- Start Breadcrumb
         ============================================= -->
     <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light"
-        style="background-image: url(assets/img/header1.png);">
+        style="background-image: url(/assets/frontend/img/header1.png);">
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
-                    <h4><b>İLETİŞİM</b></h4>
+                    <h4><b> {{__('msg.iletişim')}} </b></h4>
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Ana Sayfa</a></li>
 
-                        <li class="active">İLETİŞİM</li>
+                        <li class="active"> {{__('msg.iletişim')}} </li>
                     </ul>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         <div class="heading">
                             <h3>Bize Ulaşın</h3>
                         </div>
-                        <form action="assets/mail/contact.php" method="POST" class="contact-form">
+                        <form action="assets/frontend/mail/contact.php" method="POST" class="contact-form">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
@@ -70,7 +70,7 @@
                             <div class="custom-checkbox">
                                 <input class="checkbox" type="checkbox" id="checkbox">
                                 <label class="custom-checkbox-label" for="checkbox"></label>
-                                <a href="file:///C:/Users/RugzT/Desktop/karkent/source/assets/img/kvkk.pdf"
+                                <a href="file:///C:/Users/RugzT/Desktop/karkent/source/assets/frontend/img/kvkk.pdf"
                                     target="_blank"><b>KVKK Aydınlatma Metni'ni okudum kabul ediyorum.</b></a>
                             </div>
                             <div class="col-md-12">
@@ -117,7 +117,7 @@
                         <div id="id1" class="tab-pane active">
                             <ul>
                                 <li>
-                                    <img src="assets/img/merkez.png" alt="Thumb">
+                                    <img src="{{$data->center_photo != null ? url('/'.$data->center_photo) : url('assets/uploaods/noimage.jpg')}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -125,8 +125,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Lokasyon
-                                            <span>Uludağ OSB Turgut Ozal Cad. No:8 Gürsu - Bursa / Turkey</span>
+                                            {{__('msg.adres')}}
+                                            <span> {{$data->center_address}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -136,8 +136,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Mail
-                                            <span>karkent@karkent.com</span>
+                                            Email
+                                            <span> {{$data->center_email}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -147,8 +147,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Telefon
-                                            <span>+90 444 6 298</span>
+                                            {{__('msg.telefon')}}
+                                            <span> {{$data->center_phone}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -157,7 +157,7 @@
                         <div id="id2" class="tab-pane">
                             <ul>
                                 <li>
-                                    <img src="assets/img/fabrika.png" alt="Thumb">
+                                    <img src="/{{$data->factory_photo}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -165,8 +165,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Lokasyon
-                                            <span>Uludağ OSB Turgut Ozal Cad. No:8 Gürsu - Bursa / Turkey</span>
+                                            {{__('msg.adres')}}
+                                            <span> {{$data->factory_address}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -176,8 +176,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Mail
-                                            <span>karkent@karkent.com</span>
+                                            Email
+                                            <span> {{$data->factory_email}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -187,8 +187,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Telefon
-                                            <span>+90 444 6 298</span>
+                                            {{__('msg.telefon')}}
+                                            <span> {{$data->factory_phone}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -197,7 +197,7 @@
                         <div id="id3" class="tab-pane">
                             <ul>
                                 <li>
-                                    <img src="assets/img/muze.png" alt="Thumb">
+                                    <img src="/{{$data->museum_photo}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -205,8 +205,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Lokasyon
-                                            <span>Malina City, MN 567894</span>
+                                            {{__('msg.adres')}}
+                                            <span> {{$data->museum_address}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -216,8 +216,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Mail
-                                            <span>karkent@karkent.com</span>
+                                            Email
+                                            <span> {{$data->musem_email}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -227,8 +227,8 @@
                                     </div>
                                     <div class="info">
                                         <p>
-                                            Telefon
-                                            <span>+90 444 6 298</span>
+                                            {{__('msg.telefon')}}
+                                            <span> {{$data->museum_phone}} </span>
                                         </p>
                                     </div>
                                 </li>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <!-- ========== Meta Tags ========== -->
@@ -48,7 +48,6 @@
 
 
     <!-- Preloader Start -->
-    <div class="se-pre-con"></div>
     <!-- Preloader Ends -->
 
     <!-- Start Header Top
@@ -98,7 +97,19 @@
                         </li>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <li>
-                            <a href="#"> <img src="/assets/frontend/img/lang.png" alt="Logo" width="24">
+                            @php
+                                $langs = ['en', 'tr'];
+                                if (\Session::get('applocale') != null) {
+                                    unset($langs[array_search(\Session::get('applocale'), $langs)]);
+                                } else {
+                                    unset($langs[array_search(config('app.fallback_locale'), $langs)]);
+                                }
+                            @endphp
+                            @foreach ($langs as $key => $value)
+                                <a href="{{ route('chaange.lang', $value) }}"> <img
+                                        src="/assets/frontend/img/{{ $value }}.png" alt="{{ $value }}"
+                                        width="24">
+                            @endforeach
                         </li>
                     </ul>
                 </div>
@@ -148,62 +159,29 @@
                         </li>
 
                         <li>
+
+                        @foreach (categories2() as $cat)
                         <li class="dropdown">
-                            <a href="shirting-fabric.html" class="dropdown-toggle" data-toggle="dropdown">GÖMLEKLİK
-                                KUMAŞ</a>
+                            <a href="shirting-fabric.html" class="dropdown-toggle" data-toggle="dropdown">
+                                {{ $cat->title }} </a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Pamuk Kumaşlar</a></li>
-                                <li><a href="#">Polycotton Kumaşlar</a></li>
-                                <li><a href="#">Elastan (Lcyra) Kumaşlar</a></li>
-                                <li><a href="#">VİSKON Kumaşlar</a></li>
-                                <li><a href="#">Keten Kumaşlar</a></li>
-                                <li><a href="#">Baskılı Kumaşlar</a></li>
-                                <li><a href="#">Polyester Kumaşlar</a></li>
-                                <li><a href="#">Kışlık Kumaşlar</a></li>
-                                <li><a href="#">GOFRELİ Kumaşlar</a></li>
+
+                                @foreach (products2($cat->id) as $pro)
+                                <li><a  target="_blank" href="{{$pro->link != null ? $pro->link : '#'}}"> {{$pro->title}} </a></li>
+                                    
+                                @endforeach
+
+
+                                
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="Label-fabric.html" class="dropdown-toggle" data-toggle="dropdown">ETİKETLİK
-                                Kumaş</a>
-                            <ul class="dropdown-menu">
-                                <li><a
-                                        href="https://www.kardrop.com.tr/3-cm-japon-akmaz-etiketlik-kumas-1-koli-8000mt-orta-yikama-baskiya-uygun">NT660
-                                        Japon Akmaz ETİKETLİK Kumaş </a></li>
-                                <li><a
-                                        href="https://www.kardrop.com.tr/25-cm-japon-akmaz-etiketlik-kumas-1-koli-8000mt">NT
-                                        7029 Japon Akmaz ETİKETLİK Kumaş</a></li>
-                                <li><a
-                                        href="https://www.kardrop.com.tr/3-cm-ingiliz-saten-etiketlik-kumas-1-koli-8.000mt">İNGİLİZ
-                                        Saten ETİKETLİK Kumaş</a></li>
-                                <li><a href="#">Japon Akmazlar</a></li>
-                                <li><a href="#">Avrupa Akmazlar</a></li>
-                                <li><a href="#">İTHAL Satenler</a></li>
-                                <li><a href="#">ÇİFT Taraflı Kenar Örgülü</a></li>
-                                <li><a href="#">ÇİFT Taraflı Kenar Örgüsüz </a></li>
-                                <li><a href="#">Wax RİBBONLAR</a></li>
-                                <li><a href="#">D110A RİBBONLAR</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="collections.html" class="dropdown-toggle"
-                                data-toggle="dropdown">Koleksİyonlar</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">100% Pamuk Koleksİyonu</a></li>
-                                <li><a href="#">Pamuk Saten Koleksİyonu</a></li>
-                                <li><a href="#">Poplİn Lİkra Koleksİyonu</a></li>
-                                <li><a href="#">Ekose Koleksİyonu</a></li>
-                                <li><a href="#">Kİng Koleksİyonu</a></li>
-                                <li><a href="#">Vİskon Koleksİyonu</a></li>
-                                <li><a href="#">ArmÜr Koleksİyonu</a></li>
-                                <li><a href="#">Oxford Koleksİyonu</a></li>
-                                <li><a href="#">Şamre Koleksİyonu</a></li>
-                            </ul>
-                        </li>
+                        @endforeach
+
+
 
 
                         <li>
-                            <a href="contact.html">İLETİŞİM</a>
+                            <a href="{{ route('frontend.contact') }}">İLETİŞİM</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

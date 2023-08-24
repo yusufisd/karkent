@@ -7,7 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Sponsor Ekle
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Sponsor {{__('msg.ekle')}}
                 </h1>
                 <!--end::Title-->
             </div>
@@ -18,7 +18,7 @@
                 <a href="javascript:history.back()"
                     class="page-heading d-flex text-dark fw-bold fs-3 justify-content-center my-0 text-hover-success">
                     <i class="fa fa-arrow-left my-auto mx-2"></i>
-                    Geri Dön
+                    {{__('msg.geri dön')}}
                 </a>
                 <!--end::Title-->
             </div>
@@ -29,7 +29,7 @@
     <!--end::Toolbar-->
     <!--begin::Content-->
 
-    <form action="{{ route('admin.slider.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.sponsor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
 
@@ -57,10 +57,20 @@
 
                                 <div class="row" style="margin: 3%">
                                     <div class="col-md-1">
-                                        <h4>Logo</h4>
+                                        <label>Logo</label>
                                     </div>
                                     <div class="col-md-11">
                                         <input type="file" class="form-control" name="image" id="">
+                                    </div>
+                                </div>
+
+
+                                <div class="row" style="margin: 3%">
+                                    <div class="col-md-1">
+                                        <label> {{__('msg.sıralama')}} </label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <input type="number" class="form-control" name="queue" id="">
                                     </div>
                                 </div>
 

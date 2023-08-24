@@ -17,7 +17,8 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PageDefinitousController extends Controller
 {
-    public function add(){
+    public function add()
+    {
         $def1_tr = PageDefinitous1::latest()->first();
         $def1_en = EnPageDefinitous1::latest()->first();
 
@@ -30,15 +31,19 @@ class PageDefinitousController extends Controller
         $def4_tr = PageDefinitous4::latest()->first();
         $def4_en = EnPageDefinitous4::latest()->first();
 
-        
-        return view('backend.home.page_definitous.add',compact('def1_tr','def1_en','def2_tr','def2_en','def3_tr','def3_en','def4_tr','def4_en'));
 
+        return view('backend.page_definitous.add', compact('def1_tr', 'def1_en', 'def2_tr', 'def2_en', 'def3_tr', 'def3_en', 'def4_tr', 'def4_en'));
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
 
-        $definitous1 = new PageDefinitous1();
+        if (PageDefinitous1::find(1) != null) {
+            $definitous1 = PageDefinitous1::find(1);
+        } else {
+            $definitous1 = new PageDefinitous1();
+        }
         $definitous1->title1 = $request->def1_title_tr;
         $definitous1->description1 = $request->def1_description_tr;
         $definitous1->icon1 = $request->def1_icon_tr;
@@ -53,7 +58,11 @@ class PageDefinitousController extends Controller
         $definitous1->save();
 
 
-        $definitous1_en = new EnPageDefinitous1();
+        if (EnPageDefinitous1::find(1) != null) {
+            $definitous1_en = EnPageDefinitous1::find(1);
+        } else {
+            $definitous1_en = new EnPageDefinitous1();
+        }
         $definitous1_en->title1 = $request->def1_title_en;
         $definitous1_en->description1 = $request->def1_description_en;
         $definitous1_en->icon1 = $request->def1_icon_en;
@@ -67,10 +76,14 @@ class PageDefinitousController extends Controller
         $definitous1_en->icon3 = $request->def3_icon_en;
         $definitous1_en->definitous_id = $definitous1->id;
         $definitous1_en->save();
-        
 
 
-        $definitous2 = new PageDefinitous2();
+
+        if (PageDefinitous2::find(1) != null) {
+            $definitous2 = PageDefinitous2::find(1);
+        } else {
+            $definitous2 = new PageDefinitous2();
+        }
         $definitous2->title = $request->page_def_title;
         $definitous2->description = $request->page_def_description;
         $definitous2->button_url = $request->page_def_button_url;
@@ -78,7 +91,11 @@ class PageDefinitousController extends Controller
         $definitous2->video_url = $request->page_def_video_url;
         $definitous2->save();
 
-        $definitous2_en = new EnPageDefinitous2();
+        if (EnPageDefinitous2::find(1) != null) {
+            $definitous2_en = EnPageDefinitous2::find(1);
+        } else {
+            $definitous2_en = new EnPageDefinitous2();
+        }
         $definitous2_en->title = $request->page_def_title_en;
         $definitous2_en->description = $request->page_def_description_en;
         $definitous2_en->button_url = $request->page_def_button_url_en;
@@ -88,8 +105,11 @@ class PageDefinitousController extends Controller
         $definitous2_en->save();
 
 
-
-        $definitous3 = new PageDefinitous3();
+        if (PageDefinitous3::find(1) != null) {
+            $definitous3 = PageDefinitous3::find(1);
+        } else {
+            $definitous3 = new PageDefinitous3();
+        }
         $definitous3->title1_1 = $request->page_def3_title_a;
         $definitous3->title1_2 = $request->page_def3_title_a1;
         $definitous3->icon1 = $request->page_def3_icon1;
@@ -107,7 +127,12 @@ class PageDefinitousController extends Controller
         $definitous3->icon4 = $request->page_def3_icon4;
         $definitous3->save();
 
-        $definitous3_en = new EnPageDefinitous3();
+
+        if (EnPageDefinitous3::find(1) != null) {
+            $definitous3_en = EnPageDefinitous3::find(1);
+        } else {
+            $definitous3_en = new EnPageDefinitous3();
+        }
         $definitous3_en->title1_1 = $request->page_def3_title_a_en;
         $definitous3_en->title1_2 = $request->page_def3_title_a1_en;
         $definitous3_en->icon1 = $request->page_def3_icon1_en;
@@ -127,8 +152,11 @@ class PageDefinitousController extends Controller
         $definitous3_en->save();
 
 
-
-        $definitous4 = new PageDefinitous4();
+        if (PageDefinitous4::find(1) != null) {
+            $definitous4 = PageDefinitous4::find(1);
+        } else {
+            $definitous4 = new PageDefinitous4();
+        }
         $definitous4->title = $request->def_4_title;
         $definitous4->description = $request->def_4_description;
         $definitous4->title1 = $request->def_4_title_1;
@@ -145,7 +173,12 @@ class PageDefinitousController extends Controller
         $definitous4->icon4 = $request->def_4_icon4;
         $definitous4->save();
 
-        $definitous4_en = new EnPageDefinitous4();
+
+        if (EnPageDefinitous4::find(1) != null) {
+            $definitous4_en = EnPageDefinitous4::find(1);
+        } else {
+            $definitous4_en = new EnPageDefinitous4();
+        }
         $definitous4_en->title = $request->def_4_title_en;
         $definitous4_en->description = $request->def_4_description_en;
         $definitous4_en->title1 = $request->def_4_title_1_en;
@@ -165,6 +198,5 @@ class PageDefinitousController extends Controller
 
         Alert::success('Sayfa Tanımları Başarıyla Eklendi');
         return back();
-        
     }
 }

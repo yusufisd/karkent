@@ -58,10 +58,9 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th>Resim<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">Sıralama<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center pe-7">Durum<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">İşlem<i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{__('msg.resim')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{__('msg.sıralama')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -76,22 +75,13 @@
                                                 </div>
                                             </td>
                                             <td>
-                                                <img src="/{{$item->image}}" style="width: 100%" class="w-75px ms-n1"
+                                                <img src="/{{$item->logo}}" style="width: 100%" class="w-75px ms-n1"
                                                     alt="">
                                             </td>
 
                                             <td class="text-center"> {{$item->queue}} </td>
                                             <td class="text-center">
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                    title="Görüntüle">
-                                                    <i class="fa-solid fa-eye fs-3"></i>
-                                                </a>
-                                                <a href="{{route('admin.slider.edit',$item->id)}}"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
+                                                
                                                 <a onclick="destroy({{$item->id}})"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
                                                     data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
@@ -134,7 +124,7 @@
                 confirmButtonText: 'Evet, sil!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('admin.slider.destroy') }}/"+d;
+                    window.location.href = "{{ route('admin.sponsor.destroy') }}/"+d;
                 }
             })
         }
@@ -145,7 +135,8 @@
                 [0, "asc"]
             ],
             "language": {
-                "sEmptyTable": "Tabloda herhangi bir veri mevcut değil",
+                
+                "sEmptyTable": "{{__('msg.Tabloda herhangi bir veri mevcut değil')}}",
                 "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
                 "sInfoEmpty": "Kayıt yok",
                 "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
@@ -154,13 +145,13 @@
                 "sLengthMenu": "Sayfada _MENU_ kayıt göster",
                 "sLoadingRecords": "Yükleniyor...",
                 "sProcessing": "İşleniyor...",
-                "sSearch": "Ara:",
+                "sSearch": "{{__('msg.ara')}}:",
                 "sZeroRecords": "Eşleşen kayıt bulunamadı",
                 "oPaginate": {
                     "sFirst": "İlk",
                     "sLast": "Son",
-                    "sNext": "Sonraki",
-                    "sPrevious": "Önceki"
+                    "sNext": "{{__('msg.sonraki')}}",
+                    "sPrevious": "{{__('msg.önceki')}}"
                 },
                 "oAria": {
                     "sSortAscending": ": artan sütun sıralamasını aktifleştir",

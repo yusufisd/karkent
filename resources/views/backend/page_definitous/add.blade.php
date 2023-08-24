@@ -7,8 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Sayfa
-                    Tanımları</h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.sayfa tanımı')}} </h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -37,19 +36,19 @@
                             <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6">
 
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_page_home">Sayfa Tanımı 1</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#tab_page_home"> {{__('msg.sayfa tanımı')}} 1</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link " data-bs-toggle="tab" href="#tab_page_header">Sayfa Tanımı 2</a>
+                                    <a class="nav-link " data-bs-toggle="tab" href="#tab_page_header"> {{__('msg.sayfa tanımı')}} 2</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_page_footer">Sayfa Tanımı 3</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_page_footer"> {{__('msg.sayfa tanımı')}} 3</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_page_four">Sayfa Tanımı 4</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#tab_page_four"> {{__('msg.sayfa tanımı')}} 4</a>
                                 </li>
                             </ul>
 
@@ -86,7 +85,7 @@
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Başlık</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} </label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_title"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
@@ -111,8 +110,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
-                                                                <label class="col-md-2 col-form-label fw-bold fs-6">Buton
-                                                                    Başlık</label>
+                                                                <label class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.buton')}} 
+                                                                     {{__('msg.başlık')}} </label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_button_text"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
@@ -122,7 +121,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="row">
-                                                                <label class="col-md-2 col-form-label fw-bold fs-6">Buton
+                                                                <label class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.buton')}} 
                                                                     URL</label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_button_url"
@@ -135,10 +134,10 @@
 
 
                                                     <div class="row">
-                                                        <label class="col-md-1 col-form-label fw-bold fs-6">Açıklama</label>
+                                                        <label class="col-md-1 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         <div class="col-md-11">
                                                             <textarea name="page_def_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
-                                                                cols="30" rows="5"> {{$def2_tr->description}} </textarea>
+                                                                cols="30" rows="5">  </textarea>
                                                         </div>
                                                     </div>
 
@@ -162,7 +161,7 @@
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Başlık</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} </label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_title_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
@@ -187,8 +186,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
-                                                                <label class="col-md-2 col-form-label fw-bold fs-6">Buton
-                                                                    Başlık</label>
+                                                                <label class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.buton')}} 
+                                                                     {{__('msg.başlık')}} </label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_button_text_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
@@ -198,7 +197,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="row">
-                                                                <label class="col-md-2 col-form-label fw-bold fs-6">Buton
+                                                                <label class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.buton')}} 
                                                                     URL</label>
                                                                 <div class="col-md-10 fv-row">
                                                                     <input type="text" name="page_def_button_url_en"
@@ -212,10 +211,10 @@
 
                                                     <div class="row">
                                                         <label
-                                                            class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                            class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         <div class="col-md-10">
                                                             <textarea name="page_def_description_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
-                                                                cols="30" rows="5"> {{$def2_en->description}} </textarea>
+                                                                cols="30" rows="5"> {{$def2_en->description ?? ''}} </textarea>
                                                         </div>
                                                     </div>
 
@@ -258,14 +257,14 @@
                                             <!--begin::Form-->
                                                 <!--begin::Card body-->
                                                 <div class="card-body p-5">
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -279,7 +278,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -294,7 +293,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -307,14 +306,14 @@
                                                     </div><br><br>
 
 
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -328,7 +327,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -343,7 +342,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -357,14 +356,14 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -378,7 +377,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -393,7 +392,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -405,14 +404,14 @@
                                                         </div>
                                                     </div><br><br>
 
-                                                    <h6 class="mb-5">Bölüm 4</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  4</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -426,7 +425,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -441,7 +440,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -466,14 +465,14 @@
                                             <!--begin::Form-->
                                                 <!--begin::Card body-->
                                                 <div class="card-body p-5">
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -487,7 +486,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -502,7 +501,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -515,14 +514,14 @@
                                                     </div><br><br>
 
 
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -536,7 +535,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -551,7 +550,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -565,14 +564,14 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -586,7 +585,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -601,7 +600,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -613,14 +612,14 @@
                                                         </div>
                                                     </div><br><br>
 
-                                                    <h6 class="mb-5">Bölüm 4</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  4</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -634,7 +633,7 @@
                                                         <div class="col-md-4">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         2</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -649,7 +648,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -700,7 +699,7 @@
                                             <!--begin::Form-->
                                                 <!--begin::Card body-->
                                                 <div class="card-body p-5">
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -711,7 +710,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -740,7 +739,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -768,7 +767,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -796,7 +795,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -807,7 +806,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -836,7 +835,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -864,7 +863,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -894,7 +893,7 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -905,7 +904,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -934,7 +933,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -962,7 +961,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -1002,7 +1001,7 @@
                                             <!--begin::Form-->
                                                 <!--begin::Card body-->
                                                 <div class="card-body p-5">
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -1013,7 +1012,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -1042,7 +1041,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -1070,7 +1069,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -1098,7 +1097,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -1109,7 +1108,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -1138,7 +1137,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -1166,7 +1165,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -1196,7 +1195,7 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <!--begin::Input group-->
@@ -1207,7 +1206,7 @@
                                                                 <div class="row">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">Başlık
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                     </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
@@ -1236,7 +1235,7 @@
                                                             <div class="row fv-row fv-plugins-icon-container ps-5">
                                                                 <!--begin::Label-->
                                                                 <label
-                                                                    class="col-md-2 col-form-label fw-bold fs-6">Açıklama</label>
+                                                                    class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                                 <!--end::Label-->
                                                                 <!--begin::Col-->
                                                                 <div class="col-md-10">
@@ -1264,7 +1263,7 @@
                                                                 <div class="row mb-9">
                                                                     <!--begin::Label-->
                                                                     <label
-                                                                        class="col-md-2 col-form-label fw-bold fs-6">İkon</label>
+                                                                        class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                     <!--end::Label-->
                                                                     <!--begin::Col-->
                                                                     <div class="col-md-10">
@@ -1331,7 +1330,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-2">
-                                                            <h4>Genel Başlık</h4>
+                                                            <h4>  {{__('msg.genel')}}  {{__('msg.başlık')}} </h4>
                                                         </div>
                                                         <div class="col-md-10">
                                                             <input type="text" value="{{$def4_tr->title ?? ''}}"
@@ -1342,23 +1341,23 @@
 
                                                     <div class="row">
                                                         <div class="col-md-2">
-                                                            <h4>Genel Açıklama</h4>
+                                                            <h4>  {{__('msg.genel')}}  {{__('msg.açıklama')}} </h4>
                                                         </div>
                                                         <div class="col-md-10">
                                                             <textarea name="def_4_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
-                                                                cols="30" rows="5">{{$def4_tr->description}}</textarea>
+                                                                cols="30" rows="5">{{$def4_tr->description ?? ''}}</textarea>
                                                         </div>
                                                     </div><br><br>
 
 
                                                     <div class="separator mb-10"></div>
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1374,7 +1373,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1387,7 +1386,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_1"
@@ -1398,13 +1397,13 @@
                                                     <br>
 
                                                     <div class="separator mb-10"></div>
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1420,7 +1419,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1433,7 +1432,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_2"
@@ -1445,14 +1444,14 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1468,7 +1467,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1481,7 +1480,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_3"
@@ -1491,14 +1490,14 @@
                                                     </div>
                                                     <br>
 
-                                                    <h6 class="mb-5">Bölüm 4</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  4</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1514,7 +1513,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1527,7 +1526,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_4"
@@ -1552,7 +1551,7 @@
 
                                                     <div class="row">
                                                         <div class="col-md-2">
-                                                            <h4>Genel Başlık</h4>
+                                                            <h4>  {{__('msg.genel')}}  {{__('msg.başlık')}} </h4>
                                                         </div>
                                                         <div class="col-md-10">
                                                             <input type="text" value="{{$def4_en->title ?? ''}}"
@@ -1563,23 +1562,23 @@
 
                                                     <div class="row">
                                                         <div class="col-md-2">
-                                                            <h4>Genel Açıklama</h4>
+                                                            <h4>  {{__('msg.genel')}}  {{__('msg.açıklama')}} </h4>
                                                         </div>
                                                         <div class="col-md-10">
                                                             <textarea name="def_4_description_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
-                                                                cols="30" rows="5">{{$def4_en->description}}</textarea>
+                                                                cols="30" rows="5">{{$def4_en->description ?? ''}}</textarea>
                                                         </div>
                                                     </div><br><br>
 
 
                                                     <div class="separator mb-10"></div>
-                                                    <h6 class="mb-5">Bölüm 1</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  1</h6>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1595,7 +1594,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1608,7 +1607,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_1_en"
@@ -1619,13 +1618,13 @@
                                                     <br>
 
                                                     <div class="separator mb-10"></div>
-                                                    <h6 class="mb-5">Bölüm 2</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  2</h6>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1641,7 +1640,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1654,7 +1653,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_2_en"
@@ -1666,14 +1665,14 @@
 
 
 
-                                                    <h6 class="mb-5">Bölüm 3</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  3</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1689,7 +1688,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1702,7 +1701,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama2</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} 2</label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_3_en"
@@ -1712,14 +1711,14 @@
                                                     </div>
                                                     <br>
 
-                                                    <h6 class="mb-5">Bölüm 4</h6>
+                                                    <h6 class="mb-5"> {{__('msg.bölüm')}}  4</h6>
                                                     <div class="separator mb-10"></div>
 
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="col-md-2">
-                                                                    <label class=" col-form-label fw-bold fs-6">Başlık
+                                                                    <label class=" col-form-label fw-bold fs-6"> {{__('msg.başlık')}} 
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
@@ -1735,7 +1734,7 @@
                                                             <div class="row">
                                                                 <div class="col-md-2">
                                                                     <label
-                                                                        class=" col-form-label fw-bold fs-6">İkon</label>
+                                                                        class=" col-form-label fw-bold fs-6"> {{__('msg.ikon')}} </label>
                                                                 </div>
                                                                 <div class="col-md-10">
                                                                     <input type="text"
@@ -1748,7 +1747,7 @@
                                                     </div><br>
                                                     <div class="row">
                                                         <div class="col-md-1">
-                                                            <label class=" col-form-label fw-bold fs-6">Açıklama</label>
+                                                            <label class=" col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         </div>
                                                         <div class="col-md-11">
                                                             <input type="text" name="def_4_description_4_en"

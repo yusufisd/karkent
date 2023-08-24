@@ -7,8 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Slider
-                    Yönetimi</h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">{{__('msg.tarihçe')}} {{__('msg.yönetim')}}</h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -33,8 +32,8 @@
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <!--begin::Add user-->
-                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.slider.add')}}">
-                                        <i class="fa-solid fa-plus"></i>Yeni Ekle</a>
+                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.history.add')}}">
+                                        <i class="fa-solid fa-plus"></i>{{__('msg.ekle')}}</a>
                                     <!--end::Add user-->
                                 </div>
                                 <!--end::Toolbar-->
@@ -58,11 +57,10 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th>Resim<i class="fa fa-sort ms-3"></i></th>
-                                            <th>Başlık<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">Sıralama<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center pe-7">Durum<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">İşlem<i class="fa fa-sort ms-3"></i></th>
+                                            <th>{{__('msg.yıl')}}<i class="fa fa-sort ms-3"></i></th>
+                                            <th>{{__('msg.başlık')}}<i class="fa fa-sort ms-3"></i></th>
+                                            <th>{{__('msg.açıklama')}}<i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center">{{__('msg.işlem')}}<i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -76,28 +74,16 @@
                                                         value="1" />
                                                 </div>
                                             </td>
-                                            <td>
-                                                <img src="/{{$item->image}}" style="width: 100%" class="w-75px ms-n1"
-                                                    alt="">
-                                            </td>
-
+                                            <td>{{$item->year}}</td>
                                             <td> {{$item->title}} </td>
-                                            <td class="text-center"> {{$item->queue}} </td>
-                                            <td>
-                                                <div
-                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
-                                                    <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="slider_status_1" {{$item->status == 1 ? 'checked' : ''}}>
-                                                    <label class="form-check-label" for="slider_status_1"></label>
-                                                </div>
-                                            </td>
+                                            <td> {{$item->description}} </td>
                                             <td class="text-center">
                                                 <a href=""
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
                                                     title="Görüntüle">
                                                     <i class="fa-solid fa-eye fs-3"></i>
                                                 </a>
-                                                <a href="{{route('admin.slider.edit',$item->id)}}"
+                                                <a href="{{route('admin.history.edit',$item->id)}}"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
                                                     title="Düzenle">
                                                     <i class="fa-regular fa-pen-to-square fs-3"></i>
@@ -135,16 +121,16 @@
     <script>
         function destroy(d) {
             Swal.fire({
-                title: 'Emin misiniz?',
-                text: "Seçtiğiniz içerik silinecek!",
+                title: "{{__('msg.emin misiniz')}}?",
+                text: "{{__('msg.seçtiğiniz içerik silinecektir')}}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Evet, sil!'
+                confirmButtonText: "{{__('msg.evet sil')}}"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('admin.slider.destroy') }}/"+d;
+                    window.location.href = "{{ route('admin.history.destroy') }}/"+d;
                 }
             })
         }

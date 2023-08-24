@@ -158,9 +158,9 @@
                                     <i class="flaticon-presentation"></i>
                                 </div>
                                 <div class="info">
-                                    <h4>Gömleklik Kumaş</h4>
+                                    <h4> {{$page_def1->title1}} </h4>
                                     <p>
-                                        1980 yılında tekstil şehri Bursa’da kurulan Karkent Tekstil, geçen yıllar içerisinde gömleklik kumaş ve etiketlik kumaş imalatı alanında Türkiye’nin önde gelen firmaları arasında yerini almıştır. 
+                                        {{$page_def1->description1}}
                                     </p>
                                     <!-- <a href="#">Devamı<i class="fas fa-long-arrow-alt-right"></i></a> -->
                                 </div>
@@ -172,9 +172,9 @@
                                     <i class="flaticon-collaboration"></i>
                                 </div>
                                 <div class="info">
-                                    <h4>Etiketlik Kumaş</h4>
+                                    <h4> {{$page_def1->title2}} </h4>
                                     <p>
-                                        Karkent Tekstil, sektörün en çok aranan kumaşları arasında olan etiketlik kumaş çeşitliliğini bünyesinde barındırmakta ve yerel pazarda lider tedarikçi konumunda bulunmaktadır.
+                                        {{$page_def1->description2}}
                                     </p>
                                 </div>
                             </div>
@@ -185,9 +185,9 @@
                                     <i class="flaticon-id"></i>
                                 </div>
                                 <div class="info">
-                                    <h4>Ribon</h4>
+                                    <h4> {{$page_def1->title3}} </h4>
                                     <p>
-                                        Karkent Tekstil, Uzakdoğu'dan ithal ettiği ribonların Türkiye'deki satışını büyük bir özenle gerçekleştirmektedir. Uzman satış kadrosu ve tecrübeli saha ekibi ile müşterilerine güçlü markalar ve kaliteli ürünlerle hizmet vermektedir
+                                        {{$page_def1->description3}}
                                     </p>
                                 </div>
                             </div>
@@ -212,17 +212,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 default info">
-                    <h2>Karkent Tekstil</h2>
+                    <h2> {{$page_def2->title}} </h2>
                     <p style="text-align: left;"> 
-                        Yılların verdiği tecrübe ile gençliğin dinamizmini birleştirerek, 41 yıldan bu yana giyim sektörünün kalitesini ve şıklığını geliştirmesine ön ayak olan Karkent Tekstil, özellikle gömleklik kumaşın, global pazardaki yerini bulmasında söz sahibi konumdadır. Her bir çalışanının özveri ve emek ortaya koymasının ürünü olan Karkent kumaşları, Avrupa başta olmak üzere dünyanın kumaş merkezi sayılan 50’yi aşkın ülkesinde sektöre yön vermektedir.
-                    </p>
-                    <p style="text-align: left;">
-                        Karkent’i rakiplerinden farklı kılan, milyon metreleri bulan ve çeşitliliği ile modaya ayak uyduran hazır stok servisi ve sahip olduğu genç -dinamik kadrosuyla kaliteli ve hızlı servis anlayışıdır. Karkent, 41 yıldır olduğu gibi müşterilerine hizmet vermeye devam etmek için zorlu ve sürekli gelişen iş alanlarında faaliyetlerini geliştirerek geleceğe bakmaktadır. 
+                        {{$page_def2->description}}
                     </p>
                     <div class="bottom-info" style="    margin-left: 199px;">
                         <ul>
                             <li>
-                                <a class="btn btn-theme effect btn-sm " href="about.html">TARİHÇE</a>
+                                <a class="btn btn-theme effect btn-sm " href="{{$page_def2->button_url}}"> {{$page_def2->button_title}} </a>
                             </li>
                             <li><i class=""></i> </li>
                         </ul>
@@ -240,30 +237,30 @@
                 <div class="col-md-12">
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            <i class="flaticon-world-map"></i>
-                            <div class="timer" data-to="198" data-speed="5000"></div>
-                            <span class="medium">Nitelikli Personal</span>
+                            {!!$page_def3->icon1!!}
+                            <div class="timer" data-to="{{$page_def3->title1_1}}" data-speed="5000">{{$page_def3->title1_1}}</div>
+                            <span class="medium"> {{$page_def3->title1_2}} </span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            <i class="flaticon-gears"></i>
-                            <div class="timer" data-to="128" data-speed="5000"></div>
-                            <span class="medium">Dokuma Tezgahı</span>
+                            {!!$page_def3->icon2!!}
+                            <div class="timer" data-to="{{$page_def3->title2_1}}" data-speed="5000"></div>
+                            <span class="medium">{{$page_def3->title2_2}}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            <i class="flaticon-id-card"></i>
-                            <div class="timer" data-to="12000000" data-speed="5000"></div>
-                            <span class="medium">Metre Yıllık Üretim</span>
+                            {!!$page_def3->icon3!!}
+                            <div class="timer" data-to="{{$page_def3->title3_1}}" data-speed="5000"></div>
+                            <span class="medium">{{$page_def3->title3_2}}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            <i class="flaticon-id"></i>
-                            <div class="timer" data-to="51" data-speed="5000"></div>
-                            <span class="medium">İhracat Yapılan Ülke</span>
+                            {!!$page_def3->icon4!!}
+                            <div class="timer" data-to="{{$page_def3->title4_1}}" data-speed="5000"></div>
+                            <span class="medium">{{$page_def3->title4_2}}</span>
                         </div>
                     </div>
                 </div>
@@ -279,9 +276,9 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>ÜRETİM SÜREÇLERİ</h2>
+                        <h2> {{$page_def4->title}} </h2>
                         <p>
-                            Karkent Tekstil, dokunan her bir iplik telinin müthiş bir özveri ile ilmek ilmek işlendiği, başarıya her bir çalışanın saygıdeğer emekleri ile erişildiği yerdir. Karkent Tekstil olarak, 41 yıldır global modayı takip eden Türk kumaşı üretiyor, kültürümüzü de birlikte ihraç ediyoruz. Hayallerimizi kumaşa dokuyor, 50’yi aşkın ülkeye hizmet veriyoruz. Yıllık 12 milyon metre üretim kapasitemiz ile Karkent kumaşlarını dünya markalarına ulaştırıyoruz. Gelin hep birlikte Karkent kumaşının yolculuğuna ufak bir göz atalım.
+                            {{$page_def4->description}}
                         </p>
                     </div>
                 </div>
@@ -291,15 +288,15 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon">
-                                <img src="assets/frontend/img/iplik.png" alt="Logo" width="80">
+                                {!!$page_def4->icon1!!}
                             </div>
                             <div class="vertical-line">
                                 <span>1</span>
                             </div>
                             <div class="info">
-                                <h4>İplik</h4>
+                                <h4> {{$page_def4->title1}} </h4>
                                 <p>
-                                    Doğa dostu, BCI sertifikalı pamuk iplikleri ve karışımlı ipliklerin devere makinelerinde dokunmaya hazırlanması ile başlar Karkent kumaşının yolculuğu…
+                                    {{$page_def4->description1}}
                                 </p>
                             </div>
                         </div>
@@ -307,31 +304,31 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="info">
-                                <h4>Dokuma</h4>
+                                <h4>{{$page_def4->title2}}</h4>
                                 <p>
-                                    Son teknolojiyi kullanan bilgisayarlı ve uzaktan yönetilip takip edilebilen dokuma makinelerinde, çözgüye atılan atkı iplikleri, deneyimli ustaların elleriyle kaliteli kumaşa evrilir bir çırpıda..
+                                    {{$page_def4->description1}}
                                 </p>
                             </div>
                             <div class="vertical-line bottom">
                                 <span>2</span>
                             </div>
                             <div class="icon icon-down"><br><br><br><br>
-                               <img src="assets/frontend/img/dokuma.png" alt="Logo" width="80">
+                                {!!$page_def4->icon2!!}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon">
-                               <img src="assets/frontend/img/boyama.png" alt="Logo" width="80">
+                                {!!$page_def4->icon3!!}
                             </div>
                             <div class="vertical-line">
                                 <span>3</span>
                             </div>
                             <div class="info">
-                                <h4>Boya - Apre</h4>
+                                <h4>{{$page_def4->title3}}</h4>
                                 <p>
-                                    Özgün desenlerle ortaya çıkan Karkent kumaşları, boyama ve apre işlemlerinin ardından kalite kontrol süreçleri ile nitelikli hale dönüşmüş oluverir kısa zaman içinde. 
+                                    {{$page_def4->description1}}
                                 </p>
                             </div>
                         </div>
@@ -339,16 +336,16 @@
                <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="info">
-                                <h4>Hazır Stok</h4>
+                                <h4>{{$page_def4->title4}}</h4>
                                 <p>
-                                    Hızlı ve hazır stok servisi ile dünyada 50’yi aşkın ülkeye ihraç edilen Karkent gömleklik kumaşları, kaliteyi ve özgünlüğü tüm dünyaya giydirmeye devam etmektedir.
+                                    {{$page_def4->description1}}
                                 </p>
                             </div>
                             <div class="vertical-line bottom">
                                 <span>4</span>
                             </div>
                             <div class="icon icon-down"><br><br><br><br>
-                               <img src="assets/frontend/img/stok.png" alt="Logo" width="80">
+                                {!!$page_def4->icon4!!}
                             </div>
                         </div>
                     </div>
@@ -364,10 +361,16 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="clients-items owl-carousel owl-theme text-center">
+
+                        @foreach ($sponsors as $item)
+                            
                         <div class="single-item">
-                            <a href="#"><img src="assets/frontend/img/1.png" alt="Clients"></a>
+                            <a href="#"><img style="width: 100%" src="/{{$item->logo}}" alt="Clients"></a>
                         </div>
-                        <div class="single-item">
+
+                        @endforeach
+
+                        {{-- <div class="single-item">
                             <a href="#"><img src="assets/frontend/img/2.jpg" alt="Clients"></a>
                         </div>
                         <div class="single-item">
@@ -385,7 +388,7 @@
                         <div class="single-item">
                             <a href="#"><img src="assets/frontend/img/7.jpg" alt="Clients"></a>
                         </div>
-                       
+                        --}}
                     </div>
                 </div>
             </div>
@@ -399,7 +402,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>TARİHÇE</h2>
+                        <h2> {{__('msg.tarihçe')}} </h2>
                     </div>
                 </div>
             </div>
@@ -408,16 +411,24 @@
                     <div class="timeline">
                         <div class="timeline-box">
                             <div class="timeline-items">
+                                @foreach ($tarihce as $item)
+                                    
+
                                 <div class="timeline-item">
                                     <div class="timeline-content">
-                                        <h4>1980</h4>
-                                        <h5>Kuruluş</h5>
+                                        <h4> {{$item->year}} </h4>
+                                        <h5> {{$item->title}} </h5>
                                         <p>
-                                            Karkent Tekstil’in temelleri Bursa Gürsu’da atıldı.
+                                            {{$item->description}}
                                         </p>
                                     </div>
                                 </div>
-                                <div class="timeline-item">
+                                
+
+                                @endforeach
+
+                                {{-- 
+                                    <div class="timeline-item">
                                     <div class="timeline-content">
                                         <h4>1993</h4>
                                         <h5>Etiketlik</h5>
@@ -426,7 +437,7 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="timeline-item">
+                                    <div class="timeline-item">
                                     <div class="timeline-content">
                                         <h4>2000</h4>
                                         <h5>Dokuma</h5>
@@ -533,7 +544,7 @@
                                             Boyahane işletmesini kendi bünyesine alarak yıllık 12 milyon mt gömleklik kumaş üretim kapasitesine ulaştı.
                                         </p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

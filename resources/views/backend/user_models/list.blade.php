@@ -34,12 +34,12 @@
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <!--begin::Add user-->
                                     <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.user.add')}}">
-                                        <i class="fa-solid fa-plus"></i>Yeni Ekle</a>
+                                        <i class="fa-solid fa-plus"></i> {{__('msg.ekle')}} </a>
                                     <!--end::Add user-->
 
                                     <a type="button" class="btn btn-outline btn-outline-success ms-5"
                                         href="{{route('admin.role.list')}}">
-                                        <i class="fa fa-podcast" aria-hidden="true"></i>Kullanıcı Grupları</a>
+                                        <i class="fa fa-podcast" aria-hidden="true"></i> {{__('msg.rol')}} </a>
 
                                 </div>
                                 <!--end::Toolbar-->
@@ -62,10 +62,10 @@
                                                         data-kt-check-target="#user_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th>Adı Soyadı<i class="fa fa-sort ms-3"></i></th>
-                                            <th>Kullanıcı Grubu<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center pe-7">Durum<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">İşlem<i class="fa fa-sort ms-3"></i></th>
+                                            <th>{{__('msg.ad')}} {{__('msg.soyad')}}<i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{__('msg.rol')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center pe-7"> {{__('msg.durum')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,7 +139,7 @@
                 [0, "asc"]
             ],
             "language": {
-                "sEmptyTable": "Tabloda herhangi bir veri mevcut değil",
+                "sEmptyTable": "{{__('msg.Tabloda herhangi bir veri mevcut değil')}}",
                 "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
                 "sInfoEmpty": "Kayıt yok",
                 "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
@@ -148,13 +148,13 @@
                 "sLengthMenu": "Sayfada _MENU_ kayıt göster",
                 "sLoadingRecords": "Yükleniyor...",
                 "sProcessing": "İşleniyor...",
-                "sSearch": "Ara:",
+                "sSearch": "{{__('msg.ara')}}:",
                 "sZeroRecords": "Eşleşen kayıt bulunamadı",
                 "oPaginate": {
                     "sFirst": "İlk",
                     "sLast": "Son",
-                    "sNext": "Sonraki",
-                    "sPrevious": "Önceki"
+                    "sNext": "{{__('msg.sonraki')}}",
+                    "sPrevious": "{{__('msg.önceki')}}"
                 },
                 "oAria": {
                     "sSortAscending": ": artan sütun sıralamasını aktifleştir",

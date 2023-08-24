@@ -7,8 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Kullanıcı
-                    Grupları</h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.rol')}} </h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -35,7 +34,7 @@
                                     <!--begin::Add user-->
                                     <a type="button" class="btn btn-outline btn-outline-success"
                                         href="{{ route('admin.role.add') }}">
-                                        <i class="fa-solid fa-plus"></i>Yeni Ekle</a>
+                                        <i class="fa-solid fa-plus"></i> {{__('msg.ekle')}} </a>
                                     <!--end::Add user-->
                                 </div>
                                 <!--end::Toolbar-->
@@ -59,10 +58,10 @@
                                                         value="1" />
                                                 </div>
                                             </th>
-                                            <th>Grup Adı</th>
+                                            <th> {{__('msg.rol')}}  {{__('msg.ad')}} </th>
                                             <th class="text-center">Kullanıcı Sayısı<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center pe-7">Durum<i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center">İşlem<i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center pe-7"> {{__('msg.durum')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -164,7 +163,7 @@
                 [0, "asc"]
             ],
             "language": {
-                "sEmptyTable": "Tabloda herhangi bir veri mevcut değil",
+                "sEmptyTable": " {{__('msg.Tabloda herhangi bir veri mevcut değil')}} ",
                 "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
                 "sInfoEmpty": "Kayıt yok",
                 "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
@@ -173,13 +172,13 @@
                 "sLengthMenu": "Sayfada _MENU_ kayıt göster",
                 "sLoadingRecords": "Yükleniyor...",
                 "sProcessing": "İşleniyor...",
-                "sSearch": "Ara:",
+                "sSearch": "{{__('msg.ara')}}:",
                 "sZeroRecords": "Eşleşen kayıt bulunamadı",
                 "oPaginate": {
                     "sFirst": "İlk",
                     "sLast": "Son",
-                    "sNext": "Sonraki",
-                    "sPrevious": "Önceki"
+                    "sNext": " {{__('msg.önceki')}} ",
+                    "sPrevious": " {{__('msg.sonraki')}} "
                 },
                 "oAria": {
                     "sSortAscending": ": artan sütun sıralamasını aktifleştir",

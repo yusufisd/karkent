@@ -19,7 +19,7 @@ class SliderController extends Controller
     public function index()
     {
         $data = Slider::latest()->get();
-        return view('backend.home.slider.list', compact('data'));
+        return view('backend.slider.list', compact('data'));
     }
 
     /**
@@ -27,7 +27,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('backend.home.slider.add');
+        return view('backend.slider.add');
     }
 
     /**
@@ -85,7 +85,7 @@ class SliderController extends Controller
     {
         $data_tr = Slider::findOrFail($id);
         $data_en = EnSlider::where('slider_id', $id)->first();
-        return view('backend.home.slider.edit', compact('data_tr', 'data_en'));
+        return view('backend.slider.edit', compact('data_tr', 'data_en'));
     }
 
     /**

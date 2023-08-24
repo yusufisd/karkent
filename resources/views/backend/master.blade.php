@@ -512,29 +512,23 @@
                                 <!--begin::Menu-->
                                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px"
                                     data-kt-menu="true" data-kt-element="theme-mode-menu">
+                                    @foreach (Config::get('languages') as $lang => $language)
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3 my-0">
+                                            <a href="{{ route('chaange.lang', $lang) }}"
+                                                class="menu-link px-3 py-2 active" data-kt-element="mode"
+                                                data-kt-value="light">
+                                                <span class="menu-icon" data-kt-element="icon">
+                                                    <img src="https://gaviapanel.gaviaworks.org//assets/backend/images/svg/{{ $lang }}.svg"
+                                                        width="28" height="28" alt="TR" title="TR">
+                                                </span>
+                                                <span class="menu-title">{{ $language }}</span>
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    @endforeach
                                     <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-0">
-                                        <a href="#" class="menu-link px-3 py-2 active" data-kt-element="mode"
-                                            data-kt-value="light">
-                                            <span class="menu-icon" data-kt-element="icon">
-                                                <img src="https://gaviapanel.gaviaworks.org//assets/backend/images/svg/turkey.svg"
-                                                    width="28" height="28" alt="TR" title="TR">
-                                            </span>
-                                            <span class="menu-title">Türkçe</span>
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-0">
-                                        <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
-                                            data-kt-value="dark">
-                                            <span class="menu-icon" data-kt-element="icon">
-                                                <img src="https://gaviapanel.gaviaworks.org//assets/backend/images/svg/england.svg"
-                                                    width="28" height="28" alt="EN" title="EN">
-                                            </span>
-                                            <span class="menu-title">İngilizce</span>
-                                        </a>
-                                    </div>
+
                                     <!--end::Menu item-->
                                 </div>
                                 <!--end::Menu-->
@@ -559,7 +553,7 @@
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="{{route('admin.logout')}}" class="menu-link px-5">Çıkış</a>
+                                        <a href="{{ route('admin.logout') }}" class="menu-link px-5">Çıkış</a>
                                     </div>
                                     <!--end::Menu item-->
                                 </div>
@@ -633,21 +627,22 @@
                                         <span class="menu-icon">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Kontrol Paneli</span>
+                                        <span class="menu-title"> {{ __('msg.kontrol paneli') }} </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
 
 
-                                 <!--begin:Menu item-->
-                                 <div class="menu-item">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.slider.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.slider.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-sliders" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Slider Yönetimi</span>
+                                        <span class="menu-title"> {{ __('msg.slider') }} {{ __('msg.yönetim') }}
+                                        </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -657,11 +652,11 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.page-definitous.add')}}">
+                                    <a class="menu-link" href="{{ route('admin.page-definitous.add') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-text-width" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Sayfa Tanımları</span>
+                                        <span class="menu-title"> {{ __('msg.sayfa tanımı') }} </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -671,11 +666,12 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="blog/blog_list.html">
+                                    <a class="menu-link" href="{{ route('admin.sponsor.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-newspaper" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Sponsorlar</span>
+                                        <span class="menu-title"> {{ __('msg.sponsor') }} {{ __('msg.yönetim') }}
+                                        </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -685,11 +681,11 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="activity/activity_list.html">
+                                    <a class="menu-link" href="{{ route('admin.history.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-users" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Tarihçe</span>
+                                        <span class="menu-title"> {{ __('msg.tarihçe') }} </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -699,11 +695,12 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.user.list')}}">
+                                    <a class="menu-link" href="{{ route('admin.user.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-user" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Kullanıcı Yönetimi</span>
+                                        <span class="menu-title"> {{ __('msg.kullanıcı') }} {{ __('msg.yönetim') }}
+                                        </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -722,24 +719,48 @@
                                 </div>
                                 <!--end:Menu item-->
 
-                                
-
-                                
-
-                               
 
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="referance/referance_list.html">
+                                    <a class="menu-link" href="{{route('admin.contact.add')}}">
                                         <span class="menu-icon">
-                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                            <i class="fa fa-cogs" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title">Referans Yönetimi</span>
+                                        <span class="menu-title">İletişim Yönetim</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
+
+
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{route('admin.category.list')}}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{__('msg.kategori')}} {{__('msg.yönetim')}} </span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+
+
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link" href="{{route('admin.product.list')}}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{__('msg.ürün')}} {{__('msg.yönetim')}} </span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+
 
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
@@ -877,7 +898,7 @@
                                 </div>
                                 <!--end:Menu item-->
 
-                                
+
 
                                 <!--begin:Menu item-->
                                 <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"

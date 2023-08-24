@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AppLocaleMiddleware;
+use App\Http\Middleware\LangMid;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Spatie\Permission\Middlewares\PermissionMiddleware;
 use Spatie\Permission\Middlewares\RoleMiddleware;
@@ -68,5 +70,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'permission' => PermissionMiddleware::class,
         'role' => RoleMiddleware::class,
+        "lang" => LangMid::class,
+        "applocale" => AppLocaleMiddleware::class,
     ];
 }

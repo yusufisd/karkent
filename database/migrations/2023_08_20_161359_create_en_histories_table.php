@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('year');
             $table->string('title');
             $table->string('description');
+            $table->integer('history_id');
             $table->timestamps();
         });
     }

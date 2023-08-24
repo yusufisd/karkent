@@ -7,8 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Kullanıcı
-                    Grubu Ekle</h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.rol')}}  {{__('msg.ekle')}}</h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -18,7 +17,7 @@
                 <a href="javascript:history.back()"
                     class="page-heading d-flex text-dark fw-bold fs-3 justify-content-center my-0 text-hover-success">
                     <i class="fa fa-arrow-left my-auto mx-2"></i>
-                    Geri Dön
+                    {{__('msg.geri dön')}}
                 </a>
                 <!--end::Title-->
             </div>
@@ -50,8 +49,7 @@
                                     <!--begin::Input group-->
                                     <div class="row">
                                         <!--begin::Label-->
-                                        <label class="col-lg-2 col-form-label fw-bold fs-6 required">Kullanıcı Grup
-                                            Adı</label>
+                                        <label class="col-lg-2 col-form-label fw-bold fs-6 required"> {{__('msg.rol')}} {{__('msg.ad')}} </label>
                                         <!--end::Label-->
                                         <!--begin::Col-->
                                         <div class="col-lg-10">
@@ -94,16 +92,16 @@
                                         class="table table-striped table-row-bordered gy-5 gs-7">
                                         <thead>
                                             <tr class="fw-bold fs-6 text-gray-800">
-                                                <th class="w-60">SAYFA TANIMLARI YÖNETİMİ</th>
-                                                <th class="w-10 text-center">Görüntüleme</th>
-                                                <th class="w-10 text-center">Ekleme</th>
-                                                <th class="w-10 text-center">Düzenleme</th>
-                                                <th class="w-10 text-center">Silme</th>
+                                                <th class="w-60">{{__('msg.sayfa tanımı')}} {{__('msg.ad')}}</th>
+                                                <th class="w-10 text-center"> {{__('msg.görüntüle')}} </th>
+                                                <th class="w-10 text-center">{{__('msg.ekle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.düzenle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.sil')}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>Sayfa Tanımları </td>
+                                                <td>{{__('msg.sayfa tanımı')}} </td>
                                                 <td>
                                                     <div
                                                         class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
@@ -167,11 +165,11 @@
                                         class="table table-striped table-row-bordered gy-5 gs-7">
                                         <thead>
                                             <tr class="fw-bold fs-6 text-gray-800">
-                                                <th class="w-60">SLİDER YÖNETİMİ</th>
-                                                <th class="w-10 text-center">Görüntüleme</th>
-                                                <th class="w-10 text-center">Ekleme</th>
-                                                <th class="w-10 text-center">Düzenleme</th>
-                                                <th class="w-10 text-center">Silme</th>
+                                                <th class="w-60">{{__('msg.slider')}} {{__('msg.yönetim')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.görüntüle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.ekle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.düzenle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.sil')}}</th>
                                             </tr>
                                         </thead>
 
@@ -236,17 +234,17 @@
                                         class="table table-striped table-row-bordered gy-5 gs-7">
                                         <thead>
                                             <tr class="fw-bold fs-6 text-gray-800">
-                                                <th class="w-60">DİĞER İŞLEMLER</th>
-                                                <th class="w-10 text-center">Görüntüleme</th>
-                                                <th class="w-10 text-center">Ekleme</th>
-                                                <th class="w-10 text-center">Düzenleme</th>
-                                                <th class="w-10 text-center">Silme</th>
+                                                <th class="w-60">{{__('msg.diğer')}} {{__('msg.işlem')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.görüntüle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.ekle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.düzenle')}}</th>
+                                                <th class="w-10 text-center">{{__('msg.sil')}}</th>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <tr>
-                                                <td>Sponsorlar</td>
+                                                <td> {{__('msg.sponsor')}}  </td>
                                                 <td>
                                                     <div
                                                         class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
@@ -285,7 +283,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Tarihçe</td>
+                                                <td>{{__('msg.tarihçe')}}</td>
                                                 <td>
                                                     <div
                                                         class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
