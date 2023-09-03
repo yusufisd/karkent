@@ -21,6 +21,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,10 @@ use Illuminate\Support\Facades\Route;
 // CHANGE LANG
 Route::get('/change-lang/{lang}', [LanguageController::class, 'change'])->name('chaange.lang');
 
-
+Route::get('optimize',function(){
+    Artisan::call('optimize');
+    dd('optimize başarılı');
+});
 
 // TR ROUTES
 // FRONTEND İŞLEMLERİ
