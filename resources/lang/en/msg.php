@@ -46,6 +46,8 @@ return [
     "kategori" => "Category",
     "ürün" => "Product",
     "kısa" => "Short",
+    "kurumsal" => "About",
+    "anasayfa" => "Homepage",
 ]
 
 

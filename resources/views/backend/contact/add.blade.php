@@ -28,12 +28,14 @@
     </div>
     <!--end::Toolbar-->
     <!--begin::Content-->
-    <div id="kt_app_content" class="app-content flex-column-fluid">
-        <!--begin::Content container-->
-        <div id="kt_app_content_container" class="app-container container-fluid">
 
-            <form action="{{ route('admin.contact.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
+
+    <form action="{{ route('admin.contact.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container container-fluid">
+
 
                 <!--begin::Row-->
                 <div class="row g-5 g-xl-8">
@@ -116,7 +118,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="merkez_adres_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->center_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -140,7 +142,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="merkez_telefon_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->center_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -163,7 +165,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="merkez_email_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->center_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -192,7 +194,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="merkez_adres_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->center_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -216,7 +218,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="merkez_telefon_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->center_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -239,7 +241,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="merkez_email_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->center_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -343,7 +345,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="fabrika_adres_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->factory_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -367,7 +369,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="fabrika_telefon_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->factory_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -390,7 +392,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="fabrik_email_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->factory_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -419,7 +421,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="fabrika_adres_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->factory_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -443,7 +445,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="fabrika_telefon_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->factory_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -466,7 +468,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="fabrika_email_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->factory_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -571,7 +573,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="muze_adres_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->museum_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -595,7 +597,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="muze_telefon_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->museum_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -618,7 +620,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="muze_email_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_tr->museum_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -647,7 +649,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="muze_adres_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->museum_address}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -671,7 +673,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="text" name="muze_telefon_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->museum_phone}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -694,7 +696,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="email" name="muze_email_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$data_en->museum_email}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -709,22 +711,73 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--begin::Body-->
                         </div>
+
                     </div>
-                    <!--end::Col-->
                 </div>
                 <!--end::Row-->
 
-                <div class="right" style="text-align: right">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('msg.kaydet') }}
-                    </button>
-                </div>
-            </form>
+                <div class="row g-5 g-xl-8">
+                    <div class="col-xl-12 mb-5 mb-xl-8">
+                        <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
+                            <div class="card-body py-5">
+                                <div id="" class="row">
+                                    <label class="col-lg-2 col-form-label fw-bold fs-6">INSTAGRAM</label>
+                                    <div class="col-lg-10">
+                                        <div class="row">
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="instagram"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                    value="{{$data_tr->instagram}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body py-5">
+                                <div id="" class="row">
+                                    <label class="col-lg-2 col-form-label fw-bold fs-6">FACEBOOK</label>
+                                    <div class="col-lg-10">
+                                        <div class="row">
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="facebook"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                    value="{{$data_tr->facebook}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-        </div>
-        <!--end::Content container-->
+                            <div class="card-body py-5">
+                                <div id="" class="row">
+                                    <label class="col-lg-2 col-form-label fw-bold fs-6">YOUTUBE</label>
+                                    <div class="col-lg-10">
+                                        <div class="row">
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="text" name="youtube"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                    value="{{$data_tr->youtube}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right" style="text-align: right">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('msg.kaydet') }}
+                </button>
+            </div>
+    </form>
+
+    </div>
+    <!--end::Content container-->
     </div>
     <!--end::Content-->
 @endsection

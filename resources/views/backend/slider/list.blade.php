@@ -1,5 +1,11 @@
 @extends('backend.master')
 @section('content')
+
+<style>
+    #point:hover{
+        cursor: pointer!important;
+    }
+</style>
     <!--begin::Toolbar-->
     <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-10">
         <!--begin::Toolbar container-->
@@ -7,7 +13,8 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.slider')}} {{__('msg.yönetim')}} </h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">
+                    {{ __('msg.slider') }} {{ __('msg.yönetim') }} </h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -32,8 +39,9 @@
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <!--begin::Add user-->
-                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.slider.add')}}">
-                                        <i class="fa-solid fa-plus"></i> {{__('msg.ekle')}} </a>
+                                    <a type="button" class="btn btn-outline btn-outline-success"
+                                        href="{{ route('admin.slider.add') }}">
+                                        <i class="fa-solid fa-plus"></i> {{ __('msg.ekle') }} </a>
                                     <!--end::Add user-->
                                 </div>
                                 <!--end::Toolbar-->
@@ -57,61 +65,66 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th> {{__('msg.resim')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th>{{__('msg.başlık')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center"> {{__('msg.sıralama')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center pe-7"> {{__('msg.durum')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{ __('msg.resim') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th>{{ __('msg.başlık') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{ __('msg.sıralama') }} <i
+                                                    class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center pe-7"> {{ __('msg.durum') }} <i
+                                                    class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center"> {{ __('msg.işlem') }} <i class="fa fa-sort ms-3"></i>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                         @foreach ($data as $item)
-                                            
-                                        <tr class="align-middle">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input my-input" type="checkbox"
-                                                        value="1" />
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <img src="/{{$item->image}}" style="width: 100%" class="w-75px ms-n1"
-                                                    alt="">
-                                            </td>
+                                            <tr class="align-middle">
+                                                <td>
+                                                    <div
+                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                        <input class="form-check-input my-input" type="checkbox"
+                                                            value="1" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <img src="/{{ $item->image }}" style="width: 100%" class="w-75px ms-n1"
+                                                        alt="">
+                                                </td>
 
-                                            <td> {{$item->title}} </td>
-                                            <td class="text-center"> {{$item->queue}} </td>
-                                            <td>
-                                                <div
-                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
-                                                    <input class="form-check-input w-50px h-25px" type="checkbox"
-                                                        id="slider_status_1" {{$item->status == 1 ? 'checked' : ''}}>
-                                                    <label class="form-check-label" for="slider_status_1"></label>
-                                                </div>
-                                            </td>
-                                            <td class="text-center">
-                                                <a href=""
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
-                                                    title="Görüntüle">
-                                                    <i class="fa-solid fa-eye fs-3"></i>
-                                                </a>
-                                                <a href="{{route('admin.slider.edit',$item->id)}}"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
-                                                <a onclick="destroy({{$item->id}})"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
-                                                    data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
-                                                    <i class="fa-regular fa-trash-can fs-4"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-
+                                                <td> {{ $item->title }} </td>
+                                                <td class="text-center"> {{ $item->queue }} </td>
+                                                <td>
+                                                    <div 
+                                                        class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
+                                                        <input class="form-check-input w-50px h-25px" id="point" type="checkbox"
+                                                            id="slider_status_1"
+                                                            onchange="status_change({{ $item->id }})"
+                                                            {{ $item->status == 1 ? 'checked' : '' }}>
+                                                        <label class="form-check-label" for="slider_status_1"></label>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href=""
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                                                        title="Görüntüle">
+                                                        <i class="fa-solid fa-eye fs-3"></i>
+                                                    </a>
+                                                    <a href="{{ route('admin.slider.edit', $item->id) }}"
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
+                                                        title="Düzenle">
+                                                        <i class="fa-regular fa-pen-to-square fs-3"></i>
+                                                    </a>
+                                                    <a onclick="destroy({{ $item->id }})"
+                                                        class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
+                                                        data-bs-toggle="modal" data-bs-target="#delete_modal"
+                                                        title="Sil">
+                                                        <i class="fa-regular fa-trash-can fs-4"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         @endforeach
 
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -132,6 +145,10 @@
 @section('script')
     <!--begin:: extra js-->
     <script>
+        function status_change(d) {
+            window.location.href = "{{ route('admin.slider.status_change') }}/" + d
+        }
+
         function destroy(d) {
             Swal.fire({
                 title: 'Emin misiniz?',
@@ -143,7 +160,7 @@
                 confirmButtonText: 'Evet, sil!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('admin.slider.destroy') }}/"+d;
+                    window.location.href = "{{ route('admin.slider.destroy') }}/" + d;
                 }
             })
         }
@@ -154,7 +171,7 @@
                 [0, "asc"]
             ],
             "language": {
-                "sEmptyTable": "{{__('msg.Tabloda herhangi bir veri mevcut değil')}}",
+                "sEmptyTable": "{{ __('msg.Tabloda herhangi bir veri mevcut değil') }}",
                 "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
                 "sInfoEmpty": "Kayıt yok",
                 "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
@@ -163,13 +180,13 @@
                 "sLengthMenu": "Sayfada _MENU_ kayıt göster",
                 "sLoadingRecords": "Yükleniyor...",
                 "sProcessing": "İşleniyor...",
-                "sSearch": "{{__('msg.ara')}}:",
+                "sSearch": "{{ __('msg.ara') }}:",
                 "sZeroRecords": "Eşleşen kayıt bulunamadı",
                 "oPaginate": {
                     "sFirst": "İlk",
                     "sLast": "Son",
-                    "sNext": "{{__('msg.sonraki')}}",
-                    "sPrevious": "{{__('msg.önceki')}}"
+                    "sNext": "{{ __('msg.sonraki') }}",
+                    "sPrevious": "{{ __('msg.önceki') }}"
                 },
                 "oAria": {
                     "sSortAscending": ": artan sütun sıralamasını aktifleştir",

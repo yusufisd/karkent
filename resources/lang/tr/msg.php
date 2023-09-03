@@ -46,6 +46,8 @@ return [
     "kategori" => "Kategori",
     "ürün" => "Ürün",
     "kısa" => "Kısa",
+    "kurumsal" => "Kurumsal",
+    "anasayfa" => "Anasayfa",
  
 ]
 

@@ -81,7 +81,7 @@
                                                 </td>
 
                                                 <td> {{ $item->name }} {{ $item->surname }} </td>
-                                                <td>NEW TRENDS IN WEB</td>
+                                                <td> {{strtoupper($item->Yetkiler->rol_adi)}} </td>
                                                 <td>
                                                     <div
                                                         class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">

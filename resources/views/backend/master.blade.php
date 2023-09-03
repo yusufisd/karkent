@@ -12,7 +12,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
 
-    <link rel="shortcut icon" href="/assets/backend/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{asset('/assets/backend/media/logos/favicon.ico')}}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,13 @@
         rel="stylesheet">
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="/assets/backend/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/assets/backend/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css')}}" />
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-    <link href="/assets/backend/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/backend/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="/assets/backend/css/gavia_style.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/assets/backend/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css')}}" />
+    <link href="{{asset('/assets/backend/css/style.bundle.css" rel="stylesheet" type="text/css')}}" />
+    <link href="{{asset('/assets/backend/css/gavia_style.css" rel="stylesheet" type="text/css')}}" />
     <!--end::Global Stylesheets Bundle-->
     <!-- begin:: Extra Style -->
     <style>
@@ -100,7 +100,7 @@
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                         <a href="index.html" class="d-lg-none">
-                            <img alt="Logo" src="/assets/backend/media/logos/erkek.png" class="h-30px" />
+                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/erkek.png')}}" class="h-30px" />
                         </a>
                     </div>
                     <!--end::Mobile logo-->
@@ -519,7 +519,7 @@
                                                 class="menu-link px-3 py-2 active" data-kt-element="mode"
                                                 data-kt-value="light">
                                                 <span class="menu-icon" data-kt-element="icon">
-                                                    <img src="https://gaviapanel.gaviaworks.org//assets/backend/images/svg/{{ $lang }}.svg"
+                                                    <img src="/assets/frontend/img/{{ $lang }}.png"
                                                         width="28" height="28" alt="TR" title="TR">
                                                 </span>
                                                 <span class="menu-title">{{ $language }}</span>
@@ -540,12 +540,19 @@
                                 <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                                     data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                    <img src="/assets/backend/media/avatars/300-1.jpg" alt="user" />
+                                    <img src="{{asset('/assets/backend/media/avatars/300-1.jpg" alt="user')}}" />
                                 </div>
                                 <!--begin::User account menu-->
                                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
                                     data-kt-menu="true">
 
+                                    <div class="menu-item px-5">
+                                        <a href="profile.html" class="menu-link px-5">
+                                            {{ Auth::guard('user_model')->user() != null ? Auth::guard('user_model')->user()->name.' '.Auth::guard('user_model')->user()->surname : Auth::guard('admin')->user()->name.' '.Auth::guard('admin')->user()->surname }}
+                                        </a>
+                                    </div>
+
+                                    <hr>
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
                                         <a href="profile.html" class="menu-link px-5">Profilim</a>
@@ -580,9 +587,9 @@
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
                         <a href="index.html" class="mx-auto">
-                            <img alt="Logo" src="/assets/backend/media/logos/disi.png"
+                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/disi.png')}}"
                                 class="h-50px app-sidebar-logo-default" />
-                            <img alt="Logo" src="/assets/backend/media/logos/favikon.svg"
+                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/favikon.svg')}}"
                                 class="h-20px app-sidebar-logo-minimize" />
                         </a>
                         <!--end::Logo image-->
@@ -623,7 +630,8 @@
                                 <!--begin:Menu item-->
                                 <div data-kt-menu-trigger="click" class="menu-item here show">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="">
+                                    <a class="menu-link {{ Route::is('admin.index') ? 'active' : '' }}"
+                                        href="{{ route('admin.index') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-home" aria-hidden="true"></i>
                                         </span>
@@ -634,10 +642,63 @@
                                 <!--end:Menu item-->
 
 
+                                <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
+
+
+
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ route('admin.slider.list') }}">
+                                    <a class="menu-link {{ Route::is('admin.page-definitous.add') ? 'active' : '' }}"
+                                        href="{{ route('admin.page-definitous.add') }}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-text-width" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{ __('msg.sayfa tanımı') }} </span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ Route::is('admin.about.add') ? 'active' : '' }}"
+                                        href="{{ route('admin.about.add') }}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{ __('msg.kurumsal') }} {{ __('msg.yönetim') }}
+                                        </span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+
+
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ Route::is('admin.contact.add') ? 'active' : '' }}"
+                                        href="{{ route('admin.contact.add') }}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-cogs" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{ __('msg.iletişim') }}
+                                            {{ __('msg.yönetim') }}</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+
+                                <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
+
+
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ Route::is('admin.slider.list') ? 'active' : '' }}"
+                                        href="{{ route('admin.slider.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-sliders" aria-hidden="true"></i>
                                         </span>
@@ -648,25 +709,11 @@
                                 </div>
                                 <!--end:Menu item-->
 
-
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ route('admin.page-definitous.add') }}">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-text-width" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title"> {{ __('msg.sayfa tanımı') }} </span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ route('admin.sponsor.list') }}">
+                                    <a class="menu-link {{ Route::is('admin.sponsor.list') ? 'active' : '' }}"
+                                        href="{{ route('admin.sponsor.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-newspaper" aria-hidden="true"></i>
                                         </span>
@@ -681,67 +728,31 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ route('admin.history.list') }}">
+                                    <a class="menu-link {{ Route::is('admin.history.list') ? 'active' : '' }}"
+                                        href="{{ route('admin.history.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-users" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title"> {{ __('msg.tarihçe') }} </span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{ route('admin.user.list') }}">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-user" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title"> {{ __('msg.kullanıcı') }} {{ __('msg.yönetim') }}
+                                        <span class="menu-title"> {{ __('msg.tarihçe') }} {{ __('msg.yönetim') }}
                                         </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
                                 <!--end:Menu item-->
 
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="pages/page_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Sayfalar</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
+
 
 
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.contact.add')}}">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">İletişim Yönetim</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.category.list')}}">
+                                    <a class="menu-link {{ Route::is('admin.category.list') ? 'active' : '' }}"
+                                        href="{{ route('admin.category.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-briefcase" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title"> {{__('msg.kategori')}} {{__('msg.yönetim')}} </span>
+                                        <span class="menu-title"> {{ __('msg.kategori') }} {{ __('msg.yönetim') }}
+                                        </span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -751,244 +762,13 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link" href="{{route('admin.product.list')}}">
+                                    <a class="menu-link {{ Route::is('admin.product.list') ? 'active' : '' }}"
+                                        href="{{ route('admin.product.list') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-briefcase" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title"> {{__('msg.ürün')}} {{__('msg.yönetim')}} </span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="personnel/personnel_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-address-card" aria-hidden="true"></i>
+                                        <span class="menu-title"> {{ __('msg.ürün') }} {{ __('msg.yönetim') }}
                                         </span>
-                                        <span class="menu-title">Personel Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="photo_gallery/photo_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-image" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Foto Galeri Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="video_gallery/video_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-video" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Video Galeri Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="popup/popup_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-object-ungroup" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Pop-up Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="ad_management/ad_management.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-newspaper" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Reklam Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="menu_management/menu_header_management.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Menu Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                    data-kt-menu-placement="right-start"
-                                    class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention">
-                                    <!--begin:Menu link-->
-                                    <span class="menu-link">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Form Yönetimi</span>
-                                        <span class="menu-arrow"></span>
-                                    </span>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu sub-->
-                                    <div
-                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-2 py-4 w-200px mh-75 overflow-auto">
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="form_management/form_requests.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Form Talepleri </span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="form_management/mail_forwards.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Mail Yönlendirmeleri</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                    </div>
-                                    <!--end:Menu sub-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="log/log_list.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-podcast" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Log Yönetimi</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-
-
-                                <!--begin:Menu item-->
-                                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
-                                    data-kt-menu-placement="right-start"
-                                    class="menu-item menu-lg-down-accordion menu-sub-lg-down-indention">
-                                    <!--begin:Menu link-->
-                                    <span class="menu-link">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Genel Ayarlar</span>
-                                        <span class="menu-arrow"></span>
-                                    </span>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu sub-->
-                                    <div
-                                        class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown px-2 py-4 w-200px mh-75 overflow-auto">
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="general_settings/site_settings.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Site Ayarları</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="general_settings/contact_informations.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">İletişim Bilgileri</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="general_settings/social_media_settings.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Sosyal Medya Ayarları</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="general_settings/smtp_settings.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">SMTP Mail Ayarları</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                        <!--begin:Menu item-->
-                                        <div class="menu-item">
-                                            <!--begin:Menu link-->
-                                            <a class="menu-link" href="general_settings/analytics.html">
-                                                <span class="menu-bullet">
-                                                    <span class="bullet bullet-dot"></span>
-                                                </span>
-                                                <span class="menu-title">Analytics Ayarları</span>
-                                            </a>
-                                            <!--end:Menu link-->
-                                        </div>
-                                        <!--end:Menu item-->
-                                    </div>
-                                    <!--end:Menu sub-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="site_statistics/site_statistics.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-chart-line" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Site İstatistikleri</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -996,61 +776,37 @@
 
                                 <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
 
-                                <div class="ms-5">
-                                    <h6 class="text-white">Destek</h6>
-                                </div>
+                                @if (Auth::guard('admin')->user())
+                                    <!--begin:Menu item-->
+                                    <div class="menu-item">
+                                        <!--begin:Menu link-->
+                                        <a class="menu-link {{ Route::is('admin.user.list') ? 'active' : '' }}"
+                                            href="{{ route('admin.user.list') }}">
+                                            <span class="menu-icon">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="menu-title"> {{ __('msg.kullanıcı') }}
+                                                {{ __('msg.yönetim') }}
+                                            </span>
+                                        </a>
+                                        <!--end:Menu link-->
+                                    </div>
+                                    <!--end:Menu item-->
 
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-headset" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Destek Talepleri</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-book" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">Dokümantasyon</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="supports/sss.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-question-circle" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">S.S.S</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
-
-                                <!--begin:Menu item-->
-                                <div class="menu-item">
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link" href="email_setup.html">
-                                        <span class="menu-icon">
-                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                        </span>
-                                        <span class="menu-title">E-Posta Kurulumu</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                </div>
-                                <!--end:Menu item-->
+                                    <!--begin:Menu item-->
+                                    <div class="menu-item here">
+                                        <!--begin:Menu link-->
+                                        <a class="menu-link {{ Route::is('admin.log.list') ? 'active' : '' }}"
+                                            href="{{ route('admin.log.list') }}">
+                                            <span class="menu-icon">
+                                                <i class="fa fa-podcast" aria-hidden="true"></i>
+                                            </span>
+                                            <span class="menu-title">Log {{ __('msg.yönetim') }}</span>
+                                        </a>
+                                        <!--end:Menu link-->
+                                    </div>
+                                    <!--end:Menu item-->
+                                @endif
 
                             </div>
                             <!--end::Menu-->
@@ -1092,16 +848,16 @@
         var hostUrl = "/assets/backend/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-    <script src="/assets/backend/plugins/global/plugins.bundle.js"></script>
-    <script src="/assets/backend/js/scripts.bundle.js"></script>
+    <script src="{{asset('/assets/backend/plugins/global/plugins.bundle.js')}}"></script>
+    <script src="{{asset('/assets/backend/js/scripts.bundle.js')}}"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="{{asset('/assets/backend/plugins/custom/datatables/datatables.bundle.js')}}"></script>
     <!--end::Vendors Javascript-->
     <!--begin::Custom Javascript(used for this page only)-->
-    <script src="/assets/backend/js/widgets.bundle.js"></script>
-    <script src="/assets/backend/js/custom/widgets.js"></script>
-    <script src="/assets/backend/js/custom/apps/chat/chat.js"></script>
+    <script src="{{asset('/assets/backend/js/widgets.bundle.js')}}"></script>
+    <script src="{{asset('/assets/backend/js/custom/widgets.js')}}"></script>
+    <script src="{{asset('/assets/backend/js/custom/apps/chat/chat.js')}}"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
     <!--begin:: extra js-->

@@ -11,20 +11,22 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner text-light carousel-zoom">
                 
-                <div class="item active">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/frontend/img/slider1.png);"></div>
+
+                @foreach ($sliders as $item)
+                    
+                <div class="item {{$item->id == 1 ? 'active' : ''}}">
+                    <div class="slider-thumb bg-fixed" style="background-image: url({{$item->image == null ? $item->Image->image : $item->image}});"></div>
                     <div class="box-table shadow theme">
                         <div class="box-cell">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="content">
-                                            <h1 data-animation="animated slideInLeft">Karkent Tekstil</h1>
-                                            <p data-animation="animated slideInUp">
-                                                Gömleklik Kumaşta 41 Yıllık Tecrübe
+                                            <h1 data-animation="animated slideInLeft"> {{$item->title}} </h1>
+                                            <p style="text-align: left" data-animation="animated slideInUp">
+                                                {{$item->description}}
                                             </p>
-                                            <a data-animation="animated slideInUp" class="btn btn-light effect btn-sm" href="about.html">Kurumsal</a>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-sm" href="contact.html">İletİşİm</a>
+                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-sm" href="{{$item->button_url}}"> {{$item->button_title}} </a>
                                         </div>
                                     </div>
                                 </div>
@@ -33,86 +35,7 @@
                     </div>
                 </div>
 
-                <div class="item">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/frontend/img/slider2.jpg);"></div>
-                    <div class="box-table shadow theme">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="content">
-                                            <h1 data-animation="animated slideInLeft">Kardrop</h1>
-                                            <p data-animation="animated slideInUp">
-                                                Online Etiketlik Kumaş Satışı
-                                            </p>
-                                            <a data-animation="animated slideInUp" class="btn btn-light effect btn-sm" href="https://www.kardrop.com.tr/etiketlik-kumas">Web Sİtesİ</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/frontend/img/slider3.jpg);"></div>
-                    <div class="box-table shadow theme">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="content">
-                                            <h1 data-animation="animated slideInLeft">Karkent Tekstil</h1>
-                                            <p data-animation="animated slideInUp">
-                                                Sertifikalandırılmış Üretim Süreçleri
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/frontend/img/slider4.jpg);"></div>
-                    <div class="box-table shadow theme">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="content">
-                                            <h1 data-animation="animated slideInLeft">Bilgisayar Destekli Üretim</h1>
-                                            <p data-animation="animated slideInUp">
-                                                Son teknoloji donanımlar ile bilgisayar destekli üretim.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="slider-thumb bg-fixed" style="background-image: url(assets/frontend/img/slider5.jpg);"></div>
-                    <div class="box-table shadow theme">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="content">
-                                            <h1 data-animation="animated slideInLeft">Tek Depoda</h1>
-                                            <p data-animation="animated slideInUp">
-                                                Binlerce Desen ve Yüz Binlerce Stok Depoda
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
 
 
             </div>
@@ -427,124 +350,7 @@
 
                                 @endforeach
 
-                                {{-- 
-                                    <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>1993</h4>
-                                        <h5>Etiketlik</h5>
-                                        <p>
-                                            Etiketlik kumaş sektörünün önde gelen firmaları arasına girmeyi başardı.
-                                        </p>
-                                    </div>
-                                </div>
-                                    <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2000</h4>
-                                        <h5>Dokuma</h5>
-                                        <p>
-                                            Gömleklik kumaş alanında adından söz edilen firmaların arasında yerini aldı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2005</h4>
-                                        <h5>İhracat</h5>
-                                        <p>
-                                            Ürünlerini yurtdışı pazara taşıyarak ilk ihracatlarını yaptı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2009 </h4>
-                                        <h5>Başarı</h5>
-                                        <p>
-                                            Ticaret ve Sanayi odasınca belirlenen Ekonomiye değer katanlar listesine 192. sıradan giriş yaptı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2011</h4>
-                                        <h5>Gelişim</h5>
-                                        <p>
-                                            Ekonomiye değer katanlar listesinde 20 firmayı daha geride bırakarak 172. sıraya yükseldi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2013</h4>
-                                        <h5>Liderlik</h5>
-                                        <p>
-                                            25 farklı ülkeye ihracat yaparak, tekstil alanında liderler arasına girdi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2013</h4>
-                                        <h5>Yükselen Değer</h5>
-                                        <p>
-                                            Ekonomiye değer katanlar listesinde 162. olurken, bir önceki listeye göre 10 firmanın daha önüne geçti.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2017</h4>
-                                        <h5>İstihdam</h5>
-                                        <p>
-                                            Çalışan sayısı 100’ün üzerine çıktı ve Bursa’nın istihdama katkı sağlayan firmalarından birisi haline geldi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2018</h4>
-                                        <h5>Dokuma Tezgâhı</h5>
-                                        <p>
-                                            Bünyesine kattığı yeni üretim ağıyla toplamda 128 dokuma tezgahına ulaştı ve yıllık kapasitesi 10 milyon mt oldu.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2018</h4>
-                                        <h5>Müze & Restaurant</h5>
-                                        <p>
-                                            Girişimcilik ve yenilikçilik anlayışıyla, Karkent bünyesinde Tekstil Müze & Restaurant kuruldu ve ziyaretçilere açıldı. 
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2019</h4>
-                                        <h5>İhracat</h5>
-                                        <p>
-                                            Pandemiden önceki son sezonda rekor kırarak yaklaşık 50 farklı ülkeye ihracat gerçekleştirdi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2022</h4>
-                                        <h5>Konfeksiyon</h5>
-                                        <p>
-                                            Pandemi sonrası yatırımlara ara vermeden devam ederek bünyesine konfeksiyonu kattı ve gömlek üretimine başladı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2023</h4>
-                                        <h5>Boyahane</h5>
-                                        <p>
-                                            Boyahane işletmesini kendi bünyesine alarak yıllık 12 milyon mt gömleklik kumaş üretim kapasitesine ulaştı.
-                                        </p>
-                                    </div>
-                                </div> --}}
+                                
                             </div>
                         </div>
                     </div>

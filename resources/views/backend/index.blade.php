@@ -45,8 +45,8 @@
                                         </svg>
                                     </span>
                                     <!--end::Svg Icon-->
-                                    <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5">3</div>
-                                    <div class="fw-semibold text-gray-400">Toplam Sipariş</div>
+                                    <div class="text-gray-900 fw-bold fs-2 mb-2 mt-5"> {{userCount()}} </div>
+                                    <div class="fw-semibold text-gray-400">Kayıtlı Kullanıcı</div>
                                 </div>
                                 <!--end::Body-->
                             </a>
@@ -73,8 +73,8 @@
                                         </svg>
                                     </span>
                                     <!--end::Svg Icon-->
-                                    <div class="text-gray-100 fw-bold fs-2 mb-2 mt-5">2</div>
-                                    <div class="fw-semibold text-gray-100">Kayıtlı Müşteri</div>
+                                    <div class="text-gray-100 fw-bold fs-2 mb-2 mt-5"> {{categoryCount()}} </div>
+                                    <div class="fw-semibold text-gray-100">Kategoriler</div>
                                 </div>
                                 <!--end::Body-->
                             </a>
@@ -98,8 +98,8 @@
                                         </svg>
                                     </span>
                                     <!--end::Svg Icon-->
-                                    <div class="text-white fw-bold fs-2 mb-2 mt-5">7</div>
-                                    <div class="fw-semibold text-white">Kayıtlı Ürün</div>
+                                    <div class="text-white fw-bold fs-2 mb-2 mt-5"> {{productCount()}} </div>
+                                    <div class="fw-semibold text-white">Ürünler</div>
                                 </div>
                                 <!--end::Body-->
                             </a>
@@ -108,540 +108,7 @@
                     </div>
                     <!--end::Row-->
 
-                    <!--begin::Row-->
-                    <div class="row g-5 g-xl-8">
-                        <!--begin::Col-->
-                        <div class="col-xl-8 mb-5 mb-xl-8">
-                            <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
-                                <!--begin::Header-->
-                                <div class="card-header border-0 pt-5">
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">Yeni Gelen Siparişler</span>
-                                    </h3>
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Body-->
-                                <div class="card-body pt-0 pb-5">
-                                    <!--begin::Table container-->
-                                    <div class="table-responsive with_search_table">
-                                        <table id="datatable_new_orders"
-                                            class="table table-striped table-row-bordered gy-5 gs-7">
-                                            <thead>
-                                                <tr class="fw-bold fs-6 text-gray-800">
-                                                    <th>Sipariş Kodu<i class="fa fa-sort ms-3"></i></th>
-                                                    <th>Müşteri Adı<i class="fa fa-sort ms-3"></i></th>
-                                                    <th>Durum<i class="fa fa-sort ms-3"></i></th>
-                                                    <th>Sipariş Tarihi<i class="fa fa-sort ms-3"></i></th>
-                                                    <th>Tutar<i class="fa fa-sort ms-3"></i></th>
-                                                    <th>İşlem<i class="fa fa-sort ms-3"></i></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Tiger Nixon</td>
-                                                    <td>System Architect</td>
-                                                    <td>Edinburgh</td>
-                                                    <td>61</td>
-                                                    <td>2011/04/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td class="ps-8">
-                                                        <a title="Detay" href=""
-                                                            class="badge badge-rounded badge-primary">
-                                                            <i class="fa fa-eye text-light"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Garrett Winters</td>
-                                                    <td>Accountant</td>
-                                                    <td>Tokyo</td>
-                                                    <td>63</td>
-                                                    <td>2011/07/25</td>
-                                                    <td>$170,750</td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!--end::Table container-->
-                                </div>
-                                <!--begin::Body-->
-                            </div>
-                        </div>
-                        <!--end::Col-->
-                        <!--begin::Col-->
-                        <div class="col-xl-4 mb-5 mb-xl-8">
-                            <!--begin::List widget 14-->
-                            <div class="card card-flush h-xl-100 mb-5 mb-xl-8 ">
-                                <!--begin::Header-->
-                                <div class="card-header pt-5">
-                                    <!--begin::Title-->
-                                    <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold text-dark">Son Yapılan İşlemler</span>
-                                    </h3>
-                                    <!--end::Title-->
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Body-->
-                                <div class="card-body pt-6">
-                                    <!--begin::Timeline-->
-                                    <div class="timeline-label">
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">00:28:53</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-gray-600 fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">17.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Blog İçeriği Düzenleme</span>
-                                                <br>
-                                                <span class="fw-semibold text-success fs-5">Blog İçeriği Güncellendi</span>
-                                                <br>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item d-flex align-items-center">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">19:01:58</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-success fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Referans</span> <br>
-                                                <span class="fw-semibold text-success fs-5">Referans Durum Pasif Olarak
-                                                    Güncellendi</span> <br>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">16:14:35</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Kullanıcı Grubu Silme</span>
-                                                <br>
-                                                <span class="fw-semibold text-success fs-5">Kullanıcı Grubu Silindi. GRUP
-                                                    ADI : new group name ID : 6</span> <br>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">16:50:03</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Kullanıcı Grubu</span> <br>
-                                                <span class="fw-semibold text-success fs-5">Kullanıcı Grubu Durum Aktif
-                                                    Olarak Güncellendi</span> <br>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                    </div>
-                                    <!--end::Timeline-->
-                                    <!--begin::Link-->
-                                    <div class="text-center pt-9">
-                                        <a href="" class="fw-semibold text-gray-900 text-hover-primary fs-5">
-                                            Tümünü Gör
-                                            <i class="fa-solid fa-angle-right text-gray-900"></i>
-                                        </a>
-                                    </div>
-                                    <!--begin::Link-->
-                                </div>
-                                <!--end: Card Body-->
-                            </div>
-                            <!--end: List widget 14-->
-                        </div>
-                        <!--end::Col-->
-                    </div>
-                    <!--end::Row-->
+                
 
                     <!--begin::Row-->
                     <div class="row g-5 g-xl-8">
@@ -651,27 +118,14 @@
                                 <!--begin::Header-->
                                 <div class="card-header border-0 pt-5">
                                     <h3 class="card-title align-items-start flex-column">
-                                        <span class="card-label fw-bold fs-3 mb-1">Sipariş Listesi</span>
+                                        <span class="card-label fw-bold fs-3 mb-1">Son Hareketler</span>
                                     </h3>
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Body-->
                                 <div class="card-body py-5">
                                     <!--begin::Table container-->
-                                    <ul class="nav nav-tabs nav-line-tabs mb-5 fs-6">
-                                        <li class="nav-item">
-                                            <a class="nav-link active btn btn-active-light btn-color-gray-600 btn-active-color-primary rounded-bottom-0"
-                                                data-bs-toggle="tab" href="#kt_tab_pane_1">Tamamlanan</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn btn-active-light btn-color-gray-600 btn-active-color-primary rounded-bottom-0"
-                                                data-bs-toggle="tab" href="#kt_tab_pane_2">Yolda</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link btn btn-active-light btn-color-gray-600 btn-active-color-primary rounded-bottom-0"
-                                                data-bs-toggle="tab" href="#kt_tab_pane_3">İptal</a>
-                                        </li>
-                                    </ul>
+                                 
 
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="kt_tab_pane_1" role="tabpanel">
@@ -681,315 +135,32 @@
                                                     class="table table-striped table-row-bordered gy-5 gs-7">
                                                     <thead>
                                                         <tr class="fw-bold fs-6 text-gray-800">
-                                                            <th>Sipariş Kodu<i class="fa fa-sort ms-3"></i></th>
-                                                            <th>Müşteri Adı<i class="fa fa-sort ms-3"></i></th>
-                                                            <th>Durum<i class="fa fa-sort ms-3"></i></th>
-                                                            <th>Sipariş Tarihi<i class="fa fa-sort ms-3"></i></th>
-                                                            <th>Tutar<i class="fa fa-sort ms-3"></i></th>
+                                                            <th>Konum<i class="fa fa-sort ms-3"></i></th>
+                                                            <th>Kullanıcı<i class="fa fa-sort ms-3"></i></th>
                                                             <th>İşlem<i class="fa fa-sort ms-3"></i></th>
+                                                            <th>Tarihi<i class="fa fa-sort ms-3"></i></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+
+                                                        @foreach ($logs as $item)
+                                                            
                                                         <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Garrett Winters</td>
-                                                            <td>Accountant</td>
-                                                            <td>Tokyo</td>
-                                                            <td>63</td>
-                                                            <td>2011/07/25</td>
-                                                            <td>$170,750</td>
+                                                            <td> {{$item->title}} </td>
+                                                            <td> {{$item->user}} </td>
+                                                            <td> {{$item->description}} </td>
+                                                            <td> {{$item->created_at}} </td>
                                                         </tr>
 
+                                                        @endforeach
+
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>
                                             <!--end::Table container-->
                                         </div>
-                                        <div class="tab-pane fade" id="kt_tab_pane_2" role="tabpanel">
-                                            ...
-                                        </div>
-                                        <div class="tab-pane fade" id="kt_tab_pane_3" role="tabpanel">
-                                            ...
-                                        </div>
+                                     
                                     </div>
                                     <!--end::Table container-->
                                 </div>
@@ -1015,9 +186,12 @@
                                     <!--begin::Timeline-->
                                     <div class="timeline-label">
                                         <!--begin::Item-->
+
+                                        @foreach ($loginLogs as $item)
+                                            
                                         <div class="timeline-item">
                                             <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">00:28:53</div>
+                                            <div class="timeline-label fw-bold text-gray-800 fs-6"> {{substr($item->created_at,10,18)}} </div>
                                             <!--end::Label-->
                                             <!--begin::Badge-->
                                             <div class="timeline-badge">
@@ -1026,124 +200,20 @@
                                             <!--end::Badge-->
                                             <!--begin::Text-->
                                             <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">17.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
+                                                <span class="fw-semibold text-gray-700 fs-7"> {{substr($item->created_at,0,10)}} </span> <br>
+                                                <span class="fw-semibold text-gray-900 fs-5"> {{$item->user}} Giriş Yaptı</span>
                                             </div>
                                             <!--end::Text-->
                                         </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item d-flex align-items-center">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">19:01:58</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-success fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">16:14:35</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">12:50:03</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-primary fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">19:50:04</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-warning fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">15:50:02</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-info fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <div class="timeline-item">
-                                            <!--begin::Label-->
-                                            <div class="timeline-label fw-bold text-gray-800 fs-6">18:50:25</div>
-                                            <!--end::Label-->
-                                            <!--begin::Badge-->
-                                            <div class="timeline-badge">
-                                                <i class="fa fa-genderless text-danger fs-1"></i>
-                                            </div>
-                                            <!--end::Badge-->
-                                            <!--begin::Text-->
-                                            <div class="ps-3">
-                                                <span class="fw-semibold text-gray-700 fs-7">14.03.2023</span> <br>
-                                                <span class="fw-semibold text-gray-900 fs-5">Demo Giriş Yaptı</span>
-                                            </div>
-                                            <!--end::Text-->
-                                        </div>
-                                        <!--end::Item-->
+
+                                        @endforeach
+
+                                        
                                     </div>
                                     <!--end::Timeline-->
                                     <!--begin::Link-->
                                     <div class="text-center pt-9">
-                                        <a href="" class="fw-semibold text-gray-900 text-hover-primary fs-5">
+                                        <a href="{{route('admin.log.list')}}" class="fw-semibold text-gray-900 text-hover-primary fs-5">
                                             Tümünü Gör
                                             <i class="fa-solid fa-angle-right text-gray-900"></i>
                                         </a>

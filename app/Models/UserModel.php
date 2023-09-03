@@ -10,6 +10,12 @@ use Spatie\Permission\Traits\HasRoles;
 class UserModel extends Authenticatable
 {
     use HasFactory, HasRoles;
-    protected $guard_name = 'web';
+
     protected $guarded = [];
+
+    public function Yetkiler(){
+        return $this->hasOne(Roller::class,'id','role_id');
+    }
+
+
 }

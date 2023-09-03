@@ -80,7 +80,7 @@
                                                     title="Resmi Değiştir">
                                                     <i class="bi bi-pencil-fill fs-7"></i>
                                                     <!--begin::Inputs-->
-                                                    <input type="file" name="add_slider_image"
+                                                    <input type="file" name="image"
                                                         accept=".png, .jpg, .jpeg" />
                                                     <input type="hidden" name="add_slider_image_remove" />
                                                     <!--end::Inputs-->

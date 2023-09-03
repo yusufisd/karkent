@@ -137,7 +137,7 @@
                                                         <label class="col-md-1 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
                                                         <div class="col-md-11">
                                                             <textarea name="page_def_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
-                                                                cols="30" rows="5">  </textarea>
+                                                                cols="30" rows="5"> {{$def2_tr->description ?? ''}} </textarea>
                                                         </div>
                                                     </div>
 
@@ -268,7 +268,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_a"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_tr->title1_1 ?? ''}}" />
@@ -317,7 +317,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_b"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_tr->title2_1 ?? ''}}" />
@@ -367,7 +367,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_c"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_tr->title3_1 ?? ''}}" />
@@ -415,7 +415,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_d"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_tr->title4_1 ?? ''}}" />
@@ -476,7 +476,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_a_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_en->title1_1 ?? ''}}" />
@@ -525,7 +525,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_b_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_en->title2_1 ?? ''}}" />
@@ -575,7 +575,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_c_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_en->title3_1 ?? ''}}" />
@@ -623,7 +623,7 @@
                                                                         1</label>
                                                                 </div>
                                                                 <div class="col-md-10">
-                                                                    <input type="text"
+                                                                    <input type="number"
                                                                         name="page_def3_title_d_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                                                                         value="{{$def3_en->title4_1 ?? ''}}" />

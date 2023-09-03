@@ -1,9 +1,9 @@
 @extends('frontend.master')
 @section('content')
     <!-- Start Breadcrumb
-        ============================================= -->
+                ============================================= -->
     <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light"
-        style="background-image: url(assets/img/header1.png);">
+        style="background-image: url(assets/frontend/img/header1.png);">
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
@@ -22,52 +22,40 @@
     <!-- End Breadcrumb -->
 
     <!-- Start About
-        ============================================= -->
+                ============================================= -->
     <div class="about-area bg-gray services-include default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 default info">
-                    <h2>Karkent Tekstil</h2>
+                    <h2> {{ $about->title }} </h2>
                     <p style="text-align:left;">
-                        Bir yandan tarihi içinde barındırırken bir yandan gelişen teknolojiye ayak uydurup ekonomi ve iş
-                        dünyasına yön veren sanayi şehrimiz olan Bursa’da; dokuma sektörünün önde gelen kumaş
-                        imalatçılarından birisi olan Karkent Tekstil, 1980 yılından beri tekstil sektörüne hizmet
-                        vermektedir. Kuşaktan kuşağa birikimlerini aktaran Karkent Tekstil, üç kuşak boyunca hız kesmeden
-                        büyümeye, yenilenmeye ve son teknolojiyi takip ederek özgün planlama ve üretim faaliyetlerini
-                        artırmaya devam etmektedir.
+                        {{ $about->description }}
                     </p>
-                    <p style="text-align:left;">
-                        Karkent Tekstil’in ilk adımları 60’lı yıllarda merhum Murat Sayın’ın küçük bir atölyede kumaş
-                        dokumaya başlamasıyla atılmıştır. Baba mesleğini sürdürmeyi görev bilen Ali Sayın, Karkent
-                        Tekstil’in temellerini ilk olarak 1980 yılında atmıştır. Günümüzde Gürsu organize sanayi bölgesinde
-                        20.000m2 kapalı alan ve 5.000m2 açık alan içerisinde yer alan, son teknoloji dokuma makineleri ile
-                        yıllık üretim kapasitesi 12.000.000 metre kumaş olan Karkent Tekstil bünyesinde; pamuklu,
-                        polyester-pamuklu, viskon, keten ve baskılı gömleklik kumaşlar üretilmektedir.
-                    </p>
+
                 </div>
                 <div class="col-md-6 services text-center">
                     <div class="col-md-6 equal-height">
-                        <a href="#">
-                            <i class="flaticon-service"></i>
-                            <h4>İşletme - Üretim</h4>
+                        <a href="{{ $about->url1 }}">
+                            {!! $about->icon1 !!}
+                            <h4> {{ $about->title1 }} </h4>
                         </a>
                     </div>
                     <div class="col-md-6 equal-height">
-                        <a href="#">
-                            <i class="flaticon-profits"></i>
-                            <h4>Boyahane</h4>
+                        <a href="{{ $about->url2 }}">
+                            {!! $about->icon2 !!}
+                            <h4>{{ $about->title2 }}</h4>
                         </a>
                     </div>
                     <div class="col-md-6 equal-height">
-                        <a href="#">
-                            <i class="flaticon-id"></i>
-                            <h4>Karkent Ofis</h4>
+                        <a href="{{ $about->url3 }}">
+                            {!! $about->icon3 !!}
+                            <h4> {{ $about->title3 }} </h4>
                         </a>
                     </div>
                     <div class="col-md-6 equal-height">
-                        <a href="#">
-                            <i class="flaticon-presentation"></i>
-                            <h4>Müze - Restaurant</h4>
+                        <a href="{{ $about->url4 }}">
+                            {!! $about->icon4 !!}
+                            <h4>{{ $about->title4 }}</h4>
                         </a>
                     </div>
                 </div>
@@ -75,14 +63,14 @@
         </div>
     </div>
     <!-- End About -->
-    <!-- Start Our Story
-        ============================================= -->
+	 <!-- Start Our Story
+    ============================================= -->
     <div class="our-story-area default-padding bg-gray">
         <div class="container-fluid">
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>TARİHÇE</h2>
+                        <h2> {{__('msg.tarihçe')}} </h2>
                     </div>
                 </div>
             </div>
@@ -91,141 +79,23 @@
                     <div class="timeline">
                         <div class="timeline-box">
                             <div class="timeline-items">
+                                @foreach ($tarihce as $item)
+                                    
+
                                 <div class="timeline-item">
                                     <div class="timeline-content">
-                                        <h4>1980</h4>
-                                        <h5>Kuruluş</h5>
+                                        <h4> {{$item->year}} </h4>
+                                        <h5> {{$item->title}} </h5>
                                         <p>
-                                            Karkent Tekstil’in temelleri Bursa Gürsu’da atıldı.
+                                            {{$item->description}}
                                         </p>
                                     </div>
                                 </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>1993</h4>
-                                        <h5>Etiketlik</h5>
-                                        <p>
-                                            Etiketlik kumaş sektörünün önde gelen firmaları arasına girmeyi başardı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2000</h4>
-                                        <h5>Dokuma</h5>
-                                        <p>
-                                            Gömleklik kumaş alanında adından söz edilen firmaların arasında yerini aldı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2005</h4>
-                                        <h5>İhracat</h5>
-                                        <p>
-                                            Ürünlerini yurtdışı pazara taşıyarak ilk ihracatlarını yaptı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2009 </h4>
-                                        <h5>Başarı</h5>
-                                        <p>
-                                            Ticaret ve Sanayi odasınca belirlenen Ekonomiye değer katanlar listesine 192.
-                                            sıradan giriş yaptı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2011</h4>
-                                        <h5>Gelişim</h5>
-                                        <p>
-                                            Ekonomiye değer katanlar listesinde 20 firmayı daha geride bırakarak 172. sıraya
-                                            yükseldi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2013</h4>
-                                        <h5>Liderlik</h5>
-                                        <p>
-                                            25 farklı ülkeye ihracat yaparak, tekstil alanında liderler arasına girdi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2013</h4>
-                                        <h5>Yükselen Değer</h5>
-                                        <p>
-                                            Ekonomiye değer katanlar listesinde 162. olurken, bir önceki listeye göre 10
-                                            firmanın daha önüne geçti.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2017</h4>
-                                        <h5>İstihdam</h5>
-                                        <p>
-                                            Çalışan sayısı 100’ün üzerine çıktı ve Bursa’nın istihdama katkı sağlayan
-                                            firmalarından birisi haline geldi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2018</h4>
-                                        <h5>Dokuma Tezgâhı</h5>
-                                        <p>
-                                            Bünyesine kattığı yeni üretim ağıyla toplamda 128 dokuma tezgahına ulaştı ve
-                                            yıllık kapasitesi 10 milyon mt oldu.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2018</h4>
-                                        <h5>Müze & Restaurant</h5>
-                                        <p>
-                                            Girişimcilik ve yenilikçilik anlayışıyla, Karkent bünyesinde Tekstil Müze &
-                                            Restaurant kuruldu ve ziyaretçilere açıldı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2019</h4>
-                                        <h5>İhracat</h5>
-                                        <p>
-                                            Pandemiden önceki son sezonda rekor kırarak yaklaşık 50 farklı ülkeye ihracat
-                                            gerçekleştirdi.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2022</h4>
-                                        <h5>Konfeksiyon</h5>
-                                        <p>
-                                            Pandemi sonrası yatırımlara ara vermeden devam ederek bünyesine konfeksiyonu
-                                            kattı ve gömlek üretimine başladı.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4>2023</h4>
-                                        <h5>Boyahane</h5>
-                                        <p>
-                                            Boyahane işletmesini kendi bünyesine alarak yıllık 12 milyon mt gömleklik kumaş
-                                            üretim kapasitesine ulaştı.
-                                        </p>
-                                    </div>
-                                </div>
+                                
+
+                                @endforeach
+
+                                
                             </div>
                         </div>
                     </div>
@@ -233,5 +103,4 @@
             </div>
         </div>
     </div>
-    <!-- End Our Story -->x
 @endsection

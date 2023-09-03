@@ -25,6 +25,9 @@ return new class extends Migration
             $table->string('museum_email');
             $table->string('museum_phone');
             $table->string('museum_photo');
+            $table->string('instagram');
+            $table->string('facebook');
+            $table->string('youtube');
             $table->timestamps();
         });
     }

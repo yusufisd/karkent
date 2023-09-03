@@ -9,5 +9,9 @@ class EnSlider extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function Image(){
+        return $this->hasOne(Slider::class,'id','slider_id');
+    }
     
 }

@@ -8,6 +8,8 @@ use App\Models\EnCategory;
 use App\Models\EnContact;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\DB;
+use Throwable;
 
 class CategoryController extends Controller
 {
@@ -24,16 +26,32 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-        $category = new Category();
-        $category->title = $request->name_tr;
-        $category->save();
+        $request->validate([
+            "name_tr" => "required",
+            "name_en" => "required",
+        ]);
+        try {
+            DB::beginTransaction();
 
-        $category_en = new EnCategory();
-        $category_en->title = $request->name_en;
-        $category_en->cateogry_id = $category->id;
-        $category_en->save();
 
-        Alert::success('Kategori Ekleme Başarılı');
+            $category = new Category();
+            $category->title = $request->name_tr;
+            $category->save();
+
+            $category_en = new EnCategory();
+            $category_en->title = $request->name_en;
+            $category_en->cateogry_id = $category->id;
+            $category_en->save();
+            logKayit(['Kategori', 'Kategori Eklendi']);
+            Alert::success('Kategori Ekleme Başarılı');
+            DB::commit();
+        } catch (Throwable $e) {
+            DB::rollBack();
+            logKayit(['Kategori', 'Kategori Eklemede Hata', 0]);
+            Alert::error('Kategori Eklemede Hata');
+            return redirect()->back();
+        }
+
         return redirect()->route('admin.category.list');
     }
 
@@ -46,25 +64,51 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = Category::findOrFail($id);
-        $category->title = $request->name_tr;
-        $category->save();
+        $request->validate([
+            "name_tr" => "required",
+            "name_en" => "required",
+        ]);
+        try {
+            DB::beginTransaction();
 
-        $category_en = EnCategory::where('category_id', $id)->first();
-        $category_en->title = $request->name_en;
-        $category_en->cateogry_id = $category->id;
-        $category_en->save();
+            $category = Category::findOrFail($id);
+            $category->title = $request->name_tr;
+            $category->save();
 
-        Alert::success('Kategori Düzenleme Başarılı');
+            $category_en = EnCategory::where('category_id', $id)->first();
+            $category_en->title = $request->name_en;
+            $category_en->cateogry_id = $category->id;
+            $category_en->save();
+
+            logKayit(['Kategori', 'Kategori Eklendi']);
+            Alert::success('Kategori Düzenleme Başarılı');
+            DB::commit();
+        } catch (Throwable $e) {
+            DB::rollBack();
+            logKayit(['Kategori', 'Kategori Düzenlemede Hata', 0]);
+            Alert::error('Kategori Eklemede Hata');
+            return redirect()->back();
+        }
         return redirect()->route('admin.category.list');
     }
 
     public function destroy($id)
     {
-        $data = Category::findOrFail($id);
-        EnCategory::where('category_id', $id)->delete();
-        $data->delete();
-        Alert::success('Kategori Silme Başarılı');
+        try {
+            DB::beginTransaction();
+
+            $data = Category::findOrFail($id);
+            EnCategory::where('category_id', $id)->delete();
+            $data->delete();
+            logKayit(['Kategori', 'Kategori Eklendi']);
+            Alert::success('Kategori Silme Başarılı');
+            DB::commit();
+        } catch (Throwable $e) {
+            DB::rollBack();
+            logKayit(['Kategori', 'Kategori Silmede Hata', 0]);
+            Alert::error('Kategori Silmede Hata');
+            return redirect()->back();
+        }
         return redirect()->route('admin.category.list');
     }
 }

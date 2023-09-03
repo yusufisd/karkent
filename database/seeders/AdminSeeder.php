@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Admin;
+use App\Models\Roller;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -17,45 +18,44 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        Admin::create([
-            "username" => "Admin",
-            "email" => "admin@karkent.com",
-            "password" => Hash::make('123123')
-        ]);
-
-        $role = Role::create([
-            'guard_name' => 'admin',
-            "name" => 'admin',
-        ]);
-
         $dizi = [
-            ["name" => "slider_list"],
+            ["name" => "slider_show"],
             ["name" => "slider_edit"],
             ["name" => "slider_add"],
             ["name" => "slider_delete"],
-            ["name" => "sponsor_list"],
+            ["name" => "sponsor_show"],
             ["name" => "sponsor_edit"],
             ["name" => "sponsor_add"],
             ["name" => "sponsor_delete"],
-            ["name" => "history_list"],
+            ["name" => "history_show"],
             ["name" => "history_edit"],
             ["name" => "history_add"],
             ["name" => "history_delete"],
-            ["name" => "page_defi_1_list"],
-            ["name" => "page_defi_1_edit"],
             ["name" => "page_defi_1_add"],
-            ["name" => "page_defi_1_delete"],
+            ["name" => "about_add"],
+            ["name" => "contact_add"],
+            ["name" => "category_show"],
+            ["name" => "category_edit"],
+            ["name" => "category_add"],
+            ["name" => "category_delete"],
+            ["name" => "product_show"],
+            ["name" => "product_edit"],
+            ["name" => "product_add"],
+            ["name" => "product_delete"],
         ];
 
-        foreach ($dizi as $key => $value) {
-            $permission = Permission::create([
-                "name" => $value["name"],
-                "guard_name" => "admin"
-            ]);
-            $role->givePermissionTo($permission);
-        }
+        $role = new Roller();
+        $role->rol_adi = 'admin';
+        $role->yetkinlikler = $dizi;
+        $role->save();
 
-        $user = Admin::find(1);
-        $user->assignRole($role);
+        Admin::create([
+            "name" => "Karkent",
+            "surname" => "Admin",
+            "email" => "admin@karkent.com",
+            "phone" => "4446298",
+            "role_id" => 1,
+            "password" => Hash::make('123123')
+        ]);
     }
 }

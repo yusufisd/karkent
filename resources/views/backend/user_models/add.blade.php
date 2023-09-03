@@ -200,10 +200,10 @@
                                                     <div class="row">
                                                         <!--begin::Col-->
                                                         <div class="col-lg-12 fv-row">
-                                                            <select name="role" aria-label="Seçiniz" data-control="select2" data-placeholder="Seçiniz..." class="form-select form-select-solid form-select-lg fw-semibold">
+                                                            <select name="role_id" aria-label="Seçiniz" data-control="select2" data-placeholder="Seçiniz..." class="form-select form-select-solid form-select-lg fw-semibold">
                                                                 @foreach ($roles as $item)
                                                                     
-                                                                <option value="{{$item->name}}">{{strtoupper($item->name)}}</option>
+                                                                <option value="{{$item->id}}">{{strtoupper($item->rol_adi)}}</option>
 
                                                                 @endforeach
 

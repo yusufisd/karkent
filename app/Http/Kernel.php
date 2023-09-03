@@ -72,5 +72,8 @@ class Kernel extends HttpKernel
         'role' => RoleMiddleware::class,
         "lang" => LangMid::class,
         "applocale" => AppLocaleMiddleware::class,
+        'loginMid' => \App\Http\Middleware\LoginMid::class,
+        'permission2' => \App\Http\Middleware\Permission2::class,
+
     ];
 }
