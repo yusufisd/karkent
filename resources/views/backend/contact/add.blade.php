@@ -82,8 +82,8 @@
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#tab_add_slider_tr"
                                                     aria-selected="true" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/turkey.svg"
-                                                            width="28" height="28" alt="TR" title="TR">
+                                                        <img src="{{asset('/assets/tr.png')}}"
+                                                            width="28" height="20" alt="TR" title="TR">
                                                     </span>
 
                                                 </a>
@@ -92,8 +92,8 @@
                                                 <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en"
                                                     aria-selected="false" tabindex="-1" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/england.svg"
-                                                            width="28" height="28" alt="EN" title="EN">
+                                                        <img src="{{asset('/assets/en.png')}}"
+                                                            width="28" height="20" alt="EN" title="EN">
                                                     </span>
                                                 </a>
                                             </li>
@@ -309,8 +309,8 @@
                                                 <a class="nav-link active" data-bs-toggle="tab"
                                                     href="#tab_add_slider_tr_2" aria-selected="true" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/turkey.svg"
-                                                            width="28" height="28" alt="TR" title="TR">
+                                                        <img src="{{asset('/assets/tr.png')}}"
+                                                            width="28" height="20" alt="TR" title="TR">
                                                     </span>
 
                                                 </a>
@@ -319,8 +319,8 @@
                                                 <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en_2"
                                                     aria-selected="false" tabindex="-1" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/england.svg"
-                                                            width="28" height="28" alt="EN" title="EN">
+                                                        <img src="{{asset('/assets/en.png')}}"
+                                                            width="28" height="20" alt="EN" title="EN">
                                                     </span>
                                                 </a>
                                             </li>
@@ -537,8 +537,8 @@
                                                 <a class="nav-link active" data-bs-toggle="tab"
                                                     href="#tab_add_slider_tr_3" aria-selected="true" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/turkey.svg"
-                                                            width="28" height="28" alt="TR" title="TR">
+                                                        <img src="{{asset('/assets/tr.png')}}"
+                                                            width="28" height="20" alt="TR" title="TR">
                                                     </span>
 
                                                 </a>
@@ -547,8 +547,8 @@
                                                 <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en_3"
                                                     aria-selected="false" tabindex="-1" role="tab">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/england.svg"
-                                                            width="28" height="28" alt="EN" title="EN">
+                                                        <img src="{{asset('/assets/en.png')}}"
+                                                            width="28" height="20" alt="EN" title="EN">
                                                     </span>
                                                 </a>
                                             </li>
@@ -767,13 +767,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="right" style="text-align: right">
+                    <button type="submit" class="btn btn-primary">
+                        {{ __('msg.kaydet') }}
+                    </button>
+                </div>
             </div>
 
-            <div class="right" style="text-align: right">
-                <button type="submit" class="btn btn-primary">
-                    {{ __('msg.kaydet') }}
-                </button>
-            </div>
+            
     </form>
 
     </div>

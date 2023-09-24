@@ -46,7 +46,7 @@
                         <!--begin::Body-->
                         <div class="card-body pt-0 pb-5">
                             <!--begin::Table container-->
-                            <div class="table-responsive with_search_table">
+                            <div class="container table-responsive with_search_table">
                                 <table id="slider_table" class="table gy-7 gx-7">
                                     <thead>
                                         <tr class="fw-bold fs-6 text-gray-800">
@@ -57,8 +57,8 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th class="text-center"> {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -73,8 +73,8 @@
                                                 </div>
                                             </td>
 
-                                            <td class="text-center"> {{$item->title}} </td>
-                                            <td class="text-center">
+                                            <td > {{$item->title}} </td>
+                                            <td >
                                                 
                                                 <a onclick="destroy({{$item->id}})"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"

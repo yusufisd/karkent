@@ -57,8 +57,10 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th class="text-center"> {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th class="text-center"> {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.açıklama')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.kategori')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -73,9 +75,11 @@
                                                 </div>
                                             </td>
 
-                                            <td class="text-center"> {{$item->title}} </td>
-                                            <td class="text-center">
-                                                
+                                            <td > {{$item->title}} </td>
+                                            <td > {{substr($item->description,0,50)}} ...</td>
+                                            <td > {{$item->Category->title}} </td>
+                                            <td>
+                                               
                                                 <a onclick="destroy({{$item->id}})"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
                                                     data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">

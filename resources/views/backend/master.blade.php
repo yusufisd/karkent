@@ -12,7 +12,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
 
-    <link rel="shortcut icon" href="{{asset('/assets/backend/media/logos/favicon.ico')}}" />
+    <link rel="shortcut icon" href="{{ asset('/assets/backend/media/logos/favicon.ico') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +20,13 @@
         rel="stylesheet">
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="{{asset('/assets/backend/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css')}}" />
+    <link href="{{ asset('/assets/backend/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-    <link href="{{asset('/assets/backend/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css')}}" />
-    <link href="{{asset('/assets/backend/css/style.bundle.css" rel="stylesheet" type="text/css')}}" />
-    <link href="{{asset('/assets/backend/css/gavia_style.css" rel="stylesheet" type="text/css')}}" />
+    <link href="{{ asset('/assets/backend/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/assets/backend/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/assets/backend/css/gavia_style.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <!-- begin:: Extra Style -->
     <style>
@@ -78,7 +78,7 @@
                 <div class="app-container container-fluid d-flex align-items-stretch justify-content-between"
                     id="kt_app_header_container">
                     <!--begin::Sidebar mobile toggle-->
-                    <div class="d-flex align-items-center d-lg-none ms-n3 me-1 me-md-2" title="Show sidebar menu">
+                    <div class="d-flex align-items-center d-lg-none ms-n3 me-md-2 me-1" title="Show sidebar menu">
                         <div class="btn btn-icon btn-active-color-primary w-35px h-35px"
                             id="kt_app_sidebar_mobile_toggle">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs015.svg-->
@@ -100,7 +100,8 @@
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
                         <a href="index.html" class="d-lg-none">
-                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/erkek.png')}}" class="h-30px" />
+                            <img alt="Logo" src="{{ asset('/assets/backend/media/logos/erkek.png') }}"
+                                class="h-30px" />
                         </a>
                     </div>
                     <!--end::Mobile logo-->
@@ -120,7 +121,7 @@
                         <div class="app-navbar flex-shrink-0">
 
                             <!--begin::Notifications-->
-                            <div class="app-navbar-item ms-1 ms-md-3">
+                            <div class="app-navbar-item ms-md-3 ms-1">
                                 <!--begin::Menu- wrapper-->
                                 <div class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
@@ -140,224 +141,11 @@
                                     </span>
                                     <!--end::Svg Icon-->
                                 </div>
-                                <!--begin::Menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
-                                    data-kt-menu="true">
-                                    <!--begin::Heading-->
-                                    <div class="d-flex flex-column bgi-no-repeat rounded-top"
-                                        style="background-image:url('/assets/backend/media/misc/menu-header-dark.png')">
-                                        <!--begin::Title-->
-                                        <h3 class="text-white fw-semibold px-9 mt-6 mb-6">Bildirimler</h3>
-                                        <!--end::Title-->
-                                    </div>
-                                    <!--end::Heading-->
-                                    <!--begin:: content-->
-                                    <div>
-                                        <!--begin::Items-->
-                                        <div class="scroll-y mh-325px my-5 px-8">
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">New
-                                                        order</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Just now</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">New
-                                                        customer</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">2 hrs</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Payment
-                                                        process</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">5 hrs</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Search
-                                                        query</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">2 days</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">API
-                                                        connection</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">1 week</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Database
-                                                        restore</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Mar 5</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">System
-                                                        update</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">May 15</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Server OS
-                                                        update</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Apr 3</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">API
-                                                        rollback</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Jun 30</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Refund
-                                                        process</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Jul 10</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Withdrawal
-                                                        process</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Sep 10</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex flex-stack py-4">
-                                                <!--begin::Section-->
-                                                <div class="d-flex align-items-center me-2">
-                                                    <!--begin::Title-->
-                                                    <a href="#"
-                                                        class="text-gray-800 text-hover-primary fw-semibold">Mail
-                                                        tasks</a>
-                                                    <!--end::Title-->
-                                                </div>
-                                                <!--end::Section-->
-                                                <!--begin::Label-->
-                                                <span class="badge badge-light fs-8">Dec 10</span>
-                                                <!--end::Label-->
-                                            </div>
-                                            <!--end::Item-->
-                                        </div>
-                                        <!--end::Items-->
-                                    </div>
-                                    <!--end:: content-->
-                                </div>
-                                <!--end::Menu-->
-                                <!--end::Menu wrapper-->
+                         
                             </div>
                             <!--end::Notifications-->
                             <!--begin::Theme mode-->
-                            <div class="app-navbar-item ms-1 ms-md-3">
+                            <div class="app-navbar-item ms-md-3 ms-1">
                                 <!--begin::Menu toggle-->
                                 <a href="#"
                                     class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
@@ -419,10 +207,10 @@
                                 </a>
                                 <!--begin::Menu toggle-->
                                 <!--begin::Menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px"
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold fs-base w-150px py-4"
                                     data-kt-menu="true" data-kt-element="theme-mode-menu">
                                     <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-0">
+                                    <div class="menu-item my-0 px-3">
                                         <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
                                             data-kt-value="light">
                                             <span class="menu-icon" data-kt-element="icon">
@@ -466,7 +254,7 @@
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
-                                    <div class="menu-item px-3 my-0">
+                                    <div class="menu-item my-0 px-3">
                                         <a href="#" class="menu-link px-3 py-2" data-kt-element="mode"
                                             data-kt-value="dark">
                                             <span class="menu-icon" data-kt-element="icon">
@@ -499,7 +287,7 @@
                             </div>
                             <!--end::Theme mode-->
                             <!--begin::Language mode-->
-                            <div class="app-navbar-item ms-1 ms-md-3">
+                            <div class="app-navbar-item ms-md-3 ms-1">
                                 <!--begin::Menu toggle-->
                                 <a href="#"
                                     class="btn btn-icon btn-custom btn-icon-muted btn-active-light btn-active-color-primary w-30px h-30px w-md-40px h-md-40px"
@@ -510,13 +298,13 @@
                                 </a>
                                 <!--begin::Menu toggle-->
                                 <!--begin::Menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px"
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold fs-base w-150px py-4"
                                     data-kt-menu="true" data-kt-element="theme-mode-menu">
                                     @foreach (Config::get('languages') as $lang => $language)
                                         <!--begin::Menu item-->
-                                        <div class="menu-item px-3 my-0">
+                                        <div class="menu-item my-0 px-3">
                                             <a href="{{ route('chaange.lang', $lang) }}"
-                                                class="menu-link px-3 py-2 active" data-kt-element="mode"
+                                                class="menu-link active px-3 py-2" data-kt-element="mode"
                                                 data-kt-value="light">
                                                 <span class="menu-icon" data-kt-element="icon">
                                                     <img src="/assets/frontend/img/{{ $lang }}.png"
@@ -535,27 +323,31 @@
                             </div>
                             <!--end::Language mode-->
                             <!--begin::User menu-->
-                            <div class="app-navbar-item ms-1 ms-md-3" id="kt_header_user_menu_toggle">
+                            <div class="app-navbar-item ms-md-3 ms-1" id="kt_header_user_menu_toggle">
                                 <!--begin::Menu wrapper-->
-                                <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
+                                <div class="symbol symbol-30px symbol-md-40px cursor-pointer"
                                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                                     data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-                                    <img src="{{asset('/assets/backend/media/avatars/300-1.jpg" alt="user')}}" />
+                                    <img src="{{ asset('/assets/user.png') }}" alt="user" />
                                 </div>
                                 <!--begin::User account menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold fs-6 w-275px py-4"
                                     data-kt-menu="true">
 
                                     <div class="menu-item px-5">
-                                        <a href="profile.html" class="menu-link px-5">
-                                            {{ Auth::guard('user_model')->user() != null ? Auth::guard('user_model')->user()->name.' '.Auth::guard('user_model')->user()->surname : Auth::guard('admin')->user()->name.' '.Auth::guard('admin')->user()->surname }}
+                                        <a href="{{route('admin.profile')}}" class="menu-link px-5">
+                                            {{ Auth::guard('user_model')->user() != null ? Auth::guard('user_model')->user()->name . ' ' . Auth::guard('user_model')->user()->surname : Auth::guard('admin')->user()->name . ' ' . Auth::guard('admin')->user()->surname }}
                                         </a>
                                     </div>
 
                                     <hr>
                                     <!--begin::Menu item-->
                                     <div class="menu-item px-5">
-                                        <a href="profile.html" class="menu-link px-5">Profilim</a>
+                                        <a href="{{route('admin.profile')}}" class="menu-link px-5">Profilim</a>
+                                    </div>
+
+                                    <div class="menu-item px-5">
+                                        <a href="{{route('admin.changePassword')}}" class="menu-link px-5">Şifremi Değiştir</a>
                                     </div>
                                     <!--end::Menu item-->
                                     <!--begin::Menu item-->
@@ -587,9 +379,9 @@
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
                         <a href="index.html" class="mx-auto">
-                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/disi.png')}}"
+                            <img alt="Logo" src="{{ asset('/assets/backend/media/logos/disi.png') }}"
                                 class="h-50px app-sidebar-logo-default" />
-                            <img alt="Logo" src="{{asset('/assets/backend/media/logos/favikon.svg')}}"
+                            <img alt="Logo" src="{{ asset('/assets/backend/media/logos/favikon.svg') }}"
                                 class="h-20px app-sidebar-logo-minimize" />
                         </a>
                         <!--end::Logo image-->
@@ -616,7 +408,7 @@
                     </div>
                     <!--end::Logo-->
                     <!--begin::sidebar menu-->
-                    <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
+                    <div class="app-sidebar-menu flex-column-fluid overflow-hidden">
                         <!--begin::Menu wrapper-->
                         <div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5"
                             data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto"
@@ -642,7 +434,7 @@
                                 <!--end:Menu item-->
 
 
-                                <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
+                                <div class="separator border-1 border-light mb-10 mt-5 border-opacity-10"></div>
 
 
 
@@ -691,7 +483,7 @@
                                 </div>
                                 <!--end:Menu item-->
 
-                                <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
+                                <div class="separator border-1 border-light mb-10 mt-5 border-opacity-10"></div>
 
 
                                 <!--begin:Menu item-->
@@ -774,7 +566,7 @@
                                 </div>
                                 <!--end:Menu item-->
 
-                                <div class="separator border-1 border-light border-opacity-10 mt-5 mb-10"></div>
+                                <div class="separator border-1 border-light mb-10 mt-5 border-opacity-10"></div>
 
                                 @if (Auth::guard('admin')->user())
                                     <!--begin:Menu item-->
@@ -848,16 +640,16 @@
         var hostUrl = "/assets/backend/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-    <script src="{{asset('/assets/backend/plugins/global/plugins.bundle.js')}}"></script>
-    <script src="{{asset('/assets/backend/js/scripts.bundle.js')}}"></script>
+    <script src="{{ asset('/assets/backend/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('/assets/backend/js/scripts.bundle.js') }}"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="{{asset('/assets/backend/plugins/custom/datatables/datatables.bundle.js')}}"></script>
+    <script src="{{ asset('/assets/backend/plugins/custom/datatables/datatables.bundle.js') }}"></script>
     <!--end::Vendors Javascript-->
     <!--begin::Custom Javascript(used for this page only)-->
-    <script src="{{asset('/assets/backend/js/widgets.bundle.js')}}"></script>
-    <script src="{{asset('/assets/backend/js/custom/widgets.js')}}"></script>
-    <script src="{{asset('/assets/backend/js/custom/apps/chat/chat.js')}}"></script>
+    <script src="{{ asset('/assets/backend/js/widgets.bundle.js') }}"></script>
+    <script src="{{ asset('/assets/backend/js/custom/widgets.js') }}"></script>
+    <script src="{{ asset('/assets/backend/js/custom/apps/chat/chat.js') }}"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
     <!--begin:: extra js-->

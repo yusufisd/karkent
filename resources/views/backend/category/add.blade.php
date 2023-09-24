@@ -61,8 +61,8 @@
                                         <a class="nav-link active" data-bs-toggle="tab" href="#tab_add_slider_tr"
                                             aria-selected="true" role="tab">
                                             <span>
-                                                <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/turkey.svg"
-                                                    width="28" height="28" alt="TR" title="TR">
+                                                <img src="{{asset('/assets/tr.png')}}"
+                                                    width="28" height="20" alt="TR" title="TR">
                                             </span>
 
                                         </a>
@@ -71,8 +71,8 @@
                                         <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en"
                                             aria-selected="false" tabindex="-1" role="tab">
                                             <span>
-                                                <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/england.svg"
-                                                    width="28" height="28" alt="EN" title="EN">
+                                                <img src="{{asset('/assets/en.png')}}"
+                                                    width="28" height="20" alt="EN" title="EN">
                                             </span>
                                         </a>
                                     </li>
@@ -84,11 +84,11 @@
                                     <div class="row mb-6 tab-pane fade show active" id="tab_add_slider_tr" role="tabpanel">
                                         <div class="card-body py-5">
 
-                                            <div class="row" style="margin: 3%">
-                                                <div class="col-md-1">
-                                                    <label> {{ __('msg.kategori') }} {{ __('msg.ad') }} </label>
+                                            <div class="row" style="margin: 2%">
+                                                <div class="col-md-2">
+                                                    <label > {{ __('msg.kategori') }} {{ __('msg.ad') }} </label>
                                                 </div>
-                                                <div class="col-md-11">
+                                                <div class="col-md-10">
                                                     <input type="text" class="form-control" name="name_tr"
                                                         id="">
                                                 </div>
@@ -100,11 +100,11 @@
                                     <div class="tab-pane fade" id="tab_add_slider_en" role="tabpanel">
                                         <div class="card-body py-5">
 
-                                            <div class="row" style="margin: 3%">
-                                                <div class="col-md-1">
+                                            <div class="row" style="margin: 2%">
+                                                <div class="col-md-2">
                                                     <label> {{ __('msg.kategori') }} {{ __('msg.ad') }} </label>
                                                 </div>
-                                                <div class="col-md-11">
+                                                <div class="col-md-10">
                                                     <input type="text" class="form-control" name="name_en"
                                                         id="">
                                                 </div>

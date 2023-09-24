@@ -60,7 +60,16 @@ Route::controller(AuthController::class)->prefix('/admin')->name('admin.')->grou
 });
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/profil', [AuthController::class, 'profile'])->name('profile');
+    Route::get('/sifre-degistir', [AuthController::class, 'changePassword'])->name('changePassword');
+    Route::post('/sifre-degistir', [AuthController::class, 'changePasswordPost'])->name('changePasswordPost');
+    Route::post('/profil-duzenle', [AuthController::class, 'profileUpdate'])->name('profileUpdate');
     Route::get('/', [BackendHomeController::class, 'index'])->name('index');
+    Route::get('/sifremi-unuttum', [AuthController::class, 'forgotPassword'])->name('forgotPassword');
+    Route::post('/sifremi-unuttum', [AuthController::class, 'forgotPasswordPost'])->name('forgotPasswordPost');
+    Route::get('/sifremi-yenile/{data?}', [AuthController::class, 'resetPassword'])->name('resetPassword');
+    Route::post('/sifremi-yenile', [AuthController::class, 'resetPasswordPost'])->name('resetPasswordPost');
+    
 
     // SLİDER İŞLEMLERİ
     Route::controller(SliderController::class)->prefix('slider')->name('slider.')->group(function () {

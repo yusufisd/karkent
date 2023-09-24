@@ -76,7 +76,7 @@
                                             </td>
                                             <td>{{$item->year}}</td>
                                             <td> {{$item->title}} </td>
-                                            <td> {{$item->description}} </td>
+                                            <td> {{substr($item->description,0,99)}} ... </td>
                                             <td class="text-center">
                                                 <a href=""
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"

@@ -15,16 +15,16 @@
     <link rel="shortcut icon" href="{{ asset('/assets/frontend/img/favicon.png')}}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
-    <link href="{{ asset('/assets/frontend/css/bootstrap.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/font-awesome.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/flaticon-business-set.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/magnific-popup.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/owl.carousel.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/owl.theme.default.min.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/animate.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/css/bootsnav.css')}}" rel="stylesheet" />
-    <link href="{{ asset('/assets/frontend/style.css')}}" rel="stylesheet">
-    <link href="{{ asset('/assets/frontend/css/responsive.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootstrap.min.css')}}"  />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/font-awesome.min.css')}}"  />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/flaticon-business-set.css')}}"  />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/magnific-popup.css')}}"  />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.carousel.min.css')}}"  />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.theme.default.min.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/animate.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootsnav.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/responsive.css')}}"  />
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('/assets/frontend/css/cerez.css')}}" />
 
     <!-- ========== End Stylesheet ========== -->

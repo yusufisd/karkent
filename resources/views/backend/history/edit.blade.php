@@ -66,8 +66,8 @@
                                             <li class="nav-item">
                                                 <a class="nav-link active" data-bs-toggle="tab" href="#tab_add_slider_tr">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/turkey.svg"
-                                                            width="28" height="28" alt="TR" title="TR">
+                                                        <img src="{{asset('/assets/tr.png')}}"
+                                                            width="28" height="20" alt="TR" title="TR">
                                                     </span>
 
                                                 </a>
@@ -75,8 +75,8 @@
                                             <li class="nav-item">
                                                 <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en">
                                                     <span>
-                                                        <img src="https://gaviapanel.gaviaworks.org/assets/images/svg/england.svg"
-                                                            width="28" height="28" alt="EN" title="EN">
+                                                        <img src="{{asset('/assets/en.png')}}"
+                                                            width="28" height="20" alt="EN" title="EN">
                                                     </span>
                                                 </a>
                                             </li>

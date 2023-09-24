@@ -37,12 +37,14 @@
             <div class="d-flex flex-column flex-lg-row-fluid w-lg-50 p-10 order-2 order-lg-1">
                 <div class="d-flex flex-center flex-column flex-lg-row-fluid">
                     <div class="w-lg-500px p-10">
-                        <form class="form w-100"  method="POST" action="{{route('admin.login_post')}}">
+
+                        <form class="form w-100"  method="POST" action="{{route('admin.resetPasswordPost')}}">
 							@csrf
                             <div class="text-center mb-11">
-                                <h1 class="text-dark fw-bolder mb-3">Gavia Yönetim Paneli Giriş</h1>
+                                <h1 class="text-dark fw-bolder mb-3">Şifre Yenileme</h1>
                             </div>
-
+                            
+                            <h5 style="text-align: center">Lütfen yeni şifrenizi girin.</h5><br>
 							@if($errors->any())
 								@foreach ($errors->all() as $e)
 									<div class="alert alert-danger">
@@ -51,26 +53,20 @@
 								@endforeach
 							@endif
 
+                                    <input type="hidden" name="email" value="{{$data}}" id="">
+
                             <div class="fv-row mb-8">
-                                <input type="text" placeholder="Email" name="email" autocomplete="off"
+                                <input type="text" placeholder="Şifre" name="password" autocomplete="off"
                                     class="form-control bg-transparent" />
                             </div>
-                            <div class="fv-row mb-3" data-kt-password-meter="true">
-                                <input type="password" placeholder="Şifre" name="password" autocomplete="off"
+
+                            <div class="fv-row mb-8">
+                                <input type="text" placeholder="Şifre Tekrar" name="password_confirm" autocomplete="off"
                                     class="form-control bg-transparent" />
-                                <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2"
-                                    data-kt-password-meter-control="visibility">
-                                    <i class="bi bi-eye-slash fs-2"></i>
-                                    <i class="bi bi-eye fs-2 d-none"></i>
-                                </span>
-                            </div>
-                            <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-                                <div></div>
-                                <a href="{{route('admin.forgotPassword')}}" class="link-primary">Şifrenizi mi unuttunuz ?</a>
                             </div>
                             <div class="d-grid mb-10">
                                 <button type="submit" id="kt_sign_in_submit" class="btn btn-success">
-                                    <span class="indicator-label">Giriş Yap</span>
+                                    <span class="indicator-label">KAYDET</span>
                                     <span class="indicator-progress">Please wait...
                                         <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                 </button>
@@ -108,7 +104,6 @@
     <script src="/assets/backend/js/scripts.bundle.js"></script>
     <script src="/assets/backend/js/custom/authentication/sign-in/general.js"></script>
     @include('sweetalert::alert')
-
 </body>
 
 </html>
