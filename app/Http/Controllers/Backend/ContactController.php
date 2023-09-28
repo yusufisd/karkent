@@ -23,6 +23,7 @@ class ContactController extends Controller
 
     public function store(Request $request)
     {
+
         try {
             DB::beginTransaction();
 
@@ -36,18 +37,17 @@ class ContactController extends Controller
                 "muze_adres_tr" => "required",
                 "muze_telefon_tr" => "required",
                 "muze_email_tr" => "required",
-                "center_image" => "required",
-                "factory_image" => "required",
-                "museum_image" => "required",
                 "instagram" => "required",
                 "facebook" => "required",
                 "youtube" => "required",
             ]);
 
-            if (Contact::find(1) == null) {
+
+
+            if (Contact::latest()->first() == null) {
                 $contact = new Contact();
             } else {
-                $contact = Contact::find(1);
+                $contact = Contact::latest()->first();
             }
             $contact->center_address = $request->merkez_adres_tr;
             $contact->center_phone = $request->merkez_telefon_tr;
@@ -61,24 +61,34 @@ class ContactController extends Controller
             $contact->instagram = $request->instagram;
             $contact->facebook = $request->facebook;
             $contact->youtube = $request->youtube;
+            $contact->whatsapp = $request->whatsapp;
+
+            if($request->file('center_image')){
 
             $center_image = $request->file('center_image');
             $center_image_name = hexdec(uniqid()) . '.' . $center_image->getClientOriginalExtension();
             $save_url_center = "assets/uploads/contact/" . $center_image_name;
             Image::make($center_image)->resize(460, 345)->save($save_url_center);
             $contact->center_photo = $save_url_center;
+        }
+
+        if($request->file('factory_image')){
 
             $factory_image = $request->file('factory_image');
             $factory_image_name = hexdec(uniqid()) . '.' . $factory_image->getClientOriginalExtension();
             $save_url_factory = "assets/uploads/contact/" . $factory_image_name;
             Image::make($factory_image)->resize(460, 345)->save($save_url_factory);
             $contact->factory_photo = $save_url_factory;
+        }
+
+        if($request->file('museum_image')){
 
             $museum_image = $request->file('museum_image');
             $museum_image_name = hexdec(uniqid()) . '.' . $museum_image->getClientOriginalExtension();
             $save_url_museum = "assets/uploads/contact/" . $museum_image_name;
             Image::make($museum_image)->resize(460, 345)->save($save_url_museum);
             $contact->museum_photo = $save_url_museum;
+        }
             $contact->save();
 
             if (Contact::find(1) == null) {

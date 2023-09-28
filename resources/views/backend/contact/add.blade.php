@@ -30,6 +30,15 @@
     <!--begin::Content-->
 
 
+    @if($errors->any())
+        @foreach ($errors->all() as $e)
+            <div class="alert alert-danger">
+                {{$e}}
+            </div>
+        @endforeach
+    @endif
+
+
     <form action="{{ route('admin.contact.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div id="kt_app_content" class="app-content flex-column-fluid">
@@ -767,6 +776,30 @@
                         </div>
                     </div>
                 </div>
+
+
+                <div class="row g-5 g-xl-8">
+                    <div class="col-xl-12 mb-5 mb-xl-8">
+                        <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
+                            <div class="card-body py-5">
+                                <div id="" class="row">
+                                    <label class="col-lg-2 col-form-label fw-bold fs-6">WHATSAPP</label>
+                                    <div class="col-lg-10">
+                                        <div class="row">
+                                            <div class="col-lg-12 fv-row">
+                                                <input type="number" name="whatsapp" placeholder="5456110790"
+                                                    class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                    value="{{$data_tr->whatsapp}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class="right" style="text-align: right">
                     <button type="submit" class="btn btn-primary">
                         {{ __('msg.kaydet') }}

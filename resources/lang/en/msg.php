@@ -48,6 +48,7 @@ return [
     "kısa" => "Short",
     "kurumsal" => "About",
     "anasayfa" => "Homepage",
+    "logo" => "Logo",
 ]
 
 

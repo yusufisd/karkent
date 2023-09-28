@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\EnCategory;
 use App\Models\EnHistory;
 use App\Models\EnPageDefinitous1;
@@ -24,6 +25,8 @@ class HomeController extends Controller
 {
     public function index()
     {
+
+        $no = Contact::latest()->first()->whatsapp;
 
         $local = \Session::get('applocale');
 
@@ -51,6 +54,6 @@ class HomeController extends Controller
         }
 
         $sponsors = Sponsor::orderBy('queue', 'asc')->get();
-        return view('frontend.index', compact('sliders', 'tarihce', 'sponsors', 'page_def1', 'page_def2', 'page_def3', 'page_def4', 'categories'));
+        return view('frontend.index', compact('sliders', 'tarihce', 'sponsors', 'page_def1', 'page_def2', 'page_def3', 'page_def4', 'categories','no'));
     }
 }

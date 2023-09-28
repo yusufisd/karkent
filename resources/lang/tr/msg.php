@@ -41,13 +41,14 @@ return [
     "merkez" => "Merkez",
     "bilgileri" => "Bilgileri",
     "adres" => "Adres",
-    "iletişim" => "İletişim",
+    "iletişim" => "İletisim",
     "telefon" => "Telefon",
     "kategori" => "Kategori",
     "ürün" => "Ürün",
     "kısa" => "Kısa",
     "kurumsal" => "Kurumsal",
     "anasayfa" => "Anasayfa",
+    "logo" => "Logo",
  
 ]
 

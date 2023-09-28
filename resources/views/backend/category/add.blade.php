@@ -81,18 +81,39 @@
                                 <div class="tab-content" id="TabContent_1">
 
 
-                                    <div class="row mb-6 tab-pane fade show active" id="tab_add_slider_tr" role="tabpanel">
+                                    <div class="row tab-pane fade show active" id="tab_add_slider_tr" role="tabpanel">
                                         <div class="card-body py-5">
 
-                                            <div class="row" style="margin: 2%">
-                                                <div class="col-md-2">
-                                                    <label > {{ __('msg.kategori') }} {{ __('msg.ad') }} </label>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <input type="text" class="form-control" name="name_tr"
-                                                        id="">
+                                            
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">{{ __('msg.kategori') }} {{ __('msg.ad') }}</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="text" name="name_tr"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">Sıralama</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="number" name="queue_tr"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$no_tr}}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
 
@@ -100,13 +121,33 @@
                                     <div class="tab-pane fade" id="tab_add_slider_en" role="tabpanel">
                                         <div class="card-body py-5">
 
-                                            <div class="row" style="margin: 2%">
-                                                <div class="col-md-2">
-                                                    <label> {{ __('msg.kategori') }} {{ __('msg.ad') }} </label>
+                                          
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">{{ __('msg.kategori') }} {{ __('msg.ad') }}</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="text" name="name_en"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="" />
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <div class="col-md-10">
-                                                    <input type="text" class="form-control" name="name_en"
-                                                        id="">
+                                            </div>
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">Sıralama</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="number" name="queue_en"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$no_en}}" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

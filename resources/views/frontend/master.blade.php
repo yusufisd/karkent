@@ -36,8 +36,10 @@
       <script src="{{ asset('/assets/frontend/js/html5/respond.min.js')}}"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- ========== Google Fonts ========== -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 
@@ -45,13 +47,6 @@
 </head>
 
 <body>
-
-
-    <!-- Preloader Start -->
-    <!-- Preloader Ends -->
-
-    <!-- Start Header Top
-    ============================================= -->
     <div class="top-bar-area bg-theme text-light">
         <div class="container">
             <div class="row">
@@ -84,13 +79,13 @@
                 <div class="topbar-social col-md-3">
                     <ul class="text-right">
                         <li>
-                            <a href="{{infos()->facebook ?? ''}}"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" href="{{infos()->facebook ?? ''}}"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li>
-                            <a href="{{infos()->youtube ?? ''}}"><i class="fab fa-youtube"></i></a>
+                            <a target="_blank" href="{{infos()->youtube ?? ''}}"><i class="fab fa-youtube"></i></a>
                         </li>
                         <li>
-                            <a href="{{infos()->instagram ?? ''}}"><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="{{infos()->instagram ?? ''}}"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li>
                             <a href="https://tr.linkedin.com/company/karkenttextile"><i class="fab fa-linkedin"></i></a>
@@ -134,7 +129,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand" href="#brand">
+                    <a class="navbar-brand" href="{{route('frontend.index')}}">
 
                         <img src="{{ asset('/assets/frontend/img/logo-light.png')}}" class="logo logo-display" alt="Logo">
 
@@ -181,7 +176,7 @@
 
 
                         <li>
-                            <a href="{{ route('frontend.contact') }}">İLETİŞİM</a>
+                            <a href="{{ route('frontend.contact') }}"> {{strtoupper(__('msg.iletişim'))}} </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->

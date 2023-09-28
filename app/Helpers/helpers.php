@@ -66,6 +66,6 @@ function categoryCount(){
 }
 
 function infos(){
-    $data = Contact::find(1);
+    $data = Contact::latest()->first();
     return $data;
 }

@@ -34,132 +34,247 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-
-
 // CHANGE LANG
 Route::get('/change-lang/{lang}', [LanguageController::class, 'change'])->name('chaange.lang');
 
-Route::get('optimize',function(){
-    Artisan::call('optimize');
-    dd('optimize başarılı');
+Route::middleware('lang')->group(function () {
+    Route::get('optimize', function () {
+        Artisan::call('optimize');
+        dd('optimize başarılı');
+    });
+
+    // TR ROUTES
+    // FRONTEND İŞLEMLERİ
+    Route::get('/', [HomeController::class, 'index'])
+        ->middleware('lang')
+        ->name('frontend.index');
+    Route::get('/hakkimizda', [FrontendAboutController::class, 'about'])->name('frontend.about');
+    Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
+    Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');
+
+    // BACKEND İŞLEMLERİ
+    Route::get('login', [AuthController::class, 'login']);
+    Route::controller(AuthController::class)
+        ->prefix('/admin')
+        ->name('admin.')
+        ->group(function () {
+            Route::get('/login', 'login')->name('login');
+            Route::post('/login', 'login_post')->name('login_post');
+        });
+    Route::prefix('admin')
+        ->name('admin.')
+        ->group(function () {
+            Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+            Route::get('/profil', [AuthController::class, 'profile'])->name('profile');
+            Route::get('/sifre-degistir', [AuthController::class, 'changePassword'])->name('changePassword');
+            Route::post('/sifre-degistir', [AuthController::class, 'changePasswordPost'])->name('changePasswordPost');
+            Route::post('/profil-duzenle', [AuthController::class, 'profileUpdate'])->name('profileUpdate');
+            Route::get('/', [BackendHomeController::class, 'index'])->name('index');
+            Route::get('/sifremi-unuttum', [AuthController::class, 'forgotPassword'])->name('forgotPassword');
+            Route::post('/sifremi-unuttum', [AuthController::class, 'forgotPasswordPost'])->name('forgotPasswordPost');
+            Route::get('/sifremi-yenile/{data?}', [AuthController::class, 'resetPassword'])->name('resetPassword');
+            Route::post('/sifremi-yenile', [AuthController::class, 'resetPasswordPost'])->name('resetPasswordPost');
+
+            // SLİDER İŞLEMLERİ
+            Route::controller(SliderController::class)
+                ->prefix('slider')
+                ->name('slider.')
+                ->group(function () {
+                    Route::middleware('permission2:slider_show')
+                        ->get('/liste', 'index')
+                        ->name('list');
+                    Route::middleware('permission2:slider_add')
+                        ->get('/ekle', 'create')
+                        ->name('add');
+                    Route::middleware('permission2:slider_add')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                    Route::middleware('permission2:slider_edit')
+                        ->get('/duzenle/{id?}', 'edit')
+                        ->name('edit');
+                    Route::middleware('permission2:slider_edit')
+                        ->post('/duzenle/{id?}', 'update')
+                        ->name('update');
+                    Route::middleware('permission2:slider_delete')
+                        ->get('/sil/{id?}', 'destroy')
+                        ->name('destroy');
+                    Route::middleware('permission2:slider_show')
+                        ->get('/statu-degistir/{id?}', 'status_change')
+                        ->name('status_change');
+                });
+
+            // TARİHÇE İŞLEMLERİ
+            Route::controller(HistoryController::class)
+                ->prefix('tarihce')
+                ->name('history.')
+                ->group(function () {
+                    Route::middleware('permission2:history_show')
+                        ->get('/liste', 'index')
+                        ->name('list');
+                    Route::middleware('permission2:history_add')
+                        ->get('/ekle', 'create')
+                        ->name('add');
+                    Route::middleware('permission2:history_add')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                    Route::middleware('permission2:history_edit')
+                        ->get('/duzenle/{id?}', 'edit')
+                        ->name('edit');
+                    Route::middleware('permission2:history_edit')
+                        ->post('/duzenle/{id?}', 'update')
+                        ->name('update');
+                    Route::middleware('permission2:history_delete')
+                        ->get('/sil/{id?}', 'destroy')
+                        ->name('destroy');
+                });
+
+            // SAYFA TANIMLARI İŞLEMLERİ
+            Route::controller(PageDefinitousController::class)
+                ->prefix('sayfa-tanımı')
+                ->name('page-definitous.')
+                ->group(function () {
+                    Route::get('/ekle', 'add')->name('add');
+                    Route::post('/ekle', 'store')->name('store');
+                });
+
+            // SPONSOR İŞLEMLERİ
+            Route::controller(SponsorController::class)
+                ->prefix('sponsor')
+                ->name('sponsor.')
+                ->group(function () {
+                    Route::middleware('permission2:sponsor_add')
+                        ->get('/ekle', 'add')
+                        ->name('add');
+                    Route::middleware('permission2:sponsor_show')
+                        ->get('/liste', 'list')
+                        ->name('list');
+                    Route::middleware('permission2:sponsor_add')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                    Route::middleware('permission2:sponsor_add')
+                        ->get('/sil/{id?}', 'destroy')
+                        ->name('destroy');
+                    Route::middleware('permission2:sponsor_add')
+                        ->get('/duzenle/{id?}', 'edit')
+                        ->name('edit');
+                    Route::middleware('permission2:sponsor_add')
+                        ->post('/duzenle/{id?}', 'update')
+                        ->name('update');
+                });
+
+            // KULLANICI İŞLEMLERİ
+            Route::controller(UserController::class)
+                ->name('user.')
+                ->prefix('kullanici')
+                ->group(function () {
+                    Route::middleware('auth:admin')
+                        ->get('/liste', 'list')
+                        ->name('list');
+                    Route::middleware('auth:admin')
+                        ->get('/ekle', 'add')
+                        ->name('add');
+                    Route::middleware('auth:admin')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                });
+
+            // ROL İŞLEMLERİ
+            Route::controller(RoleController::class)
+                ->name('role.')
+                ->prefix('rol')
+                ->group(function () {
+                    Route::get('/liste', 'list')->name('list');
+                    Route::get('/ekle', 'add')->name('add');
+                    Route::post('/ekle', 'store')->name('store');
+                });
+
+            // İLETİŞİM AYARLARI
+            Route::controller(ContactController::class)
+                ->prefix('iletisim')
+                ->name('contact.')
+                ->group(function () {
+                    Route::middleware('permission2:contact_edit')
+                        ->get('/ekle', 'add')
+                        ->name('add');
+                    Route::middleware('permission2:contact_edit')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                });
+
+            // KATEGORİ İŞLEMLERİ
+            Route::controller(CategoryController::class)
+                ->prefix('kategori')
+                ->name('category.')
+                ->group(function () {
+                    Route::middleware('permission2:category_add')
+                        ->get('/ekle', 'create')
+                        ->name('add');
+                    Route::middleware('permission2:category_show')
+                        ->get('/liste', 'index')
+                        ->name('list');
+                    Route::middleware('permission2:category_add')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                    Route::middleware('permission2:category_edit')
+                        ->get('/duzenle/{id?}', 'edit')
+                        ->name('edit');
+                    Route::middleware('permission2:category_edit')
+                        ->post('/duzenle/{id?}', 'update')
+                        ->name('update');
+                    Route::middleware('permission2:category_delete')
+                        ->get('/sil/{id?}', 'destroy')
+                        ->name('destroy');
+                });
+
+            // ÜRÜN İŞLEMLERİ
+            Route::controller(ProductController::class)
+                ->prefix('urun')
+                ->name('product.')
+                ->group(function () {
+                    Route::middleware('permission2:product_add')
+                        ->get('/ekle', 'create')
+                        ->name('add');
+                    Route::middleware('permission2:product_show')
+                        ->get('/liste', 'index')
+                        ->name('list');
+                    Route::middleware('permission2:product_add')
+                        ->post('/ekle', 'store')
+                        ->name('store');
+                    Route::middleware('permission2:product_edit')
+                        ->get('/duzenle/{id?}', 'edit')
+                        ->name('edit');
+                    Route::middleware('permission2:product_edit')
+                        ->post('/duzenle/{id?}', 'update')
+                        ->name('update');
+                    Route::middleware('permission2:product_delete')
+                        ->get('/sil/{id?}', 'destroy')
+                        ->name('destroy');
+                });
+
+            // kurumsal ayarlar
+            Route::controller(AboutController::class)
+                ->prefix('kurumsal')
+                ->name('about.')
+                ->group(function () {
+                    Route::middleware('permission2:about_add')
+                        ->get('/add', 'add')
+                        ->name('add');
+                    Route::middleware('permission2:about_add')
+                        ->post('/add', 'store')
+                        ->name('store');
+                });
+
+            // LOG İŞLEMİ
+            Route::controller(LogController::class)
+                ->prefix('log')
+                ->name('log.')
+                ->group(function () {
+                    Route::get('/list', 'list')->name('list');
+                });
+        });
 });
 
-// TR ROUTES
-// FRONTEND İŞLEMLERİ
-Route::get('/', [HomeController::class, 'index'])->middleware('lang')->name('frontend.index');
-Route::get('/hakkimizda', [FrontendAboutController::class, 'about'])->name('frontend.about');
-Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
-Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');
-
-
-// BACKEND İŞLEMLERİ
-Route::get('login',[AuthController::class,'login']);
-Route::controller(AuthController::class)->prefix('/admin')->name('admin.')->group(function () {
-    Route::get('/login', 'login')->name('login');
-    Route::post('/login', 'login_post')->name('login_post');
-});
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/profil', [AuthController::class, 'profile'])->name('profile');
-    Route::get('/sifre-degistir', [AuthController::class, 'changePassword'])->name('changePassword');
-    Route::post('/sifre-degistir', [AuthController::class, 'changePasswordPost'])->name('changePasswordPost');
-    Route::post('/profil-duzenle', [AuthController::class, 'profileUpdate'])->name('profileUpdate');
-    Route::get('/', [BackendHomeController::class, 'index'])->name('index');
-    Route::get('/sifremi-unuttum', [AuthController::class, 'forgotPassword'])->name('forgotPassword');
-    Route::post('/sifremi-unuttum', [AuthController::class, 'forgotPasswordPost'])->name('forgotPasswordPost');
-    Route::get('/sifremi-yenile/{data?}', [AuthController::class, 'resetPassword'])->name('resetPassword');
-    Route::post('/sifremi-yenile', [AuthController::class, 'resetPasswordPost'])->name('resetPasswordPost');
-    
-
-    // SLİDER İŞLEMLERİ
-    Route::controller(SliderController::class)->prefix('slider')->name('slider.')->group(function () {
-        Route::middleware('permission2:slider_show')->get('/liste', 'index')->name('list');
-        Route::middleware('permission2:slider_add')->get('/ekle', 'create')->name('add');
-        Route::middleware('permission2:slider_add')->post('/ekle', 'store')->name('store');
-        Route::middleware('permission2:slider_edit')->get('/duzenle/{id?}', 'edit')->name('edit');
-        Route::middleware('permission2:slider_edit')->post('/duzenle/{id?}', 'update')->name('update');
-        Route::middleware('permission2:slider_delete')->get('/sil/{id?}', 'destroy')->name('destroy');
-        Route::middleware('permission2:slider_show')->get('/statu-degistir/{id?}', 'status_change')->name('status_change');
-    });
-
-    // TARİHÇE İŞLEMLERİ
-    Route::controller(HistoryController::class)->prefix('tarihce')->name('history.')->group(function () {
-        Route::middleware('permission2:history_show')->get('/liste', 'index')->name('list');
-        Route::middleware('permission2:history_add')->get('/ekle', 'create')->name('add');
-        Route::middleware('permission2:history_add')->post('/ekle', 'store')->name('store');
-        Route::middleware('permission2:history_edit')->get('/duzenle/{id?}', 'edit')->name('edit');
-        Route::middleware('permission2:history_edit')->post('/duzenle/{id?}', 'update')->name('update');
-        Route::middleware('permission2:history_delete')->get('/sil/{id?}', 'destroy')->name('destroy');
-    });
-
-    // SAYFA TANIMLARI İŞLEMLERİ
-    Route::controller(PageDefinitousController::class)->prefix('sayfa-tanımı')->name('page-definitous.')->group(function () {
-        Route::get('/ekle', 'add')->name('add');
-        Route::post('/ekle', 'store')->name('store');
-    });
-
-    // SPONSOR İŞLEMLERİ
-    Route::controller(SponsorController::class)->prefix('sponsor')->name('sponsor.')->group(function () {
-        Route::middleware('permission2:sponsor_add')->get('/ekle', 'add')->name('add');
-        Route::middleware('permission2:sponsor_show')->get('/liste', 'list')->name('list');
-        Route::middleware('permission2:sponsor_add')->post('/ekle', 'store')->name('store');
-        Route::middleware('permission2:sponsor_add')->get('/sil/{id?}', 'destroy')->name('destroy');
-    });
-
-    // KULLANICI İŞLEMLERİ
-    Route::controller(UserController::class)->name('user.')->prefix('kullanici')->group(function () {
-        Route::middleware('auth:admin')->get('/liste', 'list')->name('list');
-        Route::middleware('auth:admin')->get('/ekle', 'add')->name('add');
-        Route::middleware('auth:admin')->post('/ekle', 'store')->name('store');
-    });
-
-
-    // ROL İŞLEMLERİ
-    Route::controller(RoleController::class)->name('role.')->prefix('rol')->group(function () {
-        Route::get('/liste', 'list')->name('list');
-        Route::get('/ekle', 'add')->name('add');
-        Route::post('/ekle', 'store')->name('store');
-    });
-
-    // İLETİŞİM AYARLARI
-    Route::controller(ContactController::class)->prefix('iletisim')->name('contact.')->group(function () {
-        Route::middleware('permission2:contact_edit')->get('/ekle', 'add')->name('add');
-        Route::middleware('permission2:contact_edit')->post('/ekle', 'store')->name('store');
-    });
-
-    // KATEGORİ İŞLEMLERİ
-    Route::controller(CategoryController::class)->prefix('kategori')->name('category.')->group(function () {
-        Route::middleware('permission2:category_add')->get('/ekle', 'create')->name('add');
-        Route::middleware('permission2:category_show')->get('/liste', 'index')->name('list');
-        Route::middleware('permission2:category_add')->post('/ekle', 'store')->name('store');
-        Route::middleware('permission2:category_edit')->get('/duzenle/{id?}', 'edit')->name('edit');
-        Route::middleware('permission2:category_edit')->post('/duzenle/{id?}', 'update')->name('update');
-        Route::middleware('permission2:category_delete')->get('/sil/{id?}', 'destroy')->name('destroy');
-    });
-
-    // ÜRÜN İŞLEMLERİ
-    Route::controller(ProductController::class)->prefix('urun')->name('product.')->group(function () {
-        Route::middleware('permission2:product_add')->get('/ekle', 'create')->name('add');
-        Route::middleware('permission2:product_show')->get('/liste', 'index')->name('list');
-        Route::middleware('permission2:product_add')->post('/ekle', 'store')->name('store');
-        Route::middleware('permission2:product_edit')->get('/duzenle/{id?}', 'edit')->name('edit');
-        Route::middleware('permission2:product_edit')->post('/duzenle/{id?}', 'update')->name('update');
-        Route::middleware('permission2:product_delete')->get('/sil/{id?}', 'destroy')->name('destroy');
-    });
-
-    // kurumsal ayarlar
-    Route::controller(AboutController::class)->prefix('kurumsal')->name('about.')->group(function(){
-        Route::middleware('permission2:about_add')->get('/add','add')->name('add');
-        Route::middleware('permission2:about_add')->post('/add','store')->name('store');
-    });
-
-    // LOG İŞLEMİ
-    Route::controller(LogController::class)->prefix('log')->name('log.')->group(function(){
-        Route::get('/list','list')->name('list');
-    });
-});
-
-        // TR ROUTES END
+// TR ROUTES END
 
 /*             // EN ROUTES
         // BACKEND İŞLEMLERİ

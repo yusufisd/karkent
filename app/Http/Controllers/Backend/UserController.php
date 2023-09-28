@@ -13,25 +13,39 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function list(){
+    public function list()
+    {
         $data = UserModel::latest()->get();
-        return view('backend.user_models.list',compact('data'));
+        return view('backend.user_models.list', compact('data'));
     }
 
-    public function add(){
+    public function add()
+    {
         $roles = Roller::all();
-        return view('backend.user_models.add',compact('roles'));
+        return view('backend.user_models.add', compact('roles'));
     }
 
-    public function store(Request $request){
-        $request->validate([
-            "name" => "required",
-            "surname" => "required",
-            "email" => "required|email",
-            "password" => "required",
-            "password_confirm" => "required|same:password",
-            "phone" => "required",
-        ]);
+    public function store(Request $request)
+    {
+        $request->validate(
+            [
+                'name' => 'required',
+                'surname' => 'required',
+                'email' => 'required|email',
+                'password' => 'required',
+                'password_confirm' => 'required|same:password',
+                'phone' => 'required',
+            ],
+            [
+                'name.required' => 'İsim boş bırakılamaz.',
+                'surname.required' => 'İsim boş bırakılamaz.',
+                'email.required' => 'İsim boş bırakılamaz.',
+                'password.required' => 'İsim boş bırakılamaz.',
+                'password_confirm.required' => 'İsim boş bırakılamaz.',
+                'phone.required' => 'Telefon boş bırakılamaz.',
+            ],
+        );
+
         $user = new UserModel();
         $user->name = $request->name;
         $user->surname = $request->surname;
@@ -45,12 +59,13 @@ class UserController extends Controller
         return redirect()->route('admin.user.list');
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $request->validate([
-            "name" => "required",
-            "surname" => "required",
-            "email" => "required|email",
-            "phone" => "required",
+            'name' => 'required',
+            'surname' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
         ]);
         $user = UserModel::findOrFail($id);
         $user->name = $request->name;

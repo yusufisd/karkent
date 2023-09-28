@@ -14,13 +14,23 @@ class SponsorController extends Controller
 {
     public function add()
     {
-        return view('backend.sponsor.add');
+        if(Sponsor::latest()->first() != null){
+            $no = Sponsor::latest()->first()->queue + 1;
+        }else{
+            $no = 1;
+        }
+        return view('backend.sponsor.add',compact('no'));
     }
 
     public function list()
     {
         $data = Sponsor::orderBy('queue','asc')->get();
         return view('backend.sponsor.list', compact('data'));
+    }
+
+    public function edit($id){
+        $data = Sponsor::find($id);
+        return view('backend.sponsor.edit',compact('data'));
     }
 
     public function store(Request $request)
@@ -45,6 +55,51 @@ class SponsorController extends Controller
             DB::rollBack();
             logKayit(['Sponsor', 'Sponsor Eklemede Hata', 0]);
             Alert::error('Sponsor Eklemede Hata');
+            return redirect()->back();
+        }
+        return redirect()->route('admin.sponsor.list');
+    }
+
+    public function update(Request $request,$id)
+    {
+        try {
+            DB::beginTransaction();
+            $sponsor = Sponsor::findOrFail($id);
+
+            if($request->file('image') != null){
+            $image = $request->file('image');
+            $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $save = 'assets/uploads/sponsor/' . $image_name;
+            Image::make($image)->resize(175, 90)->save($save);
+            $sponsor->logo = $save;
+        }
+            if($request->queue < $sponsor->queue){
+                for($i = $request->queue; $i < $sponsor->queue; $i ++){
+                    $data = Sponsor::where('queue',$i)->first();
+                    $data->update([
+                        'queue' => $data->queue+1
+                    ]);
+                }
+                $sponsor->queue = $request->queue;
+            }
+            if($request->queue > $sponsor->queue){
+                for($i = $request->queue; $i > $sponsor->queue; $i--){
+                    $data = Sponsor::where('queue',$i)->first();
+                    $data->update([
+                        'queue' => $data->queue-1
+                    ]);
+                }
+                $sponsor->queue = $request->queue;
+            }
+            $sponsor->save();
+
+            logKayit(['Sponsor', 'Sponsor Düzenlendi']);
+            Alert::success('Sponsor Başarıyla Düzenlendi');
+            DB::commit();
+        } catch (Throwable $e) {
+            DB::rollBack();
+            logKayit(['Sponsor', 'Sponsor Düzenlemede Hata', 0]);
+            Alert::error('Sponsor Düzenlemede Hata');
             return redirect()->back();
         }
         return redirect()->route('admin.sponsor.list');

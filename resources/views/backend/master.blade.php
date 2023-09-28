@@ -99,7 +99,7 @@
                     <!--end::Sidebar mobile toggle-->
                     <!--begin::Mobile logo-->
                     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-                        <a href="index.html" class="d-lg-none">
+                        <a href="{{route('admin.index')}}" class="d-lg-none">
                             <img alt="Logo" src="{{ asset('/assets/backend/media/logos/erkek.png') }}"
                                 class="h-30px" />
                         </a>
@@ -378,7 +378,7 @@
                     <!--begin::Logo-->
                     <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
                         <!--begin::Logo image-->
-                        <a href="index.html" class="mx-auto">
+                        <a href="{{route('admin.index')}}" class="mx-auto">
                             <img alt="Logo" src="{{ asset('/assets/backend/media/logos/disi.png') }}"
                                 class="h-50px app-sidebar-logo-default" />
                             <img alt="Logo" src="{{ asset('/assets/backend/media/logos/favikon.svg') }}"
@@ -509,7 +509,7 @@
                                         <span class="menu-icon">
                                             <i class="fa fa-newspaper" aria-hidden="true"></i>
                                         </span>
-                                        <span class="menu-title"> {{ __('msg.sponsor') }} {{ __('msg.yönetim') }}
+                                        <span class="menu-title"> {{ __('msg.logo') }} {{ __('msg.yönetim') }}
                                         </span>
                                     </a>
                                     <!--end:Menu link-->
@@ -656,6 +656,7 @@
 
     @include('sweetalert::alert')
 
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 
     @yield('script')
 

@@ -58,6 +58,7 @@
                                                 </div>
                                             </th>
                                             <th > {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th > {{__('msg.sıralama')}} <i class="fa fa-sort ms-3"></i></th>
                                             <th > {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
@@ -74,8 +75,13 @@
                                             </td>
 
                                             <td > {{$item->title}} </td>
+                                            <td > {{$item->queue}} </td>
                                             <td >
-                                                
+                                                <a href="{{ route('admin.category.edit', $item->id) }}"
+                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
+                                                    title="Düzenle">
+                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
+                                                </a>
                                                 <a onclick="destroy({{$item->id}})"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
                                                     data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">

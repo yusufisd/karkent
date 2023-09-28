@@ -70,10 +70,10 @@
 
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <h4> {{ __('msg.genel') }} URL </h4>
+                                                        <h4> {{ __('msg.genel') }} {{__('msg.açıklama')}} </h4>
                                                     </div>
                                                     <div class="col-md-10">
-                                                        <textarea name="def_4_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
+                                                        <textarea name="def_4_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 ckeditor" id="editor"
                                                             cols="30" rows="5">{{ $data_tr->description ?? '' }}</textarea>
                                                     </div>
                                                 </div><br><br>
@@ -291,11 +291,11 @@
 
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <h4> {{ __('msg.genel') }} URL </h4>
+                                                        <h4> {{ __('msg.genel') }} {{__('msg.açıklama')}} </h4>
                                                     </div>
                                                     <div class="col-md-10">
-                                                        <textarea name="def_4_description_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                            id="" cols="30" rows="5">{{ $data_en->description ?? '' }}</textarea>
+                                                        <textarea name="def_4_description_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0 ckeditor"
+                                                            id="editor2" cols="30" rows="5">{{ $data_en->description ?? '' }}</textarea>
                                                     </div>
                                                 </div><br><br>
 
@@ -506,4 +506,25 @@
                 </div><br>
             </div>
         </div>
+    @endsection
+    @section('script')
+        <script>
+            ClassicEditor
+            .create(document.querySelector('#editor'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+            ClassicEditor
+            .create(document.querySelector('#editor2'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        </script>
     @endsection

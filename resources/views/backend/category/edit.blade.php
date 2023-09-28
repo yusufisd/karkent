@@ -29,7 +29,7 @@
     <!--end::Toolbar-->
     <!--begin::Content-->
 
-    <form action="{{ route('admin.update.store') }}" method="POST" >
+    <form action="{{ route('admin.category.update',$data_tr->id) }}" method="POST" >
         @csrf
 
 
@@ -55,16 +55,106 @@
                             <!--begin::Body-->
                             <div class="card-body py-5">
 
+                                <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x mb-5 fs-6" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#tab_add_slider_tr"
+                                            aria-selected="true" role="tab">
+                                            <span>
+                                                <img src="{{asset('/assets/tr.png')}}"
+                                                    width="28" height="20" alt="TR" title="TR">
+                                            </span>
 
-                                <div class="row" style="margin: 3%">
-                                    <div class="col-md-1">
-                                        <label> {{__('msg.kategori')}} {{__('msg.ad')}} </label>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#tab_add_slider_en"
+                                            aria-selected="false" tabindex="-1" role="tab">
+                                            <span>
+                                                <img src="{{asset('/assets/en.png')}}"
+                                                    width="28" height="20" alt="EN" title="EN">
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content" id="TabContent_1">
+
+
+                                    <div class="row tab-pane fade show active" id="tab_add_slider_tr" role="tabpanel">
+                                        <div class="card-body py-5">
+
+                                            
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">{{ __('msg.kategori') }} {{ __('msg.ad') }}</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="text" name="name_tr"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$data_tr->title}}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">Sıralama</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="number" name="queue_tr"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$data_tr->queue}}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
-                                    <div class="col-md-11">
-                                        <input type="text" value="{{$data->title}}" class="form-control" name="name" id="">
+
+
+                                    <div class="tab-pane fade" id="tab_add_slider_en" role="tabpanel">
+                                        <div class="card-body py-5">
+
+                                          
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">{{ __('msg.kategori') }} {{ __('msg.ad') }}</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="text" name="name_en"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$data_en->title}}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-6">
+                                                <label
+                                                    class="col-lg-2 col-form-label ps-5 fw-bold fs-6">Sıralama</label>
+                                                <div class="col-lg-10">
+                                                    <div class="row">
+                                                        <div class="col-lg-12 fv-row">
+                                                            <input type="number" name="queue_en"
+                                                                class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                                                                value="{{$data_en->queue}}" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
+
+                                    <!--begin::Body-->
                                 </div>
-
                             </div>
                             <!--begin::Body-->
                         </div>

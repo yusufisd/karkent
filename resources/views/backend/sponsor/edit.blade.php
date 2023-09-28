@@ -7,7 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Sponsor {{__('msg.ekle')}}
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.sponsor')}} {{__('msg.ekle')}}
                 </h1>
                 <!--end::Title-->
             </div>
@@ -29,7 +29,7 @@
     <!--end::Toolbar-->
     <!--begin::Content-->
 
-    <form action="{{ route('admin.sponsor.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.sponsor.update',$data->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
 
 
@@ -44,20 +44,18 @@
                         </div>
                     @endforeach
                 @endif
-                <!--begin::Row-->
                 <div class="row g-5 g-xl-8">
-                    <!--begin::Col-->
                     <div class="col-xl-12 mb-5 mb-xl-8">
                         <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
-                            <!--begin::Header-->
-                            <!--<div class="ps-12 pt-12"></div>-->
-                            <!--end::Header-->
-                            <!--begin::Body-->
-                            <div class="card-body p-20">
+                            <div class="card-body py-5">
+
+                                <div style="text-align: center; padding:3%">
+                                    <img src="/{{$data->logo}}" style="width: 300px; border-radius:15px;" style="margin: auto" alt="">
+                                </div>
 
                                 <div class="row mb-6">
                                     <label
-                                        class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.logo') }}</label>
+                                        class="col-lg-2 col-form-label ps-5 fw-bold fs-6">{{ __('msg.kategori') }} {{ __('msg.ad') }}</label>
                                     <div class="col-lg-10">
                                         <div class="row">
                                             <div class="col-lg-12 fv-row">
@@ -71,20 +69,17 @@
 
                                 <div class="row mb-6">
                                     <label
-                                        class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{__('msg.sıralama')}} </label>
+                                        class="col-lg-2 col-form-label ps-5 fw-bold fs-6">Sıralama</label>
                                     <div class="col-lg-10">
                                         <div class="row">
                                             <div class="col-lg-12 fv-row">
-                                                <input type="number" name="queue" value="{{$no}}"
+                                                <input type="number" name="queue"
                                                     class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                    />
+                                                    value="{{$data->queue}}" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                
-
 
                                
 

@@ -52,8 +52,6 @@ class SliderController extends Controller
             "image" => "required",
         ]);
 
-        try {
-            DB::beginTransaction();
 
             $slider = new Slider();
             $slider->title = $request->add_slider_title_tr;
@@ -90,12 +88,7 @@ class SliderController extends Controller
             Alert::success('Slider Başarıyla Eklendi');
 
             DB::commit();
-        } catch (Throwable $e) {
-            logKayit(['Slider', 'Slider eklemede hata']);
-            DB::rollBack();
-            Alert::error('Slider Eklemede Hata');
-            return redirect()->back();
-        }
+
         return redirect()->route('admin.slider.list');
     }
 

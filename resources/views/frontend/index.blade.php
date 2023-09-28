@@ -1,58 +1,59 @@
 @extends('frontend.master')
 @section('content')
-
-    <!-- Start Banner 
-    ============================================= -->
+    <!-- Start Banner
+        ============================================= -->
     <div class="banner-area">
         <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
             <!-- Wrapper for slides -->
-           <div class="banner-area">
-        <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner text-light carousel-zoom">
-                
+            <div class="banner-area">
+                <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner text-light carousel-zoom">
 
-                @foreach ($sliders as $item)
-                    
-                <div class="item {{$item->id == 1 ? 'active' : ''}}">
-                    <div class="slider-thumb bg-fixed" style="background-image: url({{$item->image == null ? $item->Image->image : $item->image}});"></div>
-                    <div class="box-table shadow theme">
-                        <div class="box-cell">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-9">
-                                        <div class="content">
-                                            <h1 data-animation="animated slideInLeft"> {{$item->title}} </h1>
-                                            <p style="text-align: left" data-animation="animated slideInUp">
-                                                {{$item->description}}
-                                            </p>
-                                            <a data-animation="animated slideInUp" class="btn btn-theme effect btn-sm" href="{{$item->button_url}}"> {{$item->button_title}} </a>
+
+                        @foreach ($sliders as $item)
+                            <div class="item {{ $item->id == 1 ? 'active' : '' }}">
+                                <div class="slider-thumb bg-fixed"
+                                    style="background-image: url({{ $item->image == null ? $item->Image->image : $item->image }});">
+                                </div>
+                                <div class="box-table theme shadow">
+                                    <div class="box-cell">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-9">
+                                                    <div class="content">
+                                                        <h1 data-animation="animated slideInLeft"> {{ $item->title }} </h1>
+                                                        <p style="text-align: left" data-animation="animated slideInUp">
+                                                            {{ $item->description }}
+                                                        </p>
+                                                        <a data-animation="animated slideInUp"
+                                                            class="btn btn-theme effect btn-sm"
+                                                            href="{{ $item->button_url }}"> {{ $item->button_title }} </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
+
+
                     </div>
+                    <!-- End Wrapper for slides -->
+
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#bootcarousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#bootcarousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-
-                @endforeach
-
-
             </div>
-            <!-- End Wrapper for slides -->
-
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#bootcarousel" data-slide="prev">
-                <i class="fa fa-angle-left"></i>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#bootcarousel" data-slide="next">
-                <i class="fa fa-angle-right"></i>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
             <!-- End Wrapper for slides -->
 
             <!-- Left and right controls -->
@@ -68,8 +69,8 @@
     </div>
     <!-- End Banner -->
 
-     <!-- Start Features 
-    ============================================= -->
+    <!-- Start Features
+        ============================================= -->
     <div class="features-area">
         <div class="container">
             <div class="row">
@@ -81,9 +82,9 @@
                                     <i class="flaticon-presentation"></i>
                                 </div>
                                 <div class="info">
-                                    <h4> {{$page_def1->title1}} </h4>
+                                    <h4> {{ $page_def1->title1 }} </h4>
                                     <p>
-                                        {{$page_def1->description1}}
+                                        {{ $page_def1->description1 }}
                                     </p>
                                     <!-- <a href="#">Devamı<i class="fas fa-long-arrow-alt-right"></i></a> -->
                                 </div>
@@ -95,9 +96,9 @@
                                     <i class="flaticon-collaboration"></i>
                                 </div>
                                 <div class="info">
-                                    <h4> {{$page_def1->title2}} </h4>
+                                    <h4> {{ $page_def1->title2 }} </h4>
                                     <p>
-                                        {{$page_def1->description2}}
+                                        {{ $page_def1->description2 }}
                                     </p>
                                 </div>
                             </div>
@@ -108,9 +109,9 @@
                                     <i class="flaticon-id"></i>
                                 </div>
                                 <div class="info">
-                                    <h4> {{$page_def1->title3}} </h4>
+                                    <h4> {{ $page_def1->title3 }} </h4>
                                     <p>
-                                        {{$page_def1->description3}}
+                                        {{ $page_def1->description3 }}
                                     </p>
                                 </div>
                             </div>
@@ -121,8 +122,8 @@
         </div>
     </div>
     <!-- End Features -->
-<!-- Start Welcome 
-    ============================================= -->
+    <!-- Start Welcome
+        ============================================= -->
     <div class="about-area video-info default-padding">
         <div class="container">
             <div class="row">
@@ -135,14 +136,15 @@
                     </div>
                 </div>
                 <div class="col-md-6 default info">
-                    <h2> {{$page_def2->title}} </h2>
-                    <p style="text-align: left;"> 
-                        {{$page_def2->description}}
+                    <h2> {{ $page_def2->title }} </h2>
+                    <p style="text-align: left;">
+                        {{ $page_def2->description }}
                     </p>
                     <div class="bottom-info" style="    margin-left: 199px;">
                         <ul>
                             <li>
-                                <a class="btn btn-theme effect btn-sm " href="{{$page_def2->button_url}}"> {{$page_def2->button_title}} </a>
+                                <a class="btn btn-theme effect btn-sm" href="{{ $page_def2->button_url }}">
+                                    {{ $page_def2->button_title }} </a>
                             </li>
                             <li><i class=""></i> </li>
                         </ul>
@@ -152,38 +154,40 @@
         </div>
     </div>
     <!-- End Welcome -->
-	 <!-- Start Fun Factor 
-    ============================================= -->
-    <div class="fun-factor-area default-padding text-center bg-fixed shadow theme-hard parallax parralax-shadow" data-parallax="scroll" style="background-image: url(assets/frontend/img/client.png);">
+    <!-- Start Fun Factor
+        ============================================= -->
+    <div class="fun-factor-area default-padding theme-hard parallax parralax-shadow bg-fixed text-center shadow"
+        data-parallax="scroll" style="background-image: url(assets/frontend/img/client.png);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            {!!$page_def3->icon1!!}
-                            <div class="timer" data-to="{{$page_def3->title1_1}}" data-speed="5000">{{$page_def3->title1_1}}</div>
-                            <span class="medium"> {{$page_def3->title1_2}} </span>
+                            {!! $page_def3->icon1 !!}
+                            <div class="timer" data-to="{{ $page_def3->title1_1 }}" data-speed="5000">
+                                {{ $page_def3->title1_1 }}</div>
+                            <span class="medium"> {{ $page_def3->title1_2 }} </span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            {!!$page_def3->icon2!!}
-                            <div class="timer" data-to="{{$page_def3->title2_1}}" data-speed="5000"></div>
-                            <span class="medium">{{$page_def3->title2_2}}</span>
+                            {!! $page_def3->icon2 !!}
+                            <div class="timer" data-to="{{ $page_def3->title2_1 }}" data-speed="5000"></div>
+                            <span class="medium">{{ $page_def3->title2_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            {!!$page_def3->icon3!!}
-                            <div class="timer" data-to="{{$page_def3->title3_1}}" data-speed="5000"></div>
-                            <span class="medium">{{$page_def3->title3_2}}</span>
+                            {!! $page_def3->icon3 !!}
+                            <div class="timer" data-to="{{ $page_def3->title3_1 }}" data-speed="5000"></div>
+                            <span class="medium">{{ $page_def3->title3_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
-                            {!!$page_def3->icon4!!}
-                            <div class="timer" data-to="{{$page_def3->title4_1}}" data-speed="5000"></div>
-                            <span class="medium">{{$page_def3->title4_2}}</span>
+                            {!! $page_def3->icon4 !!}
+                            <div class="timer" data-to="{{ $page_def3->title4_1 }}" data-speed="5000"></div>
+                            <span class="medium">{{ $page_def3->title4_2 }}</span>
                         </div>
                     </div>
                 </div>
@@ -191,17 +195,17 @@
         </div>
     </div>
     <!-- End Fun Factor -->
-	
+
     <!-- Start How it Work
-    ============================================= -->
+        ============================================= -->
     <div class="works-rules-area default-padding">
         <div class="container">
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2> {{$page_def4->title}} </h2>
+                        <h2> {{ $page_def4->title }} </h2>
                         <p>
-                            {{$page_def4->description}}
+                            {{ $page_def4->description }}
                         </p>
                     </div>
                 </div>
@@ -211,15 +215,15 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon">
-                                {!!$page_def4->icon1!!}
+                                {!! $page_def4->icon1 !!}
                             </div>
                             <div class="vertical-line">
                                 <span>1</span>
                             </div>
                             <div class="info">
-                                <h4> {{$page_def4->title1}} </h4>
+                                <h4> {{ $page_def4->title1 }} </h4>
                                 <p>
-                                    {{$page_def4->description1}}
+                                    {{ $page_def4->description1 }}
                                 </p>
                             </div>
                         </div>
@@ -227,48 +231,48 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="info">
-                                <h4>{{$page_def4->title2}}</h4>
+                                <h4>{{ $page_def4->title2 }}</h4>
                                 <p>
-                                    {{$page_def4->description1}}
+                                    {{ $page_def4->description1 }}
                                 </p>
                             </div>
                             <div class="vertical-line bottom">
                                 <span>2</span>
                             </div>
                             <div class="icon icon-down"><br><br><br><br>
-                                {!!$page_def4->icon2!!}
+                                {!! $page_def4->icon2 !!}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="icon">
-                                {!!$page_def4->icon3!!}
+                                {!! $page_def4->icon3 !!}
                             </div>
                             <div class="vertical-line">
                                 <span>3</span>
                             </div>
                             <div class="info">
-                                <h4>{{$page_def4->title3}}</h4>
+                                <h4>{{ $page_def4->title3 }}</h4>
                                 <p>
-                                    {{$page_def4->description1}}
+                                    {{ $page_def4->description1 }}
                                 </p>
                             </div>
                         </div>
                     </div>
-               <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-sm-6">
                         <div class="item">
                             <div class="info">
-                                <h4>{{$page_def4->title4}}</h4>
+                                <h4>{{ $page_def4->title4 }}</h4>
                                 <p>
-                                    {{$page_def4->description1}}
+                                    {{ $page_def4->description1 }}
                                 </p>
                             </div>
                             <div class="vertical-line bottom">
                                 <span>4</span>
                             </div>
                             <div class="icon icon-down"><br><br><br><br>
-                                {!!$page_def4->icon4!!}
+                                {!! $page_def4->icon4 !!}
                             </div>
                         </div>
                     </div>
@@ -277,8 +281,8 @@
         </div>
     </div>
     <!-- End How it Work -->
-	<!-- Clients
-    ============================================= -->
+    <!-- Clients
+        ============================================= -->
     <div class="clients-area bg-theme default-padding">
         <div class="container">
             <div class="row">
@@ -286,11 +290,10 @@
                     <div class="clients-items owl-carousel owl-theme text-center">
 
                         @foreach ($sponsors as $item)
-                            
-                        <div class="single-item">
-                            <a href="#"><img style="width: 100%" src="/{{$item->logo}}" alt="Clients"></a>
-                        </div>
-
+                            <div class="single-item">
+                                <a href="#"><img style="width: 100%" src="/{{ $item->logo }}"
+                                        alt="Clients"></a>
+                            </div>
                         @endforeach
 
                         {{-- <div class="single-item">
@@ -318,14 +321,14 @@
         </div>
     </div>
     <!-- End Clients -->
-	 <!-- Start Our Story
-    ============================================= -->
+    <!-- Start Our Story
+        ============================================= -->
     <div class="our-story-area default-padding bg-gray">
         <div class="container-fluid">
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2> {{__('msg.tarihçe')}} </h2>
+                        <h2> {{ __('msg.tarihçe') }} </h2>
                     </div>
                 </div>
             </div>
@@ -335,22 +338,18 @@
                         <div class="timeline-box">
                             <div class="timeline-items">
                                 @foreach ($tarihce as $item)
-                                    
-
-                                <div class="timeline-item">
-                                    <div class="timeline-content">
-                                        <h4> {{$item->year}} </h4>
-                                        <h5> {{$item->title}} </h5>
-                                        <p>
-                                            {{$item->description}}
-                                        </p>
+                                    <div class="timeline-item">
+                                        <div class="timeline-content">
+                                            <h4> {{ $item->year }} </h4>
+                                            <h5> {{ $item->title }} </h5>
+                                            <p>
+                                                {{ $item->description }}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                                
-
                                 @endforeach
 
-                                
+
                             </div>
                         </div>
                     </div>
@@ -359,21 +358,26 @@
         </div>
     </div>
     <!-- End Our Story -->
-   
 
-   
 
-    
+
+
+
 
     <!-- Start Business Growth
-    ============================================= -->
+        ============================================= -->
     <div class="business-groth-area default-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 default info">
                     <h2>Annual Report <br>from starting to now</h2>
                     <p>
-                        Both rest of know draw fond post as. It agreement defective to excellent. Feebly do engage of narrow. Extensive repulsive belonging depending if promotion be zealously as. Preference inquietude ask now are dispatched led appearance. Small meant in so doubt hopes. Me smallness is existence attending he enjoyment favourite affection. Delivered is to ye belonging enjoyment preferred. <br> Drawings me opinions returned absolute in. Otherwise therefore sex did are unfeeling something. Certain be ye amiable by exposed so. To celebrated estimating excellence do.
+                        Both rest of know draw fond post as. It agreement defective to excellent. Feebly do engage of
+                        narrow. Extensive repulsive belonging depending if promotion be zealously as. Preference inquietude
+                        ask now are dispatched led appearance. Small meant in so doubt hopes. Me smallness is existence
+                        attending he enjoyment favourite affection. Delivered is to ye belonging enjoyment preferred. <br>
+                        Drawings me opinions returned absolute in. Otherwise therefore sex did are unfeeling something.
+                        Certain be ye amiable by exposed so. To celebrated estimating excellence do.
                     </p>
                     <a class="btn btn-theme effect btn-sm" href="#">View details</a>
                 </div>
@@ -386,14 +390,15 @@
         </div>
     </div>
     <!-- End Business Growth -->
-	
-	 <!-- Start WhatsApp ============================================= -->
+
+    <!-- Start WhatsApp ============================================= -->
 
 
-			<div class="tooltip1">
-					<span class="tooltiptext1">Merhaba Size Nasıl Yardımcı Olabilirim ?<a  href="https://wa.me/+905541295778?text=Merhaba,%20sipariş%20vermek%20istiyorum." class="float1" target="_blank" ></span>
-							<i class="fa fa-whatsapp my-float1"></i>
-					</a>
-				</div>
-    
+    <div class="tooltip1">
+        <span class="tooltiptext1">Merhaba Size Nasıl Yardımcı Olabilirim ?<a
+                href="https://wa.me/+90{{ $no }}?text=Merhaba,%20sipariş%20vermek%20istiyorum." class="float1"
+                target="_blank"></span>
+        <i class="fa-brands fa-whatsapp" style="margin-top:7px; color:white"></i>
+        </a>
+    </div>
 @endsection
