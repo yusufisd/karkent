@@ -49,6 +49,11 @@ return [
     "kurumsal" => "About",
     "anasayfa" => "Homepage",
     "logo" => "Logo",
+    "KVKK Aydınlatma Metnini okudum kabul ediyorum." => "I have read and accept the KVKK Clarification Text.",
+    "bize ulaşın" => "Contact us",
+    "isim" => "Name",
+    "Mesajınızı buraya yazabilirsiniz." => "You can write your message here.",
+
 ]
 
 

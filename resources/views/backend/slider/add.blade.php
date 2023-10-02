@@ -248,7 +248,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="number" name="add_slider_no_tr"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$no}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>
@@ -404,7 +404,7 @@
                                                                 <div class="col-lg-12 fv-row">
                                                                     <input type="number" name="add_slider_no_en"
                                                                         class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                                                                        value="" />
+                                                                        value="{{$no}}" />
                                                                 </div>
                                                                 <!--end::Col-->
                                                             </div>

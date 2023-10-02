@@ -160,6 +160,9 @@ Route::middleware('lang')->group(function () {
                     Route::middleware('permission2:sponsor_add')
                         ->post('/duzenle/{id?}', 'update')
                         ->name('update');
+                    Route::middleware('permission2:sponsor_add')
+                        ->get('/statu-degistir/{id?}', 'status_change')
+                        ->name('status_change');
                 });
 
             // KULLANICI İŞLEMLERİ
@@ -224,6 +227,9 @@ Route::middleware('lang')->group(function () {
                     Route::middleware('permission2:category_delete')
                         ->get('/sil/{id?}', 'destroy')
                         ->name('destroy');
+                    Route::middleware('permission2:sponsor_add')
+                        ->get('/statu-degistir/{id?}', 'status_change')
+                        ->name('status_change');
                 });
 
             // ÜRÜN İŞLEMLERİ

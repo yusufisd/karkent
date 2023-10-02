@@ -1,11 +1,11 @@
 @extends('backend.master')
 @section('content')
     <!--begin::Toolbar-->
-    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-10">
+    <div id="kt_app_toolbar" class="app-toolbar py-lg-10 py-3">
         <!--begin::Toolbar container-->
         <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
             <!--begin::Page title-->
-            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+            <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                 <!--begin::Title-->
                 <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">Menu Header
                     Ekle</h1>
@@ -13,11 +13,11 @@
             </div>
             <!--end::Page title-->
             <!--begin::Back-->
-            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+            <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                 <!--begin::Title-->
                 <a href="javascript:history.back()"
-                    class="page-heading d-flex text-dark fw-bold fs-3 justify-content-center my-0 text-hover-success">
-                    <i class="fa fa-arrow-left my-auto mx-2"></i>
+                    class="page-heading d-flex text-dark fw-bold fs-3 justify-content-center text-hover-success my-0">
+                    <i class="fa fa-arrow-left mx-2 my-auto"></i>
                     Geri Dön
                 </a>
                 <!--end::Title-->
@@ -27,29 +27,38 @@
         <!--end::Toolbar container-->
     </div>
     <!--end::Toolbar-->
+
+
     <!--begin::Content-->
     <div id="kt_app_content" class="app-content flex-column-fluid">
         <!--begin::Content container-->
         <div id="kt_app_content_container" class="app-container container-fluid">
             <!--begin::Row-->
+            @if ($errors->any())
+                @foreach ($errors->all() as $e)
+                    <div class="alert alert-danger">
+                        {{ $e }}
+                    </div>
+                @endforeach
+            @endif
             <div class="row g-5 g-xl-8">
                 <!--begin::Col-->
-                <div class="col-xl-12 mb-5 mb-xl-8">
-                    <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
+                <div class="col-xl-12 mb-xl-8 mb-5">
+                    <div class="card card-flush h-xl-100 mb-xl-8 mb-5">
                         <!--begin::Header-->
                         <!--<div class="ps-12 pt-12"></div>-->
                         <!--end::Header-->
                         <!--begin::Body-->
                         <div class="card-body py-5">
                             <!--begin::Form-->
-                            <form action="{{route("admin.product.add")}}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.product.add') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <!--begin::Card body-->
                                 <div class="card-body px-0 py-9">
                                     <!--begin::Input group-->
                                     <div class="row mb-6">
                                         <!--begin::Label-->
-                                        <label class="col-lg-2 col-form-label ps-5 fw-bold fs-6 required">Menu Tipi</label>
+                                        <label class="col-lg-2 col-form-label fw-bold fs-6 required ps-5">Menu Tipi</label>
                                         <!--end::Label-->
                                         <!--begin::Col-->
                                         <div class="col-lg-12 ps-3">
@@ -77,7 +86,7 @@
                                     <div id="external_link_content"></div>
 
                                 </div>
-                                
+
                             </form>
                             <!--end::Form-->
 
@@ -112,45 +121,57 @@
                 if (selectedOption === 'modul') {
                     $("#modul_content").append(
                         '<div class="row mb-6">' +
-                        
-                        '<label class="col-lg-2 col-form-label ps-5 required fw-bold fs-6"> {{__("msg.kategori")}} </label>' +
+
+                        '<label class="col-lg-2 col-form-label ps-5 required fw-bold fs-6"> {{ __('msg.kategori') }} </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
                         '<select name="category_id" aria-label="Seçiniz" data-control="select2" data-placeholder="Seçiniz..." class="form-select form-select-solid form-select-lg fw-semibold">' +
                         '<option value="">Seçiniz...</option>' +
-                        '@foreach($categories as $category)'+
-                        '<option value="{{$category->id}}"> {{$category->title}} </option>' +
-                        '@endforeach'+
+                        '@foreach ($categories as $category)' +
+                        '<option value="{{ $category->id }}"> {{ $category->title }} </option>' +
+                        '@endforeach' +
                         '</select>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row mb-6">' +
-                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{__("msg.resim")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.resim') }} </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="file" name="image" class="form-control  value="" />' +
+                        '<input type="file" name="image" class="form-control"  value="" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
+                        '<div class="row mb-6">' +
+                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.sıralama') }} </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue->queue+1}}" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<input type="hidden" name="type" class="form-control" value="0" />' +
+
 
                         '<div class="row ps-5">' +
                         '<ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x fs-6">' +
                         '<li class="nav-item">' +
                         '<a class="nav-link active" data-bs-toggle="tab" href="#tab_menu_header_external_link_tr">' +
                         '<span>' +
-                        '<img src="{{asset("/assets/tr.png")}}" width="28" height="20" alt="TR" title="TR">' +
+                        '<img src="{{ asset('/assets/tr.png') }}" width="28" height="20" alt="TR" title="TR">' +
                         '</span>' +
                         '</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
                         '<a class="nav-link" data-bs-toggle="tab" href="#tab_menu_header_external_link_en">' +
                         '<span>' +
-                        '<img src="{{asset("/assets/en.png")}}" width="28" height="20" alt="EN" title="EN">' +
+                        '<img src="{{ asset('/assets/en.png') }}" width="28" height="20" alt="EN" title="EN">' +
                         '</span>' +
                         '</a>' +
                         '</li>' +
@@ -159,7 +180,7 @@
                         '<div class="tab-pane fade show active" id="tab_menu_header_external_link_tr" role="tabpanel">' +
                         '<div class="card-body px-0 py-5">' +
                         '<div class="row mb-6 container">' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}}  {{__("msg.ad")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }}  {{ __('msg.ad') }} </label>' +
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -170,10 +191,10 @@
                         '</div>' +
                         '</div>' +
 
-                        
+
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.açıklama")}}</label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.açıklama') }}</label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -188,7 +209,7 @@
 
                         '<div class="card-body px-0 py-5">' +
                         '<div class="row mb-6 container">' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}}  {{__("msg.ad")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }}  {{ __('msg.ad') }} </label>' +
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -201,7 +222,7 @@
 
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6">  {{__("msg.açıklama")}}</label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6">  {{ __('msg.açıklama') }}</label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -214,34 +235,34 @@
 
                         '</div>' +
                         '<div class="right" style="text-align:right">' +
-                        '<input type="submit" class="btn btn-primary" value=" {{__("msg.kaydet")}}">' +
+                        '<input type="submit" class="btn btn-primary" value=" {{ __('msg.kaydet') }}">' +
                         '</div>' +
                         '</div>' +
-                        '</div>' 
-                        
+                        '</div>'
+
 
                     );
 
                 } else {
                     $("#external_link_content").append(
                         '<div class="row mb-6">' +
-                        
-                        '<label class="col-lg-2 col-form-label ps-5 required fw-bold fs-6"> {{__("msg.kategori")}} </label>' +
+
+                        '<label class="col-lg-2 col-form-label ps-5 required fw-bold fs-6"> {{ __('msg.kategori') }} </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
                         '<select name="category_id" aria-label="Seçiniz" data-control="select2" data-placeholder="Seçiniz..." class="form-select form-select-solid form-select-lg fw-semibold">' +
                         '<option value="">Seçiniz...</option>' +
-                        '@foreach($categories as $category)'+
-                        '<option value="{{$category->id}}"> {{$category->title}} </option>' +
-                        '@endforeach'+
+                        '@foreach ($categories as $category)' +
+                        '<option value="{{ $category->id }}"> {{ $category->title }} </option>' +
+                        '@endforeach' +
                         '</select>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '<div class="row mb-6">' +
-                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{__("msg.resim")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.resim') }} </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -250,20 +271,31 @@
                         '</div>' +
                         '</div>' +
                         '</div>' +
+                        '<div class="row mb-6">' +
+                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.sıralama') }} </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue->queue+1}}" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '<input type="hidden" name="type" class="form-control" value="1" />' +
 
                         '<div class="row ps-5">' +
                         '<ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x fs-6">' +
                         '<li class="nav-item">' +
                         '<a class="nav-link active" data-bs-toggle="tab" href="#tab_menu_header_external_link_tr">' +
                         '<span>' +
-                        '<img src="{{asset("/assets/tr.png")}}" width="28" height="20" alt="TR" title="TR">' +
+                        '<img src="{{ asset('/assets/tr.png') }}" width="28" height="20" alt="TR" title="TR">' +
                         '</span>' +
                         '</a>' +
                         '</li>' +
                         '<li class="nav-item">' +
                         '<a class="nav-link" data-bs-toggle="tab" href="#tab_menu_header_external_link_en">' +
                         '<span>' +
-                        '<img src="{{asset("/assets/en.png")}}" width="28" height="20" alt="EN" title="EN">' +
+                        '<img src="{{ asset('/assets/en.png') }}" width="28" height="20" alt="EN" title="EN">' +
                         '</span>' +
                         '</a>' +
                         '</li>' +
@@ -272,7 +304,7 @@
                         '<div class="tab-pane fade show active" id="tab_menu_header_external_link_tr" role="tabpanel">' +
                         '<div class="card-body px-0 py-5">' +
                         '<div class="row mb-6 container">' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}}  {{__("msg.ad")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }}  {{ __('msg.ad') }} </label>' +
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -284,7 +316,7 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}} URL </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} URL </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -295,7 +327,7 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.kısa")}}  {{__("msg.açıklama")}}</label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.kısa') }}  {{ __('msg.açıklama') }}</label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -308,13 +340,13 @@
 
                         '</div>' +
 
-              
+
 
                         '<div class="tab-pane fade" id="tab_menu_header_external_link_en" role="tabpanel">' +
 
                         '<div class="card-body px-0 py-5">' +
                         '<div class="row mb-6 container">' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}}  {{__("msg.ad")}} </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }}  {{ __('msg.ad') }} </label>' +
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -326,7 +358,7 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.ürün")}} URL </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} URL </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -337,7 +369,7 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{__("msg.kısa")}}  {{__("msg.açıklama")}}</label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.kısa') }}  {{ __('msg.açıklama') }}</label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -350,21 +382,21 @@
 
                         '</div>' +
 
-                        
+
                         '</div>' +
 
                         '</div>' +
                         '<div class="right" style="text-align:right">' +
-                        '<input type="submit" class="btn btn-primary" value=" {{__("msg.kaydet")}}">' +
+                        '<input type="submit" class="btn btn-primary" value=" {{ __('msg.kaydet') }}">' +
                         '</div>' +
                         '</div>' +
-                        '</div>' 
-                        
+                        '</div>'
+
                     );
 
                 }
 
-                
+
 
             });
 

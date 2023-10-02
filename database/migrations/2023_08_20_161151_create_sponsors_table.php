@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('logo');
             $table->integer('queue');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

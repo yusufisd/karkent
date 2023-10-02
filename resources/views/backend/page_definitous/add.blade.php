@@ -134,8 +134,8 @@
 
 
                                                     <div class="row">
-                                                        <label class="col-md-1 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
-                                                        <div class="col-md-11">
+                                                        <label class="col-md-2 col-form-label fw-bold fs-6"> {{__('msg.açıklama')}} </label>
+                                                        <div class="col-md-10">
                                                             <textarea name="page_def_description" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id=""
                                                                 cols="30" rows="5"> {{$def2_tr->description ?? ''}} </textarea>
                                                         </div>

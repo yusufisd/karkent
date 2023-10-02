@@ -59,6 +59,8 @@
                                             </th>
                                             <th > {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
                                             <th > {{__('msg.sıralama')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th class="text-center pe-7"> {{ __('msg.durum') }} <i
+                                                class="fa fa-sort ms-3"></i></th>
                                             <th > {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
@@ -76,6 +78,16 @@
 
                                             <td > {{$item->title}} </td>
                                             <td > {{$item->queue}} </td>
+                                            <td>
+                                                <div 
+                                                    class="form-check form-check-solid form-switch form-check-custom fv-row justify-content-center">
+                                                    <input class="form-check-input w-50px h-25px" id="point" type="checkbox"
+                                                        id="slider_status_1"
+                                                        onchange="status_change({{ $item->id }})"
+                                                        {{ $item->status == 1 ? 'checked' : '' }}>
+                                                    <label class="form-check-label" for="slider_status_1"></label>
+                                                </div>
+                                            </td>
                                             <td >
                                                 <a href="{{ route('admin.category.edit', $item->id) }}"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
@@ -113,6 +125,9 @@
 @section('script')
     <!--begin:: extra js-->
     <script>
+        function status_change(d) {
+            window.location.href = "{{ route('admin.category.status_change') }}/" + d
+        }
         function destroy(d) {
             Swal.fire({
                 title: 'Emin misiniz?',

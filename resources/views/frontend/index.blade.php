@@ -14,7 +14,7 @@
                         @foreach ($sliders as $item)
                             <div class="item {{ $item->id == 1 ? 'active' : '' }}">
                                 <div class="slider-thumb bg-fixed"
-                                    style="background-image: url({{ $item->image == null ? $item->Image->image : $item->image }});">
+                                    style="background-image: url({{ $item->image}});">
                                 </div>
                                 <div class="box-table theme shadow">
                                     <div class="box-cell">
@@ -137,7 +137,7 @@
                 </div>
                 <div class="col-md-6 default info">
                     <h2> {{ $page_def2->title }} </h2>
-                    <p style="text-align: left;">
+                    <p style="text-align: justify;">
                         {{ $page_def2->description }}
                     </p>
                     <div class="bottom-info" style="    margin-left: 199px;">
@@ -160,6 +160,7 @@
         data-parallax="scroll" style="background-image: url(assets/frontend/img/client.png);">
         <div class="container">
             <div class="row">
+
                 <div class="col-md-12">
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
@@ -172,21 +173,21 @@
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon2 !!}
-                            <div class="timer" data-to="{{ $page_def3->title2_1 }}" data-speed="5000"></div>
+                            <div class="timer" data-to="{{ $page_def3->title2_1 }}" data-speed="5000">{{ $page_def3->title2_1 }}</div>
                             <span class="medium">{{ $page_def3->title2_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon3 !!}
-                            <div class="timer" data-to="{{ $page_def3->title3_1 }}" data-speed="5000"></div>
+                            <div class="timer" data-to="{{ $page_def3->title3_1 }}" data-speed="5000">{{ $page_def3->title3_1 }}</div>
                             <span class="medium">{{ $page_def3->title3_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon4 !!}
-                            <div class="timer" data-to="{{ $page_def3->title4_1 }}" data-speed="5000"></div>
+                            <div class="timer" data-to="{{ $page_def3->title4_1 }}" data-speed="5000">{{ $page_def3->title4_1 }}</div>
                             <span class="medium">{{ $page_def3->title4_2 }}</span>
                         </div>
                     </div>

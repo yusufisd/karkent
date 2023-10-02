@@ -79,7 +79,11 @@
                                             <td > {{substr($item->description,0,50)}} ...</td>
                                             <td > {{$item->Category->title}} </td>
                                             <td>
-                                               
+                                                <a href="{{ route('admin.product.edit', $item->id) }}"
+                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
+                                                    title="Düzenle">
+                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
+                                                </a>
                                                 <a onclick="destroy({{$item->id}})"
                                                     class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
                                                     data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">

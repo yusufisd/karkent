@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('slider_id');
             $table->string('title');
+            $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->string('button_title');
             $table->integer('queue');

@@ -9,4 +9,9 @@ class EnContact extends Model
 {
     protected $guarded = [];
     use HasFactory;
+
+    public function AllImage(){
+        $data = Contact::latest()->first();
+        return $data;
+    }
 }

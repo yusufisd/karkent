@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
-                        <li><a href="index.html"> {{strtoupper(__('msg.anasayfa'))}} </a></li>
+                        <li><a href="{{route('frontend.index')}}"> {{strtoupper(__('msg.anasayfa'))}} </a></li>
 
                         <li class="active"> {{strtoupper(__('msg.iletişim'))}} </li>
                     </ul>
@@ -30,13 +30,13 @@
                 <div class="col-md-7 contact-form">
                     <div class="content">
                         <div class="heading">
-                            <h3>Bize Ulaşın</h3>
+                            <h3> {{__('msg.bize ulaşın')}} </h3>
                         </div>
                         <form action="assets/frontend/mail/contact.php" method="POST" class="contact-form">
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" id="name" name="name" placeholder="İsminiz"
+                                        <input class="form-control" id="name" name="name" placeholder="{{__('msg.isim')}}"
                                             type="text">
                                         <span class="alert-error"></span>
                                     </div>
@@ -46,7 +46,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <input class="form-control" id="email" name="email"
-                                            placeholder="Mail Adresiniz" type="email">
+                                            placeholder="Email" type="email">
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group">
-                                        <input class="form-control" id="phone" name="phone" placeholder="Telefon"
+                                        <input class="form-control" id="phone" name="phone" placeholder="{{__('msg.telefon')}}"
                                             type="text">
                                         <span class="alert-error"></span>
                                     </div>
@@ -63,7 +63,7 @@
                             <div class="col-md-12">
                                 <div class="row">
                                     <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Mesajınızı buraya yazabilirsiniz."></textarea>
+                                        <textarea class="form-control" id="comments" name="comments" placeholder="{{__('msg.Mesajınızı buraya yazabilirsiniz.')}}"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -71,14 +71,14 @@
                                 <input class="checkbox" type="checkbox" id="checkbox">
                                 <label class="custom-checkbox-label" for="checkbox"></label>
                                 <a href="file:///C:/Users/RugzT/Desktop/karkent/source/assets/frontend/img/kvkk.pdf"
-                                    target="_blank"><b>KVKK Aydınlatma Metni'ni okudum kabul ediyorum.</b></a>
+                                    target="_blank"><b> {{__('msg.KVKK Aydınlatma Metnini okudum kabul ediyorum.')}} </b></a>
                             </div>
                             <div class="col-md-12">
 
                                 <div class="row">
 
                                     <button type="submit" name="submit" id="submit">
-                                        Gönder <i class="fa fa-paper-plane"></i>
+                                        {{__('msg.kaydet')}} <i class="fa fa-paper-plane"></i>
                                     </button>
 
 
@@ -98,26 +98,27 @@
                         <ul class="nav nav-pills">
                             <li class="active">
                                 <a data-toggle="tab" href="#id1" aria-expanded="true">
-                                    Merkez
+                                    {{__('msg.merkez')}}
                                 </a>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#id2" aria-expanded="false">
-                                    Fabrika
+                                    {{__('msg.fabrika')}}
                                 </a>
                             </li>
                             <li>
                                 <a data-toggle="tab" href="#id3" aria-expanded="false">
-                                    Müze
+                                    {{__('msg.müze')}}
                                 </a>
                             </li>
                         </ul>
                     </div>
+
                     <div class="tab-content pad-all-20p txt-center-mobile">
                         <div id="id1" class="tab-pane active">
                             <ul>
                                 <li>
-                                    <img src="{{$data->center_photo != null ? url('/'.$data->center_photo) : url('assets/uploaods/noimage.jpg')}}" alt="Thumb">
+                                    <img src="{{$data->center_photo != null ? url('/'.$data->center_photo) : url('/',$data->AllImage()->center_photo)}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -157,7 +158,7 @@
                         <div id="id2" class="tab-pane">
                             <ul>
                                 <li>
-                                    <img src="/{{$data->factory_photo}}" alt="Thumb">
+                                    <img src="{{$data->factory_photo != null ? url('/'.$data->factory_photo) : url('/',$data->AllImage()->factory_photo)}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">
@@ -197,7 +198,7 @@
                         <div id="id3" class="tab-pane">
                             <ul>
                                 <li>
-                                    <img src="/{{$data->museum_photo}}" alt="Thumb">
+                                    <img src="{{$data->museum_photo != null ? url('/'.$data->museum_photo) : url('/',$data->AllImage()->museum_photo)}}" alt="Thumb">
                                 </li>
                                 <li>
                                     <div class="icon">

@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
-                        <li><a href="index.html"> {{ __('msg.anasayfa') }} </a></li>
+                        <li><a href="{{route('frontend.index')}}"> {{ __('msg.anasayfa') }} </a></li>
 
                         <li class="active"> {{ strtoupper(__('msg.kurumsal')) }} </li>
                     </ul>
@@ -28,9 +28,9 @@
             <div class="row">
                 <div class="col-md-6 default info">
                     <h2> {{ $about->title }} </h2>
-                    <p style="text-align:left;">
-                        {{ $about->description }}
-                    </p>
+                    <div style="text-align:justify;">
+                        {!! $about->description !!}
+                    </div>
 
                 </div>
                 <div class="col-md-6 services text-center">
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="site-heading text-center">
                     <div class="col-md-8 col-md-offset-2">
-                        <h2>TARİHÇE</h2>
+                        <h2> {{__('msg.tarihçe')}} </h2>
                     </div>
                 </div>
             </div>

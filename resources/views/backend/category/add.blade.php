@@ -153,6 +153,23 @@
                                         </div>
                                     </div>
 
+                                    <div class="card-footer d-flex justify-content-between py-6 px-0">
+                                        <div class="row mb-0">
+                                            <label
+                                                class="col-lg-8 col-form-label fw-bold fs-6 ps-5">Durum</label>
+                                            <div class="col-lg-4 d-flex align-items-center">
+                                                <div
+                                                    class="form-check form-check-solid form-switch form-check-custom fv-row">
+                                                    <input class="form-check-input w-50px h-25px"
+                                                        type="checkbox" id="allowadd_slider_tr" name="allowadd_slider_tr"
+                                                        checked="checked" />
+                                                    <label class="form-check-label"
+                                                        for="allowadd_slider_tr"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
 
                                     <!--begin::Body-->
                                 </div>

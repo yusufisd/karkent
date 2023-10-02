@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
 
-        $no = Contact::latest()->first()->whatsapp;
+        $no = Contact::latest()->first()->whatsapp ?? '';
 
         $local = \Session::get('applocale');
 

@@ -49,7 +49,10 @@ return [
     "kurumsal" => "Kurumsal",
     "anasayfa" => "Anasayfa",
     "logo" => "Logo",
- 
+    "KVKK Aydınlatma Metnini okudum kabul ediyorum." => "KVKK Aydınlatma Metnini okudum kabul ediyorum.",
+    "bize ulaşın" => "Bize Ulaşın",
+    "isim" => "İsim",
+    "Mesajınızı buraya yazabilirsiniz." => "Mesajınızı buraya yazabilirsiniz.",
 ]
 
 
