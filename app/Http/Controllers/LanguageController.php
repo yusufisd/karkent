@@ -24,9 +24,11 @@ class LanguageController extends Controller
             \Artisan::call('optimize:clear');
             \Artisan::call('config:cache');
 
-            Route::dispatchToRoute(Request::create(url()->previous()));
+            /*Route::dispatchToRoute(Request::create(url()->previous()));
             $route = Route::currentRouteName();
             return redirect()->route($route);
+            */
+            return redirect()->back();
         }else{
             // session process
             Session::forget("applocale");
@@ -39,10 +41,12 @@ class LanguageController extends Controller
             \Artisan::call('optimize:clear');
             \Artisan::call('config:cache');
             \Artisan::call('optimize');
-            
+            /*
             Route::dispatchToRoute(Request::create(url()->previous()));
             $route = Route::currentRouteName();
             return redirect()->route($route);
+            */
+            return redirect()->back();
         }
     }
 }
