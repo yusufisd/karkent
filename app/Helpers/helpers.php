@@ -20,9 +20,9 @@ function categories2()
         $local = config('app.fallback_locale');
     }
     if ($local == "tr") {
-        $data = Category::latest()->get();
+        $data = Category::orderBy('queue','asc')->get();
     } elseif ($local == "en") {
-        $data = EnCategory::latest()->get();
+        $data = EnCategory::orderBy('queue','asc')->get();
     }
 
     return $data;

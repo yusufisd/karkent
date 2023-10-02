@@ -30,6 +30,11 @@ class ProductController extends Controller
     {
         $categories = Category::latest()->get();
         $queue = Product::orderBy('queue','desc')->first();
+        if($queue != null){
+            $queue = $queue->queue +1;
+        }else{
+            $queue = 1;
+        }
         return view('backend.product.add', compact('categories','queue'));
     }
 

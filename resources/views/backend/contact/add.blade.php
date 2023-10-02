@@ -66,8 +66,8 @@
                                         </div>
                                         <br>
                                         <div style="text-align: center">
-                                            <img style="width: 15%; border-radius:15px" src="/{{ $data_tr->center_photo }}"
-                                                alt="Thumb">
+                                            <img style="width: 15%; border-radius:15px" src="/{{ $data_tr->center_photo ?? '' }}"
+                                                >
                                         </div>
                                         <br>
                                         <div class="row mb-6">
@@ -299,7 +299,7 @@
                                         <br>
                                         <div style="text-align: center">
                                             <img style="width: 15%; border-radius:15px"
-                                                src="/{{ $data_tr->factory_photo }}" alt="Thumb">
+                                                src="/{{ $data_tr->factory_photo ?? '' }}" >
                                         </div>
                                         <br>
 
@@ -535,7 +535,7 @@
 
                                         <div style="text-align: center">
                                             <img style="width: 15%; border-radius:15px"
-                                                src="/{{ $data_tr->museum_photo }}" alt="Thumb">
+                                                src="/{{ $data_tr->museum_photo ?? '' }}" >
                                         </div>
                                         <br>
                                         <div class="row mb-6">

@@ -36,6 +36,19 @@ class ContactController extends Controller
             'instagram' => 'required',
             'facebook' => 'required',
             'youtube' => 'required',
+        ],[
+            'merkez_adres_tr.required' => 'Merkez adresi boş bırakılamaz.',
+            'merkez_telefon_tr.required' => 'Merkez telefonuboş bırakılamaz.',
+            'merkez_email_tr.required' => 'Merkez boş bırakılamaz.',
+            'fabrika_adres_tr.required' => 'Fabrika adres boş bırakılamaz.',
+            'fabrika_telefon_tr.required' => 'Fabrika telefon boş bırakılamaz.',
+            'fabrik_email_tr.required' => 'Fabrika email boş bırakılamaz.',
+            'muze_adres_tr.required' => 'Müze adres boş bırakılamaz.',
+            'muze_telefon_tr.required' => 'Müze telefon boş bırakılamaz.',
+            'muze_email_tr.required' => 'Müze email boş bırakılamaz.',
+            'instagram.required' => 'İnstagram boş bırakılamaz.',
+            'facebook.required' => 'Facebook boş bırakılamaz.',
+            'youtube.required' => 'Youtube boş bırakılamaz.',
         ]);
 
 

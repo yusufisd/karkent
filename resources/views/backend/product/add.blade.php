@@ -151,7 +151,7 @@
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue->queue+1}}" />' +
+                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue}}" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -276,7 +276,7 @@
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue->queue+1}}" />' +
+                        '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue}}" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
