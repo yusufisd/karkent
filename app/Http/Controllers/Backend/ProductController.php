@@ -72,7 +72,7 @@ class ProductController extends Controller
 
         $image_tr = $request->file('image');
         $image_name = hexdec(uniqid()) . '.' . $image_tr->getClientOriginalExtension();
-        $save_url = '/assets/uploads/product/' . $image_name;
+        $save_url = 'assets/uploads/product/' . $image_name;
         Image::make($image_tr)
             ->resize(360, 360)
             ->save($save_url);
@@ -152,7 +152,7 @@ class ProductController extends Controller
             if ($request->file('image') != null) {
                 $image_tr = $request->file('image');
                 $image_name = hexdec(uniqid()) . '.' . $image_tr->getClientOriginalExtension();
-                $save_url = '/assets/uploads/product/' . $image_name;
+                $save_url = 'assets/uploads/product/' . $image_name;
                 Image::make($image_tr)
                     ->resize(360, 360)
                     ->save($save_url);
