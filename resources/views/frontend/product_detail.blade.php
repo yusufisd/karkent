@@ -7,13 +7,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
-                    <h4><b> {{ strtoupper($data->title) }} </b></h4>
+                    <h4 class="soldan"><b> {{ ($data->title) }} </b></h4>
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
-                        <li><a href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a></li>
-                        <li class="active"> {{ $data->Category->title }} /</li>
-                        <li class="active"> {{ $data->title }} </li>
+                        <li class="soldan"><a href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a></li>
+                        <li class="active soldan"> {{ $data->Category->title }} </li>
+                        <li class="active soldan"> {{ $data->title }} </li>
                     </ul>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-8 conetnt">
-                    <h3 style="text-align:left;"> {{ strtoupper($data->title) }} </h3>
+                    <h3 class="soldan" style="text-align:left;"> {{ ($data->title) }} </h3>
                     <p style="text-align:left;">
                         {{ $data->description }}
                     </p>

@@ -5,13 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
-                    <h4><b>{{$baslik->title}}</b></h4>
+                    <h4 class="soldan"><b>{{$baslik->title}}</b></h4>
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
                         <li><a href="index.html"> {{__('msg.anasayfa')}} </a></li>
 
-                        <li class="active"> {{$baslik->title}} </li>
+                        <li class="active soldan"> {{$baslik->title}} </li>
                     </ul>
                 </div>
             </div>

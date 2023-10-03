@@ -7,13 +7,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
-                    <h4><b> {{ strtoupper(__('msg.kurumsal')) }} </b></h4>
+                    <h4 class="soldan"><b> {{ (__('msg.kurumsal')) }} </b></h4>
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
                         <li><a href="{{route('frontend.index')}}"> {{ __('msg.anasayfa') }} </a></li>
 
-                        <li class="active"> {{ strtoupper(__('msg.kurumsal')) }} </li>
+                        <li class="active soldan"> {{ (__('msg.kurumsal')) }} </li>
                     </ul>
                 </div>
             </div>

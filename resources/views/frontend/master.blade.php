@@ -45,7 +45,11 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900&subset=latin,latin-ext" rel="stylesheet">
 
-
+    <style>
+        .soldan{
+            text-transform: uppercase
+        }
+        </style>
 </head>
 
 <body>
