@@ -162,7 +162,7 @@
                             <ul class="dropdown-menu">
 
                                 @foreach (products2($cat->id) as $pro)
-                                <li><a  target="_blank" href="{{$pro->link != null ? $pro->link : '#'}}"> {{$pro->title}} </a></li>
+                                <li><a  target="_blank" href="{{$pro->link != null ? $pro->link : route('frontend.product.detail',$pro->id)}}"> {{$pro->title}} </a></li>
                                     
                                 @endforeach
 

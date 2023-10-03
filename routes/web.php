@@ -51,6 +51,7 @@ Route::middleware('lang')->group(function () {
     Route::get('/hakkimizda', [FrontendAboutController::class, 'about'])->name('frontend.about');
     Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
     Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');
+    Route::get('/urun/{id?}', [FrontendCategoryController::class, 'product'])->name('frontend.product.detail');
 
     // BACKEND İŞLEMLERİ
     Route::get('login', [AuthController::class, 'login']);

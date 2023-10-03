@@ -1,17 +1,17 @@
 @extends('frontend.master')
 @section('content')
-    <div class="breadcrumb-area shadow dark bg-fixed text-center padding-xl text-light"
+    <div class="breadcrumb-area padding-xl text-light dark bg-fixed text-center shadow"
         style="background-image: url(/assets/frontend/img/header1.png);">
         <div class="container">
             <div class="row">
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
-                    <h4><b>KOLEKSİYONLAR</b></h4>
+                    <h4><b>{{$baslik->title}}</b></h4>
                 </div>
                 <div class="col-md-99 col-sm-6 text-right">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html"> {{__('msg.anasayfa')}} </a></li>
 
-                        <li class="active">KOLEKSİYONLAR aaa</li>
+                        <li class="active"> {{$baslik->title}} </li>
                     </ul>
                 </div>
             </div>
@@ -22,31 +22,33 @@
             <div class="row" style="min-height: 50vh">
 
                 @foreach ($data as $item)
-                    
-                <div class="service-item col-md-4">
-                    <div class="info-box">
-                        <img src="/{{$item->image}}" alt="Thumb">
-                        <div class="info-title">
-                            <h4>
-                                <a href="#"> {{$item->title}} </a>
-                                <i class="flaticon-board"></i>
-                            </h4>
-                        </div>
-                        <div class="overlay">
-                            <div class="box">
-                                <div class="content">
-                                    <div class="overlay-content">
-                                        <h4><a href="#"> {{$item->title}} </a></h4>
-                                        <p>
-                                           {{substr($item->description,0,50)}}
-                                        </p>
-                                        <a href="product-detail.html">İncele</a>
+                    <div class="service-item col-md-4">
+                        <div class="info-box">
+                            <img src="/{{ $item->image }}" alt="Thumb">
+                            <div class="info-title">
+                                <h4>
+                                    <a href="#"> {{ $item->title }} </a>
+                                    <i class="flaticon-board"></i>
+                                </h4>
+                            </div>
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <div class="overlay-content">
+                                            <h4><a href="{{ $item->link != null ? $item->link : route('frontend.product.detail', $item->id) }}"> {{ $item->title }} </a></h4>
+                                            <p>
+                                                {{ substr($item->description, 0, 50) }}
+                                            </p>
+                                            <a target="_blank"
+                                                href="{{ $item->link != null ? $item->link : route('frontend.product.detail', $item->id) }}">
+                                                İncele</a>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
 
 

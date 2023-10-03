@@ -138,7 +138,7 @@
                                     <div class="info">
                                         <p>
                                             Email
-                                            <span> {{$data->center_email}} </span>
+                                            <span style="text-transform:lowercase"> {{strtolower($data->center_email)}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -178,7 +178,7 @@
                                     <div class="info">
                                         <p>
                                             Email
-                                            <span> {{$data->factory_email}} </span>
+                                            <span style="text-transform:lowercase"> {{strtolower($data->factory_email)}} </span>
                                         </p>
                                     </div>
                                 </li>
@@ -215,10 +215,10 @@
                                     <div class="icon">
                                         <i class="fas fa-envelope-open"></i>
                                     </div>
-                                    <div class="info">
-                                        <p>
+                                    <div class="info" >
+                                        <p >
                                             Email
-                                            <span> {{$data->musem_email}} </span>
+                                            <span style="text-transform:lowercase"> {{strtolower($data->musem_email)}}aasd </span>
                                         </p>
                                     </div>
                                 </li>
