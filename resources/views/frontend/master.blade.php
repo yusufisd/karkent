@@ -42,7 +42,7 @@
 
     <!-- ========== Google Fonts ========== -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
 
 
@@ -164,7 +164,7 @@
                             <ul class="dropdown-menu">
 
                                 @foreach (products2($cat->id) as $pro)
-                                <li><a  target="_blank" href="{{$pro->link != null ? $pro->link : route('frontend.product.detail',$pro->id)}}"> {{$pro->title}} </a></li>
+                                <li><a  {{ $cat->link != null ? 'target="_blank"' : '' }} href="{{$pro->link != null ? $pro->link : route('frontend.product.detail',$pro->id)}}"> {{$pro->title}} </a></li>
                                     
                                 @endforeach
 
