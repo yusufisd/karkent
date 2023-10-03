@@ -205,14 +205,14 @@
                         </div>
                         <div class="col-md-6 footer-bottom-menu text-right">
                             <ul>
-                                <li><a href="{{ asset('/assets/frontend/img/talep.pdf')}}">Talep Formu</a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/politika.pdf')}}">Politika</a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/kvkk.pdf')}}">KVKK Aydınlatma Metni</a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/talep.pdf')}}"> {{__('msg.Talep Formu')}} </a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/politika.pdf')}}"> {{__('msg.Politika')}}</a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/kvkk.pdf')}}"> {{__('msg.KVKK Aydınlatma Metni')}}</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>s
+            </div>
         </div>
         <!-- End Footer Bottom -->
     </footer>
@@ -238,8 +238,8 @@
                 // "position": "bottom-left", aktif ederseniz uyarı solda görünür
                 //"position": "bottom-right", aktif ederseniz uyarı sağda görünür
                 "content": {
-                    "message": "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.",
-                    "dismiss": "Tamam",
+                    "message": "{{__('msg.Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.')}}",
+                    "dismiss": "{{__('msg.tamam')}}",
                     "link": "Daha fazla bilgi",
                     "href": "{{ asset('/assets/frontend/img/kvkk.pdf')}}"
                 }

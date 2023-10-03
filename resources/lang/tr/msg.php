@@ -52,7 +52,13 @@ return [
     "KVKK Aydınlatma Metnini okudum kabul ediyorum." => "KVKK Aydınlatma Metnini okudum kabul ediyorum.",
     "bize ulaşın" => "Bize Ulaşın",
     "isim" => "İsim",
+    "tamam" => "Tamam",
+    "Politika" => "Politika",
+    "KVKK Aydınlatma Metni" => "KVKK Aydınlatma Metni",
+    "Talep Formu" => "Talep Formu",
     "Mesajınızı buraya yazabilirsiniz." => "Mesajınızı buraya yazabilirsiniz.",
+    "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz." => "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz."
+
 ]
 
 
