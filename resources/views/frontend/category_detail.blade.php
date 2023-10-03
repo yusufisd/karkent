@@ -39,7 +39,7 @@
                                             <p>
                                                 {{ substr($item->description, 0, 50) }}
                                             </p>
-                                            <a target="_blank"
+                                            <a {{ $item->link != null ? 'target="_blank"' : '' }}
                                                 href="{{ $item->link != null ? $item->link : route('frontend.product.detail', $item->id) }}">
                                                 İncele</a>
 

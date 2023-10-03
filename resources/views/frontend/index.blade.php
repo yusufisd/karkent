@@ -79,7 +79,7 @@
                         <div class="col-md-4">
                             <div class="item">
                                 <div class="icon">
-                                    <i class="flaticon-presentation"></i>
+                                    {!! $page_def1->icon1 !!}
                                 </div>
                                 <div class="info">
                                     <h4> {{ $page_def1->title1 }} </h4>
@@ -93,7 +93,7 @@
                         <div class="col-md-4">
                             <div class="item">
                                 <div class="icon">
-                                    <i class="flaticon-collaboration"></i>
+                                    {!! $page_def1->icon2 !!}
                                 </div>
                                 <div class="info">
                                     <h4> {{ $page_def1->title2 }} </h4>
@@ -106,7 +106,7 @@
                         <div class="col-md-4">
                             <div class="item">
                                 <div class="icon">
-                                    <i class="flaticon-id"></i>
+                                    {!! $page_def1->icon3 !!}
                                 </div>
                                 <div class="info">
                                     <h4> {{ $page_def1->title3 }} </h4>

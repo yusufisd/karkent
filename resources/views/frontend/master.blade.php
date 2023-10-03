@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ asset('/assets/frontend/css/responsive.css')}}"  />
     <link rel="stylesheet" type="text/css" media="all" href="{{ asset('/assets/frontend/css/cerez.css')}}" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- ========== End Stylesheet ========== -->
 
     <!-- HTML5 shim and Respond.js')}} for IE8 support of HTML5 elements and media queries -->
@@ -240,7 +242,7 @@
                 "content": {
                     "message": "{{__('msg.Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.')}}",
                     "dismiss": "{{__('msg.tamam')}}",
-                    "link": "Daha fazla bilgi",
+                    "link": "{{__('msg.Daha fazla bilgi')}}",
                     "href": "{{ asset('/assets/frontend/img/kvkk.pdf')}}"
                 }
             })
