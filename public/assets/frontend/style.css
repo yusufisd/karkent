@@ -164,6 +164,10 @@ a:hover {
   color: #232323;
 }
 
+.info-title > h4 > a {
+  color : white !important;
+}
+
 a {
   transition: all 0.35s ease-in-out;
   -webkit-transition: all 0.35s ease-in-out;

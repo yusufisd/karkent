@@ -19,15 +19,15 @@
     </div>
     <section class="default1993">
         <div class="container">
-            <div class="row" style="min-height: 50vh">
+            <div class="row" style="min-height: 50vh;margin-bottom:30px">
 
                 @foreach ($data as $item)
-                    <div class="service-item col-md-4">
+                    <div class="service-item col-md-4" style="margin-bottom:50px">
                         <div class="info-box">
                             <img src="/{{ $item->image }}" alt="Thumb">
                             <div class="info-title">
-                                <h4>
-                                    <a href="#"> {{ $item->title }} </a>
+                                <h4 style="text-color:white!important">
+                                    <a href="#" style="color:white"> {{ $item->title }} </a>
                                     <i class="flaticon-board"></i>
                                 </h4>
                             </div>
@@ -35,8 +35,8 @@
                                 <div class="box">
                                     <div class="content">
                                         <div class="overlay-content">
-                                            <h4><a href="{{ $item->link != null ? $item->link : route('frontend.product.detail', $item->id) }}"> {{ $item->title }} </a></h4>
-                                            <p>
+                                            <h4 ><a href="{{ $item->link != null ? $item->link : route('frontend.product.detail', $item->id) }}"> {{ $item->title }} </a></h4>
+                                            <p style="color:white">
                                                 {{ substr($item->description, 0, 50) }}
                                             </p>
                                             <a {{ $item->link != null ? 'target="_blank"' : '' }}
