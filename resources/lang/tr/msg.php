@@ -41,7 +41,7 @@ return [
     "merkez" => "Merkez",
     "bilgileri" => "Bilgileri",
     "adres" => "Adres",
-    "iletişim" => "İletisim",
+    "iletişim" => "İletişim",
     "telefon" => "Telefon",
     "kategori" => "Kategori",
     "ürün" => "Ürün",
