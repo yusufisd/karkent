@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('type');
             $table->integer('queue');
-            $table->string('description');
+            $table->longText('description');
             $table->string('link')->nullable();
             $table->integer('category_id');
             $table->timestamps();
