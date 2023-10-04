@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Buskey - Corporate Business Template">
+    <meta name="description" content="Karkent Tekstil">
 
     <!-- ========== Page Title ========== -->
     <title>Karkent Tekstil</title>
@@ -208,7 +208,7 @@
 
 
                         <li>
-                            <a href="{{ route('frontend.contact') }}"> {{ strtoupper(__('msg.iletişim')) }} </a>
+                            <a class="soldan" href="{{ route('frontend.contact') }}"> {{ (__('msg.iletişim')) }} </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
