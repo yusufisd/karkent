@@ -4,7 +4,7 @@
 <head>
     <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Buskey - Corporate Business Template">
 
@@ -12,44 +12,49 @@
     <title>Karkent Tekstil</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="{{ asset('/assets/frontend/img/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/assets/frontend/img/favicon.png') }}" type="image/x-icon">
 
     <!-- ========== Start Stylesheet ========== -->
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootstrap.min.css')}}"  />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/font-awesome.min.css')}}"  />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/flaticon-business-set.css')}}"  />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/magnific-popup.css')}}"  />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.carousel.min.css')}}"  />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.theme.default.min.css')}}" />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/animate.css')}}" />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootsnav.css')}}" />
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/responsive.css')}}"  />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('/assets/frontend/css/cerez.css')}}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/flaticon-business-set.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/owl.theme.default.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/animate.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/bootsnav.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/frontend/css/responsive.css') }}" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('/assets/frontend/css/cerez.css') }}" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js"
+        integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- ========== End Stylesheet ========== -->
 
     <!-- HTML5 shim and Respond.js')}} for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js')}} doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="{{ asset('/assets/frontend/js/html5/html5shiv.min.js')}}"></script>
-      <script src="{{ asset('/assets/frontend/js/html5/respond.min.js')}}"></script>
+      <script src="{{ asset('/assets/frontend/js/html5/html5shiv.min.js') }}"></script>
+      <script src="{{ asset('/assets/frontend/js/html5/respond.min.js') }}"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- ========== Google Fonts ========== -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin,latin-ext" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900&subset=latin,latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900&subset=latin,latin-ext"
+        rel="stylesheet">
 
     <style>
-        .soldan{
+        .soldan {
             text-transform: uppercase
         }
-        </style>
+    </style>
 </head>
 
 <body>
@@ -85,13 +90,15 @@
                 <div class="topbar-social col-md-3">
                     <ul class="text-right">
                         <li>
-                            <a target="_blank" href="{{infos()->facebook ?? ''}}"><i class="fab fa-facebook-f"></i></a>
+                            <a target="_blank" href="{{ infos()->facebook ?? '' }}"><i
+                                    class="fab fa-facebook-f"></i></a>
                         </li>
                         <li>
-                            <a target="_blank" href="{{infos()->youtube ?? ''}}"><i class="fab fa-youtube"></i></a>
+                            <a target="_blank" href="{{ infos()->youtube ?? '' }}"><i class="fab fa-youtube"></i></a>
                         </li>
                         <li>
-                            <a target="_blank" href="{{infos()->instagram ?? ''}}"><i class="fab fa-instagram"></i></a>
+                            <a target="_blank" href="{{ infos()->instagram ?? '' }}"><i
+                                    class="fab fa-instagram"></i></a>
                         </li>
                         <li>
                             <a href="https://tr.linkedin.com/company/karkenttextile"><i class="fab fa-linkedin"></i></a>
@@ -108,8 +115,9 @@
                             @endphp
                             @foreach ($langs as $key => $value)
                                 <a href="{{ route('chaange.lang', $value) }}"> <img
-                                        src="{{ asset('/assets/frontend/img/'. $value )}}.png" alt="{{ $value }}"
-                                        width="24">
+                                        src="{{ asset('/assets/frontend/img/' . $value) }}.png"
+                                        alt="{{ $value }}" width="24">
+                                </a>
                             @endforeach
                         </li>
                     </ul>
@@ -124,7 +132,7 @@
     <header>
 
         <!-- Start Navigation -->
-        <nav class="navbar navbar-default navbar-fixed border white no-background bootsnav">
+        <nav class="navbar navbar-default navbar-fixed white no-background bootsnav border">
 
             <div class="container">
 
@@ -135,45 +143,63 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
-                    <a class="navbar-brand" href="{{route('frontend.index')}}">
+                    <a class="navbar-brand" href="{{ route('frontend.index') }}">
 
-                        <img src="{{ asset('/assets/frontend/img/logo-light.png')}}" class="logo logo-display" alt="Logo">
+                        <img src="{{ asset('/assets/frontend/img/logo-light.png') }}" class="logo logo-display"
+                            alt="Logo">
 
-                        <img src="{{ asset('/assets/frontend/img/logo.png')}}" class="logo logo-scrolled" alt="Logo">
-                        <div class="onlang"><a href="#"> <img src="{{ asset('/assets/frontend/img/lang.png')}}" alt="Logo"
-                                    width="24"></div>
-                    </a>
+                        <img src="{{ asset('/assets/frontend/img/logo.png') }}" class="logo logo-scrolled"
+                            alt="Logo">
+
+                        @php
+                            $langs = ['en', 'tr'];
+                            if (\Session::get('applocale') != null) {
+                                unset($langs[array_search(\Session::get('applocale'), $langs)]);
+                            } else {
+                                unset($langs[array_search(config('app.fallback_locale'), $langs)]);
+                            }
+                        @endphp
+                        <div class="onlang">
+                            @foreach ($langs as $key => $value)
+                                <a href="{{ route('chaange.lang', $value) }}"> <img
+                                        src="{{ asset('/assets/frontend/img/' . $value) }}.png" alt="Logo"
+                                        width="24">
+                                </a>
+                            @endforeach
+                        </div>
 
                 </div>
 
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar-collapse collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
 
                         <li>
-                            <a href="{{route('frontend.index')}}"> {{__('msg.anasayfa')}} </a>
+                            <a href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
                         </li>
                         <li>
-                            <a href="{{route('frontend.about')}}">  {{__('msg.kurumsal')}}  </a>
+                            <a href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
                         </li>
 
                         <li>
 
-                        @foreach (categories2() as $cat)
+                            @foreach (categories2() as $cat)
                         <li class="dropdown">
-                            <a href="{{route('frontend.category.detail',$cat->id)}}" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="{{ route('frontend.category.detail', $cat->id) }}" class="dropdown-toggle"
+                                data-toggle="dropdown">
                                 {{ $cat->title }} </a>
                             <ul class="dropdown-menu">
 
                                 @foreach (products2($cat->id) as $pro)
-                                <li><a  {{ $cat->link != null ? 'target="_blank"' : '' }} href="{{$pro->link != null ? $pro->link : route('frontend.product.detail',$pro->id)}}"> {{$pro->title}} </a></li>
-                                    
+                                    <li><a {{ $cat->link != null ? 'target="_blank"' : '' }}
+                                            href="{{ $pro->link != null ? $pro->link : route('frontend.product.detail', $pro->id) }}">
+                                            {{ $pro->title }} </a></li>
                                 @endforeach
 
 
-                                
+
                             </ul>
                         </li>
                         @endforeach
@@ -182,7 +208,7 @@
 
 
                         <li>
-                            <a href="{{ route('frontend.contact') }}"> {{strtoupper(__('msg.iletişim'))}} </a>
+                            <a href="{{ route('frontend.contact') }}"> {{ strtoupper(__('msg.iletişim')) }} </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -211,9 +237,12 @@
                         </div>
                         <div class="col-md-6 footer-bottom-menu text-right">
                             <ul>
-                                <li><a href="{{ asset('/assets/frontend/img/talep.pdf')}}"> {{__('msg.Talep Formu')}} </a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/politika.pdf')}}"> {{__('msg.Politika')}}</a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/kvkk.pdf')}}"> {{__('msg.KVKK Aydınlatma Metni')}}</a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/talep.pdf') }}">
+                                        {{ __('msg.Talep Formu') }} </a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/politika.pdf') }}">
+                                        {{ __('msg.Politika') }}</a></li>
+                                <li><a href="{{ asset('/assets/frontend/img/kvkk.pdf') }}">
+                                        {{ __('msg.KVKK Aydınlatma Metni') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -244,35 +273,35 @@
                 // "position": "bottom-left", aktif ederseniz uyarı solda görünür
                 //"position": "bottom-right", aktif ederseniz uyarı sağda görünür
                 "content": {
-                    "message": "{{__('msg.Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.')}}",
-                    "dismiss": "{{__('msg.tamam')}}",
-                    "link": "{{__('msg.Daha fazla bilgi')}}",
-                    "href": "{{ asset('/assets/frontend/img/kvkk.pdf')}}"
+                    "message": "{{ __('msg.Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.') }}",
+                    "dismiss": "{{ __('msg.tamam') }}",
+                    "link": "{{ __('msg.Daha fazla bilgi') }}",
+                    "href": "{{ asset('/assets/frontend/img/kvkk.pdf') }}"
                 }
             })
         });
     </script>
     <!-- jQuery Frameworks
     ============================================= -->
-    <script src="{{ asset('/assets/frontend/js/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/equal-height.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/jquery.appear.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/jquery.easing.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/jquery.magnific-popup.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/progress-bar.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/modernizr.custom.13711.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/owl.carousel.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/wow.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/isotope.pkgd.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/count-to.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/bootsnav.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/timeline.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/Chart.min.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/custom-chart.js')}}"></script>
-    <script src="{{ asset('/assets/frontend/js/main.js')}}"></script>
-    <script type='text/javascript' src='{{ asset('/assets/frontend/js/cerez.js')}}'></script>
+    <script src="{{ asset('/assets/frontend/js/jquery-1.12.4.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/equal-height.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/jquery.appear.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/progress-bar.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/modernizr.custom.13711.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/wow.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/count-to.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/bootsnav.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/timeline.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/Chart.min.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/custom-chart.js') }}"></script>
+    <script src="{{ asset('/assets/frontend/js/main.js') }}"></script>
+    <script type='text/javascript' src='{{ asset('/assets/frontend/js/cerez.js') }}'></script>
 
 
 </body>
