@@ -84,6 +84,8 @@ Route::middleware('lang')->group(function () {
             Route::controller(PageController::class)->group(function(){
                 Route::get('kvkk-duzenle','kvkk_create')->name('kvkk.create');
                 Route::post('kvkk-duzenle','kvkk_update')->name('kvkk.update');
+                Route::get('politika-duzenle','politika_create')->name('politika.create');
+                Route::post('politika-duzenle','politika_update')->name('politika.update');
             }); 
 
             // SLİDER İŞLEMLERİ
