@@ -1,9 +1,11 @@
 @extends('frontend.master')
 @section('content')
+
+
     <div class="breadcrumb-area padding-xl text-light dark bg-fixed text-center shadow"
         style="background-image: url(/assets/frontend/img/header1.png);">
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 <div class="col-md-99 col-sm-6 text-left" id="ax11" style="top:114px;">
                     <h4 class="soldan"><b>{{$baslik->title}}</b></h4>
                 </div>

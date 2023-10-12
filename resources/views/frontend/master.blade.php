@@ -177,7 +177,7 @@
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
 
                         <li>
-                            <a class="{{Route::is('frontend.index') ? 'active' : ''}}" href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
+                            <a class="{{Route::is('frontend.index') ? 'active' : ''}}"  href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
                         </li>
                         <li>
                             <a class="{{Route::is('frontend.about') ? 'active' : ''}}"  href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
