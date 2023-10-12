@@ -218,7 +218,7 @@
                                     <div class="info" >
                                         <p >
                                             Email
-                                            <span style="text-transform:lowercase"> {{strtolower($data->musem_email)}}aasd </span>
+                                            <span style="text-transform:lowercase"> {{strtolower($data->museum_email)}} </span>
                                         </p>
                                     </div>
                                 </li>

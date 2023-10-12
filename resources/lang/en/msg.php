@@ -59,6 +59,9 @@ return [
     "Mesajınızı buraya yazabilirsiniz." => "You can write your message here.",
     "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz." => "We use cookies to give you the best experience on our website. If you continue to use this site, you agree to this.",
     "Daha fazla bilgi" => "More information",
+    "politika sayfası" => "Policy Page",
+    "kvkk sayfası" => "KVKK Page",
+    "kvkk aydınlatma metni" => "KVKK Information Text",
 ]
 
 

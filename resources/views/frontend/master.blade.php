@@ -237,11 +237,11 @@
                         </div>
                         <div class="col-md-6 footer-bottom-menu text-right">
                             <ul>
-                                <li><a href="{{ asset('/assets/frontend/img/talep.pdf') }}">
+                                <li><a style="color:gray" href="{{ asset('/assets/frontend/img/talep.pdf') }}">
                                         {{ __('msg.Talep Formu') }} </a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/politika.pdf') }}">
+                                <li><a style="{{Route::is('frontend.politika') ? 'color:white' : 'color:gray'}}" href="{{ asset('/assets/frontend/img/politika.pdf') }}">
                                         {{ __('msg.Politika') }}</a></li>
-                                <li><a href="{{ asset('/assets/frontend/img/kvkk.pdf') }}">
+                                <li><a style="{{Route::is('frontend.kvkk') ? 'color:white' : 'color:gray'}}" href="{{route('frontend.kvkk')}}">
                                         {{ __('msg.KVKK Aydınlatma Metni') }}</a></li>
                             </ul>
                         </div>

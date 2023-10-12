@@ -482,6 +482,30 @@
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
+
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ Route::is('admin.contact.add') ? 'active' : '' }}"
+                                        href="{{ route('admin.contact.add') }}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{ __('msg.politika sayfası') }}</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link {{ Route::is('admin.contact.add') ? 'active' : '' }}"
+                                        href="{{ route('admin.contact.add') }}">
+                                        <span class="menu-icon">
+                                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                                        </span>
+                                        <span class="menu-title"> {{ __('msg.kvkk sayfası') }}</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
                                 <!--end:Menu item-->
 
                                 <div class="separator border-1 border-light mb-10 mt-5 border-opacity-10"></div>

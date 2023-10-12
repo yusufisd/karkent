@@ -59,6 +59,10 @@ return [
     "Mesajınızı buraya yazabilirsiniz." => "Mesajınızı buraya yazabilirsiniz.",
     "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz." => "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz.",
     "Daha fazla bilgi" => "Daha fazla bilgi",
+    "politika sayfası" => "Politika Sayfası",
+    "kvkk sayfası" => "KVKK Sayfası",
+    "kvkk aydınlatma metni" => "KVKK AYDINLATMA METNİ",
+
 ]
 
 

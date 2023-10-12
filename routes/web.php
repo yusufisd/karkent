@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\HistoryController;
 use App\Http\Controllers\Backend\HomeController as BackendHomeController;
 use App\Http\Controllers\Backend\LogController;
+use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\PageDefinitious;
 use App\Http\Controllers\Backend\PageDefinitousController;
 use App\Http\Controllers\Backend\ProductController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\Frontend\AboutController as FrontendAboutController;
 use App\Http\Controllers\Frontend\CategoryController as FrontendCategoryController;
 use App\Http\Controllers\Frontend\ContactController as FrontendContactController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PageController as FrontendPageController;
 use App\Http\Controllers\LanguageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +54,8 @@ Route::middleware('lang')->group(function () {
     Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
     Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');
     Route::get('/urun/{id?}', [FrontendCategoryController::class, 'product'])->name('frontend.product.detail');
+    Route::get('/kvkk-aydinlatma-metni', [FrontendPageController::class, 'kvkk'])->name('frontend.kvkk');
+    Route::get('/politika', [FrontendPageController::class, 'politika'])->name('frontend.politika');
 
     // BACKEND İŞLEMLERİ
     Route::get('login', [AuthController::class, 'login']);
@@ -75,6 +79,12 @@ Route::middleware('lang')->group(function () {
             Route::post('/sifremi-unuttum', [AuthController::class, 'forgotPasswordPost'])->name('forgotPasswordPost');
             Route::get('/sifremi-yenile/{data?}', [AuthController::class, 'resetPassword'])->name('resetPassword');
             Route::post('/sifremi-yenile', [AuthController::class, 'resetPasswordPost'])->name('resetPasswordPost');
+
+
+            Route::controller(PageController::class)->group(function(){
+                Route::get('kvkk-duzenle','kvkk_create')->name('kvkk.create');
+                Route::post('kvkk-duzenle','kvkk_update')->name('kvkk.update');
+            }); 
 
             // SLİDER İŞLEMLERİ
             Route::controller(SliderController::class)
