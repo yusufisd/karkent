@@ -1,14 +1,22 @@
 @extends('frontend.master')
 @section('content')
-    <!-- Start Banner
-        ============================================= -->
-    <div class="banner-area">
+
+<style>
+    @media (max-width: 700px) {
+
+        #test {
+            height: 500px;
+        }
+
+    }
+</style>
+    <div class="banner-area" id="test">
         <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="banner-area">
                 <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
                     <!-- Wrapper for slides -->
-                    <div class="carousel-inner text-light carousel-zoom">
+                    <div  class="carousel-inner text-light carousel-zoom">
 
 
                         @foreach ($sliders as $item)
@@ -16,8 +24,8 @@
                                 <div class="slider-thumb bg-fixed"
                                     style="background-image: url({{ $item->image}});">
                                 </div>
-                                <div class="box-table theme shadow">
-                                    <div class="box-cell">
+                                <div  class="box-table theme shadow">
+                                    <div class="box-cell" >
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-9">

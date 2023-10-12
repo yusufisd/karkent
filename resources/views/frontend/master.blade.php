@@ -177,10 +177,10 @@
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
 
                         <li>
-                            <a href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
+                            <a class="{{Route::is('frontend.index') ? 'active' : ''}}" href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
                         </li>
                         <li>
-                            <a href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
+                            <a class="{{Route::is('frontend.about') ? 'active' : ''}}"  href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
                         </li>
 
                         <li>
@@ -208,7 +208,7 @@
 
 
                         <li>
-                            <a class="soldan" href="{{ route('frontend.contact') }}"> {{ (__('msg.iletişim')) }} </a>
+                            <a class="{{Route::is('frontend.contact') ? 'active' : ''}}" class="soldan" href="{{ route('frontend.contact') }}"> {{ (__('msg.iletişim')) }} </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
