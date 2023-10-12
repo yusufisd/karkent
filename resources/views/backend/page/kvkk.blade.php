@@ -77,7 +77,7 @@
 
                                         <div class="tab-pane fade show " id="tab_page_four_en" role="tabpanel">
                                             <div class="card-body py-5">
-                                                <textarea name="content_en" class="ckeditor" id="content2" cols="30" rows="10">{{ $data3 }}</textarea>
+                                                <textarea name="content_en" class="ckeditor" id="content2" cols="30" rows="10">{{ $data2 }}</textarea>
                                             </div>
                                         </div>
 

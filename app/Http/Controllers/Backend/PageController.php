@@ -22,9 +22,9 @@ class PageController extends Controller
         if($data2 == null){
             $data2 = "";
         }else{
-            $data3 = $data2->content;
+            $data2 = $data2->content;
         }
-        return view('backend.page.kvkk',compact('data','data3'));
+        return view('backend.page.kvkk',compact('data','data2'));
     }
 
     public function kvkk_update(Request $request){

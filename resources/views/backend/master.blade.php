@@ -497,8 +497,8 @@
 
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link {{ Route::is('admin.contact.add') ? 'active' : '' }}"
-                                        href="{{ route('admin.contact.add') }}">
+                                    <a class="menu-link {{ Route::is('admin.kvkk.create') ? 'active' : '' }}"
+                                        href="{{ route('admin.kvkk.create') }}">
                                         <span class="menu-icon">
                                             <i class="fa fa-file-text" aria-hidden="true"></i>
                                         </span>
