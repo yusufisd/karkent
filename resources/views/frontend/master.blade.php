@@ -145,10 +145,10 @@
 
                     <a class="navbar-brand" href="{{ route('frontend.index') }}">
 
-                        <img src="{{ asset('/assets/frontend/img/logo-light.png') }}" class="logo logo-display"
+                        <img src="{{ asset('/assets/kar-disi.png') }}" class="logo logo-display"
                             alt="Logo">
 
-                        <img src="{{ asset('/assets/frontend/img/logo.png') }}" class="logo logo-scrolled"
+                        <img src="{{ asset('/assets/kar-erkek.png') }}" class="logo logo-scrolled"
                             alt="Logo">
 
                         @php
