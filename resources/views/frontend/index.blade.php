@@ -1,31 +1,29 @@
 @extends('frontend.master')
 @section('content')
+    <style>
+        @media (max-width: 700px) {
 
-<style>
-    @media (max-width: 700px) {
+            #test {
+                height: 500px;
+            }
 
-        #test {
-            height: 500px;
         }
-
-    }
-</style>
+    </style>
     <div class="banner-area" id="test">
         <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
             <!-- Wrapper for slides -->
             <div class="banner-area">
                 <div id="bootcarousel" class="carousel slide transparent-nav animate_text carousel-fade" data-ride="carousel">
                     <!-- Wrapper for slides -->
-                    <div  class="carousel-inner text-light carousel-zoom">
+                    <div class="carousel-inner text-light carousel-zoom">
 
 
                         @foreach ($sliders as $item)
                             <div class="item {{ $item->id == 1 ? 'active' : '' }}">
-                                <div class="slider-thumb bg-fixed"
-                                    style="background-image: url({{ $item->image}});">
+                                <div class="slider-thumb bg-fixed" style="background-image: url({{ $item->image }});">
                                 </div>
-                                <div  class="box-table theme shadow">
-                                    <div class="box-cell" >
+                                <div class="box-table theme shadow">
+                                    <div class="box-cell">
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-9">
@@ -78,7 +76,7 @@
     <!-- End Banner -->
 
     <!-- Start Features
-        ============================================= -->
+            ============================================= -->
     <div class="features-area">
         <div class="container">
             <div class="row">
@@ -131,7 +129,7 @@
     </div>
     <!-- End Features -->
     <!-- Start Welcome
-        ============================================= -->
+            ============================================= -->
     <div class="about-area video-info default-padding">
         <div class="container">
             <div class="row">
@@ -163,7 +161,7 @@
     </div>
     <!-- End Welcome -->
     <!-- Start Fun Factor
-        ============================================= -->
+            ============================================= -->
     <div class="fun-factor-area default-padding theme-hard parallax parralax-shadow bg-fixed text-center shadow"
         data-parallax="scroll" style="background-image: url(assets/frontend/img/client.png);">
         <div class="container">
@@ -181,21 +179,24 @@
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon2 !!}
-                            <div class="timer" data-to="{{ $page_def3->title2_1 }}" data-speed="5000">{{ $page_def3->title2_1 }}</div>
+                            <div class="timer" data-to="{{ $page_def3->title2_1 }}" data-speed="5000">
+                                {{ $page_def3->title2_1 }}</div>
                             <span class="medium">{{ $page_def3->title2_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon3 !!}
-                            <div class="timer" data-to="{{ $page_def3->title3_1 }}" data-speed="5000">{{ $page_def3->title3_1 }}</div>
+                            <div class="timer" data-to="{{ $page_def3->title3_1 }}" data-speed="5000">
+                                {{ $page_def3->title3_1 }}</div>
                             <span class="medium">{{ $page_def3->title3_2 }}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 item">
                         <div class="fun-fact">
                             {!! $page_def3->icon4 !!}
-                            <div class="timer" data-to="{{ $page_def3->title4_1 }}" data-speed="5000">{{ $page_def3->title4_1 }}</div>
+                            <div class="timer" data-to="{{ $page_def3->title4_1 }}" data-speed="5000">
+                                {{ $page_def3->title4_1 }}</div>
                             <span class="medium">{{ $page_def3->title4_2 }}</span>
                         </div>
                     </div>
@@ -206,7 +207,7 @@
     <!-- End Fun Factor -->
 
     <!-- Start How it Work
-        ============================================= -->
+            ============================================= -->
     <div class="works-rules-area default-padding">
         <div class="container">
             <div class="row">
@@ -291,7 +292,7 @@
     </div>
     <!-- End How it Work -->
     <!-- Clients
-        ============================================= -->
+            ============================================= -->
     <div class="clients-area bg-theme default-padding">
         <div class="container">
             <div class="row">
@@ -331,7 +332,7 @@
     </div>
     <!-- End Clients -->
     <!-- Start Our Story
-        ============================================= -->
+            ============================================= -->
     <div class="our-story-area default-padding bg-gray">
         <div class="container-fluid">
             <div class="row">
@@ -374,7 +375,7 @@
 
 
     <!-- Start Business Growth
-        ============================================= -->
+            ============================================= -->
     <div class="business-groth-area default-padding">
         <div class="container">
             <div class="row">
@@ -405,9 +406,9 @@
 
     <div class="tooltip1">
         <span class="tooltiptext1">Merhaba Size Nasıl Yardımcı Olabilirim ?<a
-                href="https://wa.me/+90{{ $no }}?text=Merhaba,%20sipariş%20vermek%20istiyorum." class="float1"
+                href="https://wa.me/+90{{ $no }}?text=Merhaba,%20sipariş%20vermek%20istiyorum." class="float1"  style="background-color: white!important"
                 target="_blank"></span>
-        <i class="fa-brands fa-whatsapp" style="margin-top:7px; color:white"></i>
+        <img src="{{ asset('assets/whatsapp.png') }}" class="fa-brands fa-whatsapp">
         </a>
     </div>
 @endsection
