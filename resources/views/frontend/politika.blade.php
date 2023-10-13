@@ -19,7 +19,7 @@
     </div>
 
     <div class="contact-form-area default-padding container bg-gray" >
-        <div class="container" style="text-align: justify;width:800px;padding:5%">
+        <div class="container" style="text-align: justify;padding:5%">
             {!! $data !!}
         </div>
 

@@ -55,6 +55,7 @@ return [
     "tamam" => "Okey",
     "Talep Formu" => "Request Form",
     "Politika" => "Policy",
+    "politika" => "Policy",
     "KVKK Aydınlatma Metni" => "KVKK Clarification Text",
     "Mesajınızı buraya yazabilirsiniz." => "You can write your message here.",
     "Web sitemizde size en iyi deneyimi sunabilmemiz için çerezleri kullanıyoruz. Bu siteyi kullanmaya devam ederseniz, bunu kabul etmiş sayılıyorsunuz." => "We use cookies to give you the best experience on our website. If you continue to use this site, you agree to this.",

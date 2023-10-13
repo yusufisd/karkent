@@ -54,6 +54,7 @@ return [
     "isim" => "İsim",
     "tamam" => "Tamam",
     "Politika" => "Politika",
+    "politika" => "Politika",
     "KVKK Aydınlatma Metni" => "KVKK Aydınlatma Metni",
     "Talep Formu" => "Talep Formu",
     "Mesajınızı buraya yazabilirsiniz." => "Mesajınızı buraya yazabilirsiniz.",
