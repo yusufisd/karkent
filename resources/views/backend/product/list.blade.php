@@ -62,7 +62,7 @@
                                             <th> {{ __('msg.ad') }} <i class="fa fa-sort ms-3"></i></th>
                                             <th> {{ __('msg.açıklama') }} <i class="fa fa-sort ms-3"></i></th>
                                             <th> {{ __('msg.kategori') }} <i class="fa fa-sort ms-3"></i></th>
-                                            <th style="width: 300px"> {{ __('msg.işlem') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th style="width: 250px"> {{ __('msg.işlem') }} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -80,12 +80,14 @@
                                                 <td> {{ $item->title }} </td>
                                                 <td> {{ substr($item->description, 0, 50) }} ...</td>
                                                 <td> {{ $item->Category->title }} </td>
-                                                <td>
+                                                <td style="text-align: end">
+                                                    @if($item->type == 0)
                                                     <a href="{{ route('admin.product.multipleImage',$item->id) }}">
                                                         <button type="button"
                                                             class="btn btn-secondary btn-sm text-white"> Görseller ( {{ $item->multiple_image == null ? '0' : $item->ImageCounter()}} )
                                                         </button>
                                                     </a>
+                                                    @endif
                                                     <a href="{{ route('admin.product.edit', $item->id) }}"
                                                         class="btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1 px-2"
                                                         title="Düzenle">
