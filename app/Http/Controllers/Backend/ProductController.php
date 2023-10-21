@@ -259,7 +259,11 @@ class ProductController extends Controller
                 ->resize(170, 170)
                 ->save($save_url);
         }
-        $old_images = $data->multiple_image;
+        if($data->multiple_image != null){
+            $old_images = $data->multiple_image;
+        }else{
+            $old_images = [];
+        }
         array_push($old_images, $save_url);
         $data->multiple_image = $old_images;
         $data->save();
