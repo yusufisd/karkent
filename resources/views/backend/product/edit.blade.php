@@ -51,7 +51,8 @@
                         <!--begin::Body-->
                         <div class="card-body py-5">
                             <!--begin::Form-->
-                            <form action="{{ route('admin.product.update',$data_tr->id) }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('admin.product.update', $data_tr->id) }}" method="POST"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <!--begin::Card body-->
                                 <div class="card-body px-0 py-9">
@@ -140,7 +141,7 @@
                                                                 <div class="col-lg-10 ps-0">
                                                                     <div class="row">
                                                                         <div class="col-lg-12 fv-row">
-                                                                            <input type="text" name="product_name_tr"
+                                                                            <input type="text" name="product_name_tr" onchange="create_slug_tr()" id="product_name_tr"
                                                                                 class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
                                                                                 value="{{ $data_tr->title }}" />
                                                                         </div>
@@ -148,6 +149,24 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div class="row container mb-6">
+                                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0">
+                                                                {{ __('msg.ürün') }} Link </label>
+                                                            <div class="col-lg-10">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 fv-row">
+                                                                        <input type="text" name="link_tr"
+                                                                            id="link_tr"
+                                                                            class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
+                                                                            value="{{ $data_tr->slug ?? '' }}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
 
 
 
@@ -175,7 +194,7 @@
                                                                 <div class="col-lg-10 ps-0">
                                                                     <div class="row">
                                                                         <div class="col-lg-12 fv-row">
-                                                                            <input type="text" name="product_name_en"
+                                                                            <input type="text" name="product_name_en" onchange="create_slug_en()" id="product_name_en"
                                                                                 class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
                                                                                 value="{{ $data_en->title }}" />
                                                                         </div>
@@ -183,6 +202,23 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
+
+                                                        <div class="row container mb-6">
+                                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0">
+                                                                {{ __('msg.ürün') }} Link </label>
+                                                            <div class="col-lg-10">
+                                                                <div class="row">
+                                                                    <div class="col-lg-12 fv-row">
+                                                                        <input type="text" name="link_en"
+                                                                            id="link_en"
+                                                                            class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
+                                                                            value="{{ $data_en->slug ?? '' }}" />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
 
 
                                                         <div class="row container mb-6">
@@ -293,7 +329,7 @@
                                                 <div class="col-lg-10 ps-0">
                                                     <div class="row">
                                                         <div class="col-lg-12 fv-row">
-                                                            <input type="text" name="product_name_tr"
+                                                            <input type="text" name="product_name_tr" id="product_name_tr2"
                                                                 class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
                                                                 value="{{ $data_tr->title }}" />
                                                         </div>
@@ -302,15 +338,17 @@
                                             </div>
                                         </div>
 
+                                        
+
                                         <div class="row container mb-6">
-                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0">
-                                                {{ __('msg.ürün') }} URL </label>
+                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0"> {{ __('msg.ürün') }}
+                                                Dış Link </label>
                                             <div class="col-lg-10">
                                                 <div class="row">
                                                     <div class="col-lg-12 fv-row">
-                                                        <input type="text" name="product_url_tr"
+                                                        <input type="text" name="product_url_tr" id="product_url_tr"
                                                             class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
-                                                            value="{{ $data_tr->link }}" />
+                                                            value="{{ $data_tr->link ?? '' }}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -344,7 +382,7 @@
                                                 <div class="col-lg-10 ps-0">
                                                     <div class="row">
                                                         <div class="col-lg-12 fv-row">
-                                                            <input type="text" name="product_name_en"
+                                                            <input type="text" name="product_name_en"  id="product_name_en2"
                                                                 class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
                                                                 value="{{ $data_en->title }}" />
                                                         </div>
@@ -353,15 +391,17 @@
                                             </div>
                                         </div>
 
+                                       
+
                                         <div class="row container mb-6">
-                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0">
-                                                {{ __('msg.ürün') }} URL </label>
+                                            <label class="col-lg-2 col-form-label fw-bold fs-6 ps-0"> {{ __('msg.ürün') }}
+                                                Dış Link </label>
                                             <div class="col-lg-10">
                                                 <div class="row">
                                                     <div class="col-lg-12 fv-row">
-                                                        <input type="text" name="product_url_en"
+                                                        <input type="text" name="product_url_en" id="product_url_en"
                                                             class="form-control form-control-lg form-control-solid mb-lg-0 mb-3"
-                                                            value="{{ $data_en->link }}" />
+                                                            value="{{ $data_en->link ?? '' }}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -406,270 +446,44 @@
     <!--end::Form-->
 
     </div>
-    <!--begin::Body-->
-    </div>
-    </div>
-    <!--end::Col-->
-    </div>
-    <!--end::Row-->
 
-    </div>
-    <!--end::Content container-->
-    </div>
-    <!--end::Content-->
 @endsection
 @section('script')
-    <!--begin:: extra js-->
     <script>
-        $(document).ready(function() {
+        var slug = function(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim
+            str = str.toLowerCase();
 
-            var selectedOption;
+            // remove accents, swap ñ for n, etc
+            var from =
+                "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆĞÍÌÎÏİŇÑÓÖÒÔÕØŘŔŠŞŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇğíìîïıňñóöòôõøðřŕšşťúůüùûýÿžþÞĐđßÆa·/_,:;";
+            var to =
+                "AAAAAACCCDEEEEEEEEGIIIIINNOOOOOORRSSTUUUUUYYZaaaaaacccdeeeeeeeegiiiiinnooooooorrsstuuuuuyyzbBDdBAa------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
 
-            $('select').on('change', function(e) {
-                e.preventDefault();
-                $("#modul_content").html("");
-                $("#external_link_content").html("");
-                $("#card_action").html("");
+            str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/-+/g, '-'); // collapse dashes
 
-                selectedOption = $(this).val();
+            return str;
+        };
 
-                if (selectedOption === 'modul') {
-                    $("#modul_content").append( <
-                        div class = "row mb-6" >
+        function create_slug_tr() {
+            var Text = $("#product_name_tr").val();
+            Text2 = (slug(Text));
+            $("#link_tr").val(Text2);
+        }
 
-                        <
-                        label class = "col-lg-2 col-form-label ps-5 required fw-bold fs-6" >
-                        {{ __('msg.kategori') }} < /label> <
-                        div class = "col-lg-10" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        '<select name="category_id" aria-label="Seçiniz" data-control="select2" data-placeholder="Seçiniz..." class="form-select form-select-solid form-select-lg fw-semibold"> <
-                        option value = "" > Seçiniz... < /option>
-                        @foreach ($categories as $category)
-                            ' + <
-                            option value = "{{ $category->id }}" > {{ $category->title }} < /option>
-                        @endforeach <
-                        /select> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        /div> <
-                        div class = "row mb-6" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-5 fw-bold fs-6" >
-                        {{ __('msg.resim') }} < /label> <
-                        div class = "col-lg-10" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        input type = "file"
-                        name = "image"
-                        class = "form-control"
-                        value = "" / >
-                        <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        div class = "row mb-6" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-5 fw-bold fs-6" >
-                        {{ __('msg.sıralama') }} < /label> <
-                        div class = "col-lg-10" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        input type = "number"
-                        name = "queue"
-                        class = "form-control form-control-solid mb-3 mb-lg-0"
-                        value = "" / >
-                        <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        input type = "hidden"
-                        name = "type"
-                        class = "form-control"
-                        value = "0" / >
+        
 
+        function create_slug_en() {
+            var Text = $("#product_name_en").val();
+            Text2 = (slug(Text));
+            $("#link_en").val(Text2);
+        }
 
-                        <
-                        div class = "row ps-5" >
-                        <
-                        ul class = "nav nav-tabs nav-line-tabs nav-line-tabs-2x fs-6" >
-                        <
-                        li class = "nav-item" >
-                        <
-                        a class = "nav-link active"
-                        data - bs - toggle = "tab"
-                        href = "#tab_menu_header_external_link_tr" >
-                        <
-                        span >
-                        <
-                        img src = "{{ asset('/assets/tr.png') }}"
-                        width = "28"
-                        height = "20"
-                        alt = "TR"
-                        title = "TR" >
-                        <
-                        /span> < /
-                        a > <
-                        /li> <
-                        li class = "nav-item" >
-                        <
-                        a class = "nav-link"
-                        data - bs - toggle = "tab"
-                        href = "#tab_menu_header_external_link_en" >
-                        <
-                        span >
-                        <
-                        img src = "{{ asset('/assets/en.png') }}"
-                        width = "28"
-                        height = "20"
-                        alt = "EN"
-                        title = "EN" >
-                        <
-                        /span> < /
-                        a > <
-                        /li> < /
-                        ul > <
-                        div class = "tab-content"
-                        id = "TabContent_1" >
-                        <
-                        div class = "tab-pane fade show active"
-                        id = "tab_menu_header_external_link_tr"
-                        role = "tabpanel" >
-                        <
-                        div class = "card-body px-0 py-5" >
-                        <
-                        div class = "row mb-6 container" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-0 fw-bold fs-6" >
-                        {{ __('msg.ürün') }} {{ __('msg.ad') }} < /label> <
-                        div class = "col-lg-10 ps-0" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        input type = "text"
-                        name = "product_name_tr"
-                        class = "form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        value = "" / >
-                        <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        /div>
-
-
-
-                        <
-                        div class = "row mb-6 container" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-0 fw-bold fs-6" >
-                        {{ __('msg.açıklama') }} < /label> <
-                        div class = "col-lg-10" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        textarea name = "product_description_tr"
-                        class = "form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        value = "" / > < /textarea> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div >
-
-                        <
-                        div class = "tab-pane fade"
-                        id = "tab_menu_header_external_link_en"
-                        role = "tabpanel" >
-
-                        <
-                        div class = "card-body px-0 py-5" >
-                        <
-                        div class = "row mb-6 container" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-0 fw-bold fs-6" >
-                        {{ __('msg.ürün') }} {{ __('msg.ad') }} < /label> <
-                        div class = "col-lg-10 ps-0" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        input type = "text"
-                        name = "product_name_en"
-                        class = "form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        value = "" / >
-                        <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        /div>
-
-
-                        <
-                        div class = "row mb-6 container" >
-                        <
-                        label class = "col-lg-2 col-form-label ps-0 fw-bold fs-6" >
-                        {{ __('msg.açıklama') }} < /label> <
-                        div class = "col-lg-10" >
-                        <
-                        div class = "row" >
-                        <
-                        div class = "col-lg-12 fv-row" >
-                        <
-                        textarea name = "product_description_en"
-                        class = "form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        value = "" / > < /textarea> < /
-                        div > <
-                        /div> < /
-                        div > <
-                        /div> < /
-                        div >
-
-                        <
-                        /div> <
-                        div class = "right"
-                        style = "text-align:right" >
-                        <
-                        input type = "submit"
-                        class = "btn btn-primary"
-                        value = " {{ __('msg.kaydet') }}" >
-                        <
-                        /div> < /
-                        div > <
-                        /div>'
-
-
-                    );
-
-                } else {
-
-
-                }
-
-
-
-            });
-
-
-
-        });
+        
     </script>
-    <!--end:: extra js-->
 @endsection

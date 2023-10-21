@@ -194,7 +194,7 @@
 
                                 @foreach (products2($cat->id) as $pro)
                                     <li><a {{ $cat->link != null ? 'target="_blank"' : '' }}
-                                            href="{{ $pro->link != null ? $pro->link : route('frontend.product.detail', $pro->id) }}">
+                                            href="{{ $pro->link != null ? $pro->link : route('frontend.product.detail', $pro->slug) }}">
                                             {{ $pro->title }} </a></li>
                                 @endforeach
 

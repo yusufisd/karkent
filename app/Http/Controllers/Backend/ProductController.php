@@ -69,6 +69,7 @@ class ProductController extends Controller
         $product->link = $request->product_url_tr;
         $product->type = $request->type;
         $product->queue = $request->queue;
+        $product->slug = $request->link_tr;
 
         $image_tr = $request->file('image');
         $image_name = hexdec(uniqid()) . '.' . $image_tr->getClientOriginalExtension();
@@ -78,6 +79,7 @@ class ProductController extends Controller
             ->save($save_url);
         $product->image = $save_url;
         $product->save();
+        
 
         $product_en = new EnProduct();
         $product_en->type = $request->type;
@@ -87,6 +89,7 @@ class ProductController extends Controller
         $product_en->product_id = $product->id;
         $product_en->category_id = $request->category_id;
         $product_en->queue = $request->queue;
+        $product_en->slug = $request->link_en;
         $image_en = $request->file('image');
         $image_name_en = hexdec(uniqid()) . '.' . $image_en->getClientOriginalExtension();
         $save_url_en = 'assets/uploads/product/' . $image_name_en;
@@ -95,6 +98,24 @@ class ProductController extends Controller
             ->save($save_url_en);
         $product_en->image = $save_url;
         $product_en->save();
+
+        if ($request->file('multiple_image') != null) {
+            $datas = [];
+            foreach ($request->file('multiple_image') as $key) {
+                $image = $key;
+                $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+                $save_url = 'assets/uploads/product/' . $image_name;
+                Image::make($image)
+                    ->resize(170, 170)
+                    ->save($save_url);
+                array_push($datas, $save_url);
+            }
+            $product_en->multiple_image = $datas;
+            $product->multiple_image = $datas;
+        }
+        $product_en->save();
+        $product->save();
+
 
         if ($product && $product_en) {
             logKayit(['Ürün', 'Ürün Eklendi']);
@@ -146,7 +167,7 @@ class ProductController extends Controller
             $product->title = $request->product_name_tr;
             $product->description = $request->product_description_tr;
             $product->link = $request->product_url_tr;
-            $product->type = $request->type;
+            $product->slug = $request->link_tr;
             $product->queue = $request->queue;
 
             if ($request->file('image') != null) {
@@ -166,6 +187,7 @@ class ProductController extends Controller
             $product_en->title = $request->product_name_en;
             $product_en->description = $request->product_description_en;
             $product_en->link = $request->product_url_en;
+            $product_en->slug = $request->link_en;
             $product_en->product_id = $product->id;
             $product_en->queue = $request->queue;
             if ($request->file('image') != null) {
@@ -210,5 +232,54 @@ class ProductController extends Controller
             return redirect()->back();
         }
         return redirect()->route('admin.product.list');
+    }
+
+    public function multipleImage($id)
+    {
+        $data2 = Product::findOrFail($id);
+        $data = $data2->multiple_image;
+        $id = $id;
+
+        return view('backend.product.multipleImage.multiple_image', compact('data', 'id'));
+    }
+
+    public function multipleImage_add($id)
+    {
+        return view('backend.product.multipleImage.add', compact('id'));
+    }
+
+    public function multipleImage_store(Request $request, $id)
+    {
+        $data = Product::findOrFail($id);
+        if ($request->file('image') != null) {
+            $image = $request->file('image');
+            $image_name = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+            $save_url = 'assets/uploads/product/' . $image_name;
+            Image::make($image)
+                ->resize(170, 170)
+                ->save($save_url);
+        }
+        $old_images = $data->multiple_image;
+        array_push($old_images, $save_url);
+        $data->multiple_image = $old_images;
+        $data->save();
+        Alert::success('Görsel Başarıyla Eklendi');
+        return redirect()->route('admin.product.list');
+    }
+
+    public function multipleImage_destroy(Request $request,$id)
+    {
+
+        $data = Product::findOrFail($id);
+        $images = $data->multiple_image;
+
+        $ara = array_search($request->path,$images);
+        unset($images[$ara]);
+        $data->multiple_image = $images;
+        $data->save();
+
+        Alert::success('Görsel başarıyla silindi');
+        return redirect()->route('admin.product.list');
+
     }
 }

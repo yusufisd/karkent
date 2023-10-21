@@ -1,13 +1,14 @@
 @extends('backend.master')
 @section('content')
     <!--begin::Toolbar-->
-    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-10">
+    <div id="kt_app_toolbar" class="app-toolbar py-lg-10 py-3">
         <!--begin::Toolbar container-->
         <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
             <!--begin::Page title-->
-            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+            <div class="page-title d-flex flex-column justify-content-center me-3 flex-wrap">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0"> {{__('msg.ürün')}} {{__('msg.yönetim')}} </h1>
+                <h1 class="page-heading d-flex text-primary fw-bold fs-3 flex-column justify-content-center my-0">
+                    {{ __('msg.ürün') }} {{ __('msg.yönetim') }} </h1>
                 <!--end::Title-->
             </div>
             <!--end::Page title-->
@@ -23,8 +24,8 @@
             <!--begin::Row-->
             <div class="row g-5 g-xl-8">
                 <!--begin::Col-->
-                <div class="col-xl-12 mb-5 mb-xl-8">
-                    <div class="card card-flush h-xl-100 mb-5 mb-xl-8">
+                <div class="col-xl-12 mb-xl-8 mb-5">
+                    <div class="card card-flush h-xl-100 mb-xl-8 mb-5">
                         <!--begin::Card header-->
                         <div class="card-header border-0 pt-6">
                             <!--begin::Card toolbar-->
@@ -32,8 +33,9 @@
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                                     <!--begin::Add user-->
-                                    <a type="button" class="btn btn-outline btn-outline-success" href="{{route('admin.product.add')}}">
-                                        <i class="fa-solid fa-plus"></i> {{__('msg.ekle')}} </a>
+                                    <a type="button" class="btn btn-outline btn-outline-success"
+                                        href="{{ route('admin.product.add') }}">
+                                        <i class="fa-solid fa-plus"></i> {{ __('msg.ekle') }} </a>
                                     <!--end::Add user-->
                                 </div>
                                 <!--end::Toolbar-->
@@ -44,10 +46,10 @@
                         </div>
                         <!--end::Card header-->
                         <!--begin::Body-->
-                        <div class="card-body pt-0 pb-5">
+                        <div class="card-body pb-5 pt-0">
                             <!--begin::Table container-->
                             <div class="table-responsive with_search_table">
-                                <table id="slider_table" class="table gy-7 gx-7">
+                                <table id="slider_table" class="gy-7 gx-7 table">
                                     <thead>
                                         <tr class="fw-bold fs-6 text-gray-800">
                                             <th class="w-10px">
@@ -57,44 +59,49 @@
                                                         data-kt-check-target="#slider_table .my-input " value="1" />
                                                 </div>
                                             </th>
-                                            <th > {{__('msg.ad')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th > {{__('msg.açıklama')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th > {{__('msg.kategori')}} <i class="fa fa-sort ms-3"></i></th>
-                                            <th > {{__('msg.işlem')}} <i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{ __('msg.ad') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{ __('msg.açıklama') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th> {{ __('msg.kategori') }} <i class="fa fa-sort ms-3"></i></th>
+                                            <th style="width: 300px"> {{ __('msg.işlem') }} <i class="fa fa-sort ms-3"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                         @foreach ($data as $item)
-                                            
-                                        <tr class="align-middle">
-                                            <td>
-                                                <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                                    <input class="form-check-input my-input" type="checkbox"
-                                                        value="1" />
-                                                </div>
-                                            </td>
+                                            <tr class="align-middle">
+                                                <td>
+                                                    <div
+                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                        <input class="form-check-input my-input" type="checkbox"
+                                                            value="1" />
+                                                    </div>
+                                                </td>
 
-                                            <td > {{$item->title}} </td>
-                                            <td > {{substr($item->description,0,50)}} ...</td>
-                                            <td > {{$item->Category->title}} </td>
-                                            <td>
-                                                <a href="{{ route('admin.product.edit', $item->id) }}"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1"
-                                                    title="Düzenle">
-                                                    <i class="fa-regular fa-pen-to-square fs-3"></i>
-                                                </a>
-                                                <a onclick="destroy({{$item->id}})"
-                                                    class="px-2 btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1"
-                                                    data-bs-toggle="modal" data-bs-target="#delete_modal" title="Sil">
-                                                    <i class="fa-regular fa-trash-can fs-4"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-
+                                                <td> {{ $item->title }} </td>
+                                                <td> {{ substr($item->description, 0, 50) }} ...</td>
+                                                <td> {{ $item->Category->title }} </td>
+                                                <td>
+                                                    <a href="{{ route('admin.product.multipleImage',$item->id) }}">
+                                                        <button type="button"
+                                                            class="btn btn-secondary btn-sm text-white"> Görseller ( {{ $item->multiple_image == null ? '0' : $item->ImageCounter()}} )
+                                                        </button>
+                                                    </a>
+                                                    <a href="{{ route('admin.product.edit', $item->id) }}"
+                                                        class="btn btn-icon btn-bg-light btn-active-color-secondary btn-sm me-1 px-2"
+                                                        title="Düzenle">
+                                                        <i class="fa-regular fa-pen-to-square fs-3"></i>
+                                                    </a>
+                                                    <a onclick="destroy({{ $item->id }})"
+                                                        class="btn btn-icon btn-bg-light btn-active-color-danger btn-sm me-1 px-2"
+                                                        data-bs-toggle="modal" data-bs-target="#delete_modal"
+                                                        title="Sil">
+                                                        <i class="fa-regular fa-trash-can fs-4"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         @endforeach
 
-                                        
+
                                     </tbody>
                                 </table>
                             </div>
@@ -126,7 +133,7 @@
                 confirmButtonText: 'Evet, sil!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = "{{ route('admin.product.destroy') }}/"+d;
+                    window.location.href = "{{ route('admin.product.destroy') }}/" + d;
                 }
             })
         }
@@ -137,8 +144,8 @@
                 [0, "asc"]
             ],
             "language": {
-                
-                "sEmptyTable": "{{__('msg.Tabloda herhangi bir veri mevcut değil')}}",
+
+                "sEmptyTable": "{{ __('msg.Tabloda herhangi bir veri mevcut değil') }}",
                 "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
                 "sInfoEmpty": "Kayıt yok",
                 "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
@@ -147,13 +154,13 @@
                 "sLengthMenu": "Sayfada _MENU_ kayıt göster",
                 "sLoadingRecords": "Yükleniyor...",
                 "sProcessing": "İşleniyor...",
-                "sSearch": "{{__('msg.ara')}}:",
+                "sSearch": "{{ __('msg.ara') }}:",
                 "sZeroRecords": "Eşleşen kayıt bulunamadı",
                 "oPaginate": {
                     "sFirst": "İlk",
                     "sLast": "Son",
-                    "sNext": "{{__('msg.sonraki')}}",
-                    "sPrevious": "{{__('msg.önceki')}}"
+                    "sNext": "{{ __('msg.sonraki') }}",
+                    "sPrevious": "{{ __('msg.önceki') }}"
                 },
                 "oAria": {
                     "sSortAscending": ": artan sütun sıralamasını aktifleştir",

@@ -36,8 +36,7 @@
     <div class="portfolio-details default-padding">
         <div class="container">
 
-            <div class="row">
-
+            <div class="row" style="margin-bottom:10%">
                 <div class="col-md-3 items-center">
                     <img src="/{{ $data->image }}" alt="">
                 </div>
@@ -47,9 +46,18 @@
                     <p style="text-align:left;">
                         {{ $data->description }}
                     </p>
-
-
                 </div>
+            </div>
+            <div class="row gap-5" style="text-align: center">
+                @if ($data->multiple_image != null)
+                    @foreach ($data->multiple_image as $image)
+                        
+                    <div class="col-md-3">
+                        <img src="/{{ $image }}" style="width: 200px; border-radius:15px; margin-bottom:15%" alt="">
+                    </div>
+                    @endforeach
+
+                @endif
             </div>
         </div>
     </div>

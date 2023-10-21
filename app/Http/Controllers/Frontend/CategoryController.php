@@ -39,10 +39,10 @@ class CategoryController extends Controller
 
 
         if ($local == "tr") {
-            $data = Product::findOrFail($id);
+            $data = Product::where('slug',$id)->first();
 
         } elseif ($local == "en") {
-            $data = EnProduct::findOrFail($id);
+            $data = EnProduct::where('slug',$id)->first();
 
         }
         return view('frontend.product_detail',compact('data'));

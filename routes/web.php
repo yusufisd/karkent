@@ -21,9 +21,12 @@ use App\Http\Controllers\Frontend\ContactController as FrontendContactController
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\PageController as FrontendPageController;
 use App\Http\Controllers\LanguageController;
+use App\Models\EnProduct;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +38,28 @@ use Illuminate\Support\Facades\Artisan;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/asdewq', function () {
+    $data = Product::latest()->get();
+    foreach ($data as $item) {
+        if ($item->slug == null) {
+            $create_slug = Str::slug($item->title);
+            $item->slug = $create_slug;
+            $item->save();
+        }
+    }
+
+    $data_en = EnProduct::latest()->get();
+    foreach ($data_en as $item) {
+        if ($item->slug == null) {
+            $create_slug = Str::slug($item->title);
+            $item->slug = $create_slug;
+            $item->save();
+        }
+    }
+    return 'Linkler başarıyla oluşturuldu. Sayfadan çıkabilirsiniz.';
+
+});
 
 // CHANGE LANG
 Route::get('/change-lang/{lang}', [LanguageController::class, 'change'])->name('chaange.lang');
@@ -80,13 +105,12 @@ Route::middleware('lang')->group(function () {
             Route::get('/sifremi-yenile/{data?}', [AuthController::class, 'resetPassword'])->name('resetPassword');
             Route::post('/sifremi-yenile', [AuthController::class, 'resetPasswordPost'])->name('resetPasswordPost');
 
-
-            Route::controller(PageController::class)->group(function(){
-                Route::get('kvkk-duzenle','kvkk_create')->name('kvkk.create');
-                Route::post('kvkk-duzenle','kvkk_update')->name('kvkk.update');
-                Route::get('politika-duzenle','politika_create')->name('politika.create');
-                Route::post('politika-duzenle','politika_update')->name('politika.update');
-            }); 
+            Route::controller(PageController::class)->group(function () {
+                Route::get('kvkk-duzenle', 'kvkk_create')->name('kvkk.create');
+                Route::post('kvkk-duzenle', 'kvkk_update')->name('kvkk.update');
+                Route::get('politika-duzenle', 'politika_create')->name('politika.create');
+                Route::post('politika-duzenle', 'politika_update')->name('politika.update');
+            });
 
             // SLİDER İŞLEMLERİ
             Route::controller(SliderController::class)
@@ -268,6 +292,10 @@ Route::middleware('lang')->group(function () {
                     Route::middleware('permission2:product_delete')
                         ->get('/sil/{id?}', 'destroy')
                         ->name('destroy');
+                    Route::get('/coklu-gorsel/{id?}', 'multipleImage')->name('multipleImage');
+                    Route::get('/coklu-gorsel-ekle/{id?}', 'multipleImage_add')->name('multipleImage_add');
+                    Route::post('/coklu-gorsel-ekle/{id?}', 'multipleImage_store')->name('multipleImage_store');
+                    Route::get('/coklu-gorsel-sil/{id?}', 'multipleImage_destroy')->name('multipleImage_destroy');
                 });
 
             // kurumsal ayarlar

@@ -146,12 +146,24 @@
                         '</div>' +
                         '</div>' +
                         '</div>' +
+
                         '<div class="row mb-6">' +
                         '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> {{ __('msg.sıralama') }} </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
                         '<input type="number" name="queue" class="form-control form-control-solid mb-3 mb-lg-0" value="{{$queue}}" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="row mb-6">' +
+                        '<label class="col-lg-2 col-form-label ps-5 fw-bold fs-6"> Çoklu Görsel </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="file" name="multiple_image[]" multiple class="form-control  mb-3 mb-lg-0"  />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -184,12 +196,24 @@
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="text" name="product_name_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '<input type="text" name="product_name_tr" onchange="create_slug_tr()" id="product_name_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
+
+                        '<div class="row mb-6 container" >' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Link </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="text" name="link_tr" id="link_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        
 
 
 
@@ -213,8 +237,19 @@
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="text" name="product_name_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '<input type="text" name="product_name_en" onchange="create_slug_en()" id="product_name_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
                         '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="row mb-6 container" >' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Link </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="text" name="link_en" id="link_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -302,13 +337,13 @@
                         '</ul>' +
                         '<div class="tab-content" id="TabContent_1">' +
                         '<div class="tab-pane fade show active" id="tab_menu_header_external_link_tr" role="tabpanel">' +
-                        '<div class="card-body px-0 py-5">' +
+                        '<div class="card-body px-0 py-3">' +
                         '<div class="row mb-6 container">' +
                         '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }}  {{ __('msg.ad') }} </label>' +
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="text" name="product_name_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '<input type="text" onchange="create_slug_tr()" id="product_name_tr" name="product_name_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -316,7 +351,19 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} URL </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Link </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="text" name="link_tr" id="link_tr" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        
+
+                        '<div class="row mb-6 container" >' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Dış Link </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -350,7 +397,7 @@
                         '<div class="col-lg-10 ps-0">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
-                        '<input type="text" name="product_name_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '<input type="text" name="product_name_en" onchange="create_slug_en()" id="product_name_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
                         '</div>' +
                         '</div>' +
                         '</div>' +
@@ -358,7 +405,18 @@
                         '</div>' +
 
                         '<div class="row mb-6 container" >' +
-                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} URL </label>' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Link </label>' +
+                        '<div class="col-lg-10">' +
+                        '<div class="row">' +
+                        '<div class="col-lg-12 fv-row">' +
+                        '<input type="text" name="link_en" id="link_en" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="" />' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+
+                        '<div class="row mb-6 container" >' +
+                        '<label class="col-lg-2 col-form-label ps-0 fw-bold fs-6"> {{ __('msg.ürün') }} Dış Link </label>' +
                         '<div class="col-lg-10">' +
                         '<div class="row">' +
                         '<div class="col-lg-12 fv-row">' +
@@ -403,6 +461,42 @@
 
 
         });
+
+
+
+
+        var slug = function(str) {
+            str = str.replace(/^\s+|\s+$/g, ''); // trim
+            str = str.toLowerCase();
+
+            // remove accents, swap ñ for n, etc
+            var from =
+                "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆĞÍÌÎÏİŇÑÓÖÒÔÕØŘŔŠŞŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇğíìîïıňñóöòôõøðřŕšşťúůüùûýÿžþÞĐđßÆa·/_,:;";
+            var to =
+                "AAAAAACCCDEEEEEEEEGIIIIINNOOOOOORRSSTUUUUUYYZaaaaaacccdeeeeeeeegiiiiinnooooooorrsstuuuuuyyzbBDdBAa------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+
+            str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/-+/g, '-'); // collapse dashes
+
+            return str;
+        };
+
+        function create_slug_tr() {
+            var Text = $("#product_name_tr").val();
+            Text2 = (slug(Text));
+            $("#link_tr").val(Text2);
+        }
+
+        function create_slug_en() {
+            var Text = $("#product_name_en").val();
+            Text2 = (slug(Text));
+            $("#link_en").val(Text2);
+        }
     </script>
     <!--end:: extra js-->
 @endsection
+

@@ -297,11 +297,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="clients-items owl-carousel owl-theme text-center">
+                    <div class="clients-items owl-carousel owl-theme text-center" >
 
                         @foreach ($sponsors as $item)
-                            <div class="single-item">
-                                <a href="#"><img style="width: 100%" src="/{{ $item->logo }}"
+                            <div class="single-item" >
+                                <a href="#"><img style="width: 300px!important" src="/{{ $item->logo }}"
                                         alt="Clients"></a>
                             </div>
                         @endforeach

@@ -9,6 +9,9 @@ class EnProduct extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $casts = [
+        'multiple_image' => 'array'
+    ];
 
     public function Category()
     {
@@ -23,5 +26,10 @@ class EnProduct extends Model
         } elseif ($local == 'en') {
             return $this->hasOne(EnCategory::class, 'id', 'category_id');
         }
+    }
+
+    public function ImageCounter(){
+        $data = EnProduct::findOrFail($this->id);
+        return count($data->multiple_image);
     }
 }
