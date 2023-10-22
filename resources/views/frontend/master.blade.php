@@ -145,11 +145,9 @@
 
                     <a class="navbar-brand" href="{{ route('frontend.index') }}">
 
-                        <img src="{{ asset('/assets/kar-disi.png') }}" class="logo logo-display"
-                            alt="Logo">
+                        <img src="{{ asset('/assets/kar-disi.png') }}" class="logo logo-display" alt="Logo">
 
-                        <img src="{{ asset('/assets/kar-erkek.png') }}" class="logo logo-scrolled"
-                            alt="Logo">
+                        <img src="{{ asset('/assets/kar-erkek.png') }}" class="logo logo-scrolled" alt="Logo">
 
                         @php
                             $langs = ['en', 'tr'];
@@ -177,12 +175,20 @@
                     <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
 
                         <li>
-                            <a class="{{Route::is('frontend.index') ? 'active' : ''}}"  href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
+                            <a class="{{ Route::is('frontend.index') ? 'active' : '' }}"
+                                href="{{ route('frontend.index') }}"> {{ __('msg.anasayfa') }} </a>
                         </li>
-                        <li>
-                            <a class="{{Route::is('frontend.about') ? 'active' : ''}}"  href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
-                        </li>
-
+                        @if (\Session::get('applocale') == 'tr')
+                            <li>
+                                <a class="{{ Route::is('frontend.about') ? 'active' : '' }}"
+                                    href="{{ route('frontend.about') }}"> {{ __('msg.kurumsal') }} </a>
+                            </li>
+                        @else
+                            <li>
+                                <a class="{{ Route::is('frontend.about.en') ? 'active' : '' }}"
+                                    href="{{ route('frontend.about.en') }}"> {{ __('msg.kurumsal') }} </a>
+                            </li>
+                        @endif
                         <li>
 
                             @foreach (categories2() as $cat)
@@ -204,12 +210,17 @@
                         </li>
                         @endforeach
 
-
-
-
-                        <li>
-                            <a class="{{Route::is('frontend.contact') ? 'active' : ''}}" class="soldan" href="{{ route('frontend.contact') }}"> {{ (__('msg.iletişim')) }} </a>
-                        </li>
+                        @if (\Session::get('applocale') == 'tr')
+                            <li>
+                                <a class="{{ Route::is('frontend.contact') ? 'active' : '' }}" class="soldan"
+                                    href="{{ route('frontend.contact') }}"> {{ __('msg.iletişim') }} </a>
+                            </li>
+                        @else
+                            <li>
+                                <a class="{{ Route::is('frontend.contact.en') ? 'active' : '' }}" class="soldan"
+                                    href="{{ route('frontend.contact.en') }}"> {{ __('msg.iletişim') }} </a>
+                            </li>
+                        @endif
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div>
@@ -239,10 +250,11 @@
                             <ul>
                                 <li><a style="color:gray" href="{{ asset('/assets/frontend/img/talep.pdf') }}">
                                         {{ __('msg.Talep Formu') }} </a></li>
-                                <li><a style="{{Route::is('frontend.politika') ? 'color:white' : 'color:gray'}}" 
-                                    href="{{route('frontend.politika')}}">
+                                <li><a style="{{ Route::is('frontend.politika') ? 'color:white' : 'color:gray' }}"
+                                        href="{{ route('frontend.politika') }}">
                                         {{ __('msg.Politika') }}</a></li>
-                                <li><a style="{{Route::is('frontend.kvkk') ? 'color:white' : 'color:gray'}}" href="{{route('frontend.kvkk')}}">
+                                <li><a style="{{ Route::is('frontend.kvkk') ? 'color:white' : 'color:gray' }}"
+                                        href="{{ route('frontend.kvkk') }}">
                                         {{ __('msg.KVKK Aydınlatma Metni') }}</a></li>
                             </ul>
                         </div>

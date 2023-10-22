@@ -75,6 +75,8 @@ Route::middleware('lang')->group(function () {
     Route::get('/', [HomeController::class, 'index'])
         ->middleware('lang')
         ->name('frontend.index');
+    Route::get('/about', [FrontendAboutController::class, 'about'])->name('frontend.about.en');
+    Route::get('/contact', [FrontendContactController::class, 'contact'])->name('frontend.contact.en');
     Route::get('/hakkimizda', [FrontendAboutController::class, 'about'])->name('frontend.about');
     Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
     Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');

@@ -28,7 +28,7 @@ class LanguageController extends Controller
             $route = Route::currentRouteName();
             return redirect()->route($route);
             */
-            return redirect()->back();
+            return redirect()->route('frontend.index');
         }else{
             // session process
             Session::forget("applocale");
@@ -46,7 +46,7 @@ class LanguageController extends Controller
             $route = Route::currentRouteName();
             return redirect()->route($route);
             */
-            return redirect()->back();
+            return redirect()->route('frontend.index');
         }
     }
 }
