@@ -77,6 +77,9 @@ Route::middleware('lang')->group(function () {
         ->name('frontend.index');
     Route::get('/about', [FrontendAboutController::class, 'about'])->name('frontend.about.en');
     Route::get('/contact', [FrontendContactController::class, 'contact'])->name('frontend.contact.en');
+    Route::get('/kvkk-clarification-text', [FrontendPageController::class, 'kvkk'])->name('frontend.kvkk.en');
+    Route::get('/policy', [FrontendPageController::class, 'politika'])->name('frontend.politika.en');
+
     Route::get('/hakkimizda', [FrontendAboutController::class, 'about'])->name('frontend.about');
     Route::get('/iletisim', [FrontendContactController::class, 'contact'])->name('frontend.contact');
     Route::get('/kategori/{id?}', [FrontendCategoryController::class, 'detail'])->name('frontend.category.detail');

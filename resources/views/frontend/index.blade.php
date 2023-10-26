@@ -405,7 +405,7 @@
 
 
     <div class="tooltip1">
-        <span class="tooltiptext1">Merhaba Size Nasıl Yardımcı Olabilirim ?<a
+        <span class="tooltiptext1">{{ __('msg.Merhaba Size Nasıl Yardımcı Olabilirim ?') }}<a
                 href="https://wa.me/+90{{ $no }}?text=Merhaba,%20sipariş%20vermek%20istiyorum." class="float1"  style="background-color: white!important"
                 target="_blank"></span>
         <img src="{{ asset('assets/whatsapp.png') }}" class="fa-brands fa-whatsapp">

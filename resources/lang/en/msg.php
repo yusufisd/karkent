@@ -63,6 +63,7 @@ return [
     "politika sayfası" => "Policy Page",
     "kvkk sayfası" => "KVKK Page",
     "kvkk aydınlatma metni" => "KVKK Information Text",
+    "Merhaba Size Nasıl Yardımcı Olabilirim ?" => "Hello, how can I help you?",
 ]
 
 

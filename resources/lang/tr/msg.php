@@ -63,6 +63,7 @@ return [
     "politika sayfası" => "Politika Sayfası",
     "kvkk sayfası" => "KVKK Sayfası",
     "kvkk aydınlatma metni" => "KVKK AYDINLATMA METNİ",
+    "Merhaba Size Nasıl Yardımcı Olabilirim ?" => "Merhaba Size Nasıl Yardımcı Olabilirim ?",
 
 ]
 
