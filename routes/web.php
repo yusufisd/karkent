@@ -39,28 +39,6 @@ use Illuminate\Support\Str;
 |
 */
 
-Route::get('/asdewq', function () {
-    $data = Product::latest()->get();
-    foreach ($data as $item) {
-        if ($item->slug == null) {
-            $create_slug = Str::slug($item->title);
-            $item->slug = $create_slug;
-            $item->save();
-        }
-    }
-
-    $data_en = EnProduct::latest()->get();
-    foreach ($data_en as $item) {
-        if ($item->slug == null) {
-            $create_slug = Str::slug($item->title);
-            $item->slug = $create_slug;
-            $item->save();
-        }
-    }
-    return 'Linkler başarıyla oluşturuldu. Sayfadan çıkabilirsiniz.';
-
-});
-
 // CHANGE LANG
 Route::get('/change-lang/{lang}', [LanguageController::class, 'change'])->name('chaange.lang');
 
@@ -72,9 +50,8 @@ Route::middleware('lang')->group(function () {
 
     // TR ROUTES
     // FRONTEND İŞLEMLERİ
-    Route::get('/', [HomeController::class, 'index'])
-        ->middleware('lang')
-        ->name('frontend.index');
+    Route::get('/', [HomeController::class, 'index'])->middleware('lang')->name('frontend.index');
+    Route::get('/en', [HomeController::class, 'index'])->middleware('lang')->name('frontend.index.en');
     Route::get('/about', [FrontendAboutController::class, 'about'])->name('frontend.about.en');
     Route::get('/contact', [FrontendContactController::class, 'contact'])->name('frontend.contact.en');
     Route::get('/kvkk-clarification-text', [FrontendPageController::class, 'kvkk'])->name('frontend.kvkk.en');
@@ -89,10 +66,7 @@ Route::middleware('lang')->group(function () {
 
     // BACKEND İŞLEMLERİ
     Route::get('login', [AuthController::class, 'login']);
-    Route::controller(AuthController::class)
-        ->prefix('/admin')
-        ->name('admin.')
-        ->group(function () {
+    Route::controller(AuthController::class)->prefix('/admin')->name('admin.')->group(function () {
             Route::get('/login', 'login')->name('login');
             Route::post('/login', 'login_post')->name('login_post');
         });

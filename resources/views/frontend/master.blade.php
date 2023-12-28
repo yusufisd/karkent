@@ -54,6 +54,9 @@
         .soldan {
             text-transform: uppercase
         }
+        .cc-link{
+            margin-top:-3px;
+        }
     </style>
 </head>
 
@@ -248,25 +251,25 @@
                         </div>
                         <div class="col-md-6 footer-bottom-menu text-right">
                             <ul>
-                                <li><a style="color:gray" href="{{ asset('/assets/frontend/img/talep.pdf') }}">
+                                <li><a target="__blank" style="color:gray" href="{{ asset('/assets/frontend/img/talep.pdf') }}">
                                         {{ __('msg.Talep Formu') }} </a></li>
-                                @if (\Session::get('applocale') == 'tr')
-                                <li><a style="{{ Route::is('frontend.politika') ? 'color:white' : 'color:gray' }}"
-                                    href="{{ route('frontend.politika') }}">
+                                @if (\Session::get('applocale') == 'en')
+                                <li><a target="__blank" style="{{ Route::is('frontend.politika.en') ? 'color:white' : 'color:gray' }}"
+                                    href="{{ route('frontend.politika.en') }}">
                                     {{ __('msg.Politika') }}</a></li>
                                 @else
-                                <li><a style="{{ Route::is('frontend.politika.en') ? 'color:white' : 'color:gray' }}"
-                                    href="{{ route('frontend.politika.en') }}">
+                                <li><a target="__blank" style="{{ Route::is('frontend.politika') ? 'color:white' : 'color:gray' }}"
+                                    href="{{ route('frontend.politika') }}">
                                     {{ __('msg.Politika') }}</a></li>
                                 @endif
                                 
-                                @if (\Session::get('applocale') == 'tr')
-                                <li><a style="{{ Route::is('frontend.kvkk') ? 'color:white' : 'color:gray' }}"
-                                    href="{{ route('frontend.kvkk') }}">
+                                @if (\Session::get('applocale') == 'en')
+                                <li><a target="__blank" style="{{ Route::is('frontend.kvkk.en') ? 'color:white' : 'color:gray' }}"
+                                    href="{{ route('frontend.kvkk.en') }}">
                                     {{ __('msg.KVKK Aydınlatma Metni') }}</a></li>
                                 @else
-                                <li><a style="{{ Route::is('frontend.kvkk.en') ? 'color:white' : 'color:gray' }}"
-                                    href="{{ route('frontend.kvkk.en') }}">
+                                <li><a target="__blank" style="{{ Route::is('frontend.kvkk') ? 'color:white' : 'color:gray' }}"
+                                    href="{{ route('frontend.kvkk') }}">
                                     {{ __('msg.KVKK Aydınlatma Metni') }}</a></li>
                                 @endif
                                 
