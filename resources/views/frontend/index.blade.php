@@ -136,7 +136,7 @@
                 <div class="col-md-6 video-info thumb">
                     <img src="assets/frontend/img/kare.jpg" alt="Thumb">
                     <div class="overlay-video">
-                        <a href="https://www.youtube.com/watch?v=vQqZIFCab9o" class="popup-youtube video-play-button">
+                        <a href="{{ $page_def2->video_url }}" class="popup-youtube video-play-button">
                             <i class="fa fa-play"></i>
                         </a>
                     </div>
